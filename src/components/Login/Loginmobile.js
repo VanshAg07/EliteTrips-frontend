@@ -17,7 +17,7 @@ const Login = () => {
   const fetchSignInData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5001/api/popup/auth-image-user"
+        "https://elitetrips-backend.onrender.com/api/popup/auth-image-user"
       );
       const data = await response.json(); // Make sure to parse the response
       setSignInData(data[0]); // Assuming you want the first object from the array
@@ -31,7 +31,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5001/login-user", {
+      const response = await fetch("https://elitetrips-backend.onrender.com/login-user", {
         method: "POST",
         crossDomain: true,
         headers: {

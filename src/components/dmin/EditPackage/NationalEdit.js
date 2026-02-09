@@ -35,7 +35,7 @@ function NationalEdit() {
   const statusOptions = ["active", "non-active"];
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/edit-packages/get-national-packages")
+      .get("https://elitetrips-backend.onrender.com/api/edit-packages/get-national-packages")
       .then((response) => {
         if (response.data) {
           const packages = response.data.states || [];
@@ -147,7 +147,7 @@ function NationalEdit() {
 
       axios
         .put(
-          `http://localhost:5001/api/edit-packages/edit-national-package/${selectedTrip.stateName}/${selectedTrip._id}`,
+          `https://elitetrips-backend.onrender.com/api/edit-packages/edit-national-package/${selectedTrip.stateName}/${selectedTrip._id}`,
           formData,
           {
             headers: {
@@ -176,7 +176,7 @@ function NationalEdit() {
     if (confirmed) {
       axios
         .delete(
-          `http://localhost:5001/api/edit-packages/delete-national-package/${pkg.stateName}/${tripId}`
+          `https://elitetrips-backend.onrender.com/api/edit-packages/delete-national-package/${pkg.stateName}/${tripId}`
         )
         .then((response) => {
           alert("Trip deleted successfully!");
@@ -391,7 +391,7 @@ function NationalEdit() {
                   <button
                     onClick={() =>
                       window.open(
-                        `http://localhost:5001/upload/${pdf.filename}`,
+                        `https://elitetrips-backend.onrender.com/upload/${pdf.filename}`,
                         "_blank"
                       )
                     }
@@ -420,7 +420,7 @@ function NationalEdit() {
                 {tripDetails.tripImages.map((image, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:5001/upload/${image}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${image}`}
                     alt={`Trip Image ${index + 1}`}
                     className="h-14 w-14"
                   />
@@ -436,7 +436,7 @@ function NationalEdit() {
                 {tripDetails.tripBackgroundImg.map((image, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:5001/upload/${image}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${image}`}
                     alt={`Trip Image ${index + 1}`}
                     className="h-14 w-14"
                   />

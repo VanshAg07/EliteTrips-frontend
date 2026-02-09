@@ -15,7 +15,7 @@ const Gallery = () => {
   const fetchGalleryImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/gallery/home-galleries"
+        "https://elitetrips-backend.onrender.com/api/gallery/home-galleries"
       );
       setGalleryImages(response.data.images[0].images || []);
     } catch (error) {

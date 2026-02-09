@@ -79,7 +79,7 @@ function HallOfFrame() {
   const fetchImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/corporate/hall-of-frame"
+        "https://elitetrips-backend.onrender.com/api/corporate/hall-of-frame"
       );
       const data = response.data?.data;
       setImages(data || []);
@@ -107,7 +107,7 @@ function HallOfFrame() {
       }
 
       await axios.post(
-        "http://localhost:5001/api/corporate/hall-of-frame",
+        "https://elitetrips-backend.onrender.com/api/corporate/hall-of-frame",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -143,7 +143,7 @@ function HallOfFrame() {
       }
 
       await axios.put(
-        `http://localhost:5001/api/corporate/hall-of-frame/${id}`,
+        `https://elitetrips-backend.onrender.com/api/corporate/hall-of-frame/${id}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -166,7 +166,7 @@ function HallOfFrame() {
   const deleteImage = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/corporate/hall-of-frame/${id}`
+        `https://elitetrips-backend.onrender.com/api/corporate/hall-of-frame/${id}`
       );
       toast.success("Image deleted successfully!");
       fetchImages();

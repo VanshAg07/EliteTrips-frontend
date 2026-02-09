@@ -70,7 +70,7 @@ const App = () => {
   const fetchUpcomingTrips = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5001/api/home/upcoming"
+        "https://elitetrips-backend.onrender.com/api/home/upcoming"
       );
       const data = await response.json();
       setUpcomingTrips(data.upcomingTrips);

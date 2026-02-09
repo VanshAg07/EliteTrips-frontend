@@ -18,7 +18,7 @@ function HomeVideo() {
   const fetchVideos = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/home-page-video"
+        "https://elitetrips-backend.onrender.com/api/home/home-page-video"
       );
       setVideos(response.data.video || []); // Assuming the response structure is { video: [] }
     } catch (error) {
@@ -85,7 +85,7 @@ function HomeVideo() {
       const embeddableUrl = convertToEmbeddableUrl(urlToUse);
       
       const response = await axios.post(
-        "http://localhost:5001/api/home/create-home-page-video",
+        "https://elitetrips-backend.onrender.com/api/home/create-home-page-video",
         { video: [embeddableUrl] }, // Send as array
         {
           headers: {
@@ -117,7 +117,7 @@ function HomeVideo() {
     setIsLoading(true);
     try {
       await axios.delete(
-        "http://localhost:5001/api/home/home-page-video/delete"
+        "https://elitetrips-backend.onrender.com/api/home/home-page-video/delete"
       );
       setVideos([]);
       toast.success("Video deleted successfully!");

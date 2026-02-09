@@ -58,7 +58,7 @@ function StateImages() {
   const fetchSignIns = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/popup/state-images"
+        "https://elitetrips-backend.onrender.com/api/popup/state-images"
       );
       setSignInList(response.data);
     } catch (error) {
@@ -88,7 +88,7 @@ function StateImages() {
       if (useGoogleDrive && imageUrl) {
         // Send URL directly as JSON
         response = await axios.post(
-          "http://localhost:5001/api/popup/state-images",
+          "https://elitetrips-backend.onrender.com/api/popup/state-images",
           {
             stateName: signInData.stateName,
             type: signInData.type,
@@ -103,7 +103,7 @@ function StateImages() {
         if (signInData.image) formData.append("image", signInData.image);
 
         response = await axios.post(
-          "http://localhost:5001/api/popup/state-images",
+          "https://elitetrips-backend.onrender.com/api/popup/state-images",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -124,7 +124,7 @@ function StateImages() {
       if (useGoogleDrive && imageUrl) {
         // Send URL directly as JSON
         response = await axios.put(
-          `http://localhost:5001/api/popup/state-images/${selectedSignIn._id}`,
+          `https://elitetrips-backend.onrender.com/api/popup/state-images/${selectedSignIn._id}`,
           {
             stateName: signInData.stateName,
             type: signInData.type,
@@ -139,7 +139,7 @@ function StateImages() {
         if (signInData.image) formData.append("image", signInData.image);
 
         response = await axios.put(
-          `http://localhost:5001/api/popup/state-images/${selectedSignIn._id}`,
+          `https://elitetrips-backend.onrender.com/api/popup/state-images/${selectedSignIn._id}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -160,7 +160,7 @@ function StateImages() {
 
   const deleteSignIn = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/popup/state-images/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/popup/state-images/${id}`);
       setSignInList((prevList) => prevList.filter((item) => item._id !== id));
     } catch (error) {
       console.error("Error deleting sign-in:", error);
@@ -183,7 +183,7 @@ function StateImages() {
     if (img.startsWith('http')) {
       return convertGoogleDriveUrl(img);
     }
-    return `http://localhost:5001/upload/${img}`;
+    return `https://elitetrips-backend.onrender.com/upload/${img}`;
   };
 
   return (

@@ -91,7 +91,7 @@ function PackagesVideo() {
   const fetchVideoPages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/video-page"
+        "https://elitetrips-backend.onrender.com/api/home/video-page"
       );
       setVideoPages(response.data);
     } catch (error) {
@@ -134,11 +134,11 @@ function PackagesVideo() {
         
         if (editing) {
           await axios.put(
-            `http://localhost:5001/api/home/video-page/${editing}`,
+            `https://elitetrips-backend.onrender.com/api/home/video-page/${editing}`,
             jsonData
           );
         } else {
-          await axios.post("http://localhost:5001/api/home/video-page", jsonData);
+          await axios.post("https://elitetrips-backend.onrender.com/api/home/video-page", jsonData);
         }
       } else {
         // Send files as FormData
@@ -154,11 +154,11 @@ function PackagesVideo() {
 
         if (editing) {
           await axios.put(
-            `http://localhost:5001/api/home/video-page/${editing}`,
+            `https://elitetrips-backend.onrender.com/api/home/video-page/${editing}`,
             data
           );
         } else {
-          await axios.post("http://localhost:5001/api/home/video-page", data);
+          await axios.post("https://elitetrips-backend.onrender.com/api/home/video-page", data);
         }
       }
 
@@ -190,7 +190,7 @@ function PackagesVideo() {
 
   // Handle delete button click
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5001/api/home/video-page/${id}`);
+    await axios.delete(`https://elitetrips-backend.onrender.com/api/home/video-page/${id}`);
     fetchVideoPages();
   };
 

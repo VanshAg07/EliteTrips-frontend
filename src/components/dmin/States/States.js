@@ -73,10 +73,10 @@ const States = () => {
         honeymoonRes,
         offerRes,
       ] = await Promise.all([
-        axios.get("http://localhost:5001/api/admin/states"),
-        axios.get("http://localhost:5001/api/trip/states"),
-        axios.get("http://localhost:5001/api/honeymoon/states"),
-        axios.get("http://localhost:5001/api/offer/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/admin/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/trip/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/honeymoon/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/offer/states"),
       ]);
       setInternationalStates(internationalRes.data);
       setNationalStates(nationalRes.data);
@@ -115,7 +115,7 @@ const States = () => {
     
     try {
       const response = await axios.post(
-        `http://localhost:5001/api/admin/international-state`,
+        `https://elitetrips-backend.onrender.com/api/admin/international-state`,
         formData,
         {
           headers: {
@@ -158,7 +158,7 @@ const States = () => {
     
     try {
       const response = await axios.post(
-        `http://localhost:5001/api/offer/states`,
+        `https://elitetrips-backend.onrender.com/api/offer/states`,
         formData,
         {
           headers: {
@@ -201,7 +201,7 @@ const States = () => {
     
     try {
       const response = await axios.post(
-        `http://localhost:5001/api/trip/state`,
+        `https://elitetrips-backend.onrender.com/api/trip/state`,
         formData,
         {
           headers: {
@@ -244,7 +244,7 @@ const States = () => {
     
     try {
       const response = await axios.post(
-        `http://localhost:5001/api/honeymoon/states`,
+        `https://elitetrips-backend.onrender.com/api/honeymoon/states`,
         formData,
         {
           headers: {
@@ -265,7 +265,7 @@ const States = () => {
   // Delete state functions for each category
   const deleteOfferState = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/offer/states/${_id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/offer/states/${_id}`);
       fetchStates();
     } catch (error) {
       console.error(`Error deleting international state`, error);
@@ -274,7 +274,7 @@ const States = () => {
 
   const deleteInternationalState = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/admin/state/${_id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/admin/state/${_id}`);
       fetchStates();
     } catch (error) {
       console.error(`Error deleting international state`, error);
@@ -283,7 +283,7 @@ const States = () => {
 
   const deleteNationalState = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/trip/state/${_id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/trip/state/${_id}`);
       fetchStates();
     } catch (error) {
       console.error(`Error deleting international state`, error);
@@ -292,7 +292,7 @@ const States = () => {
 
   const deleteHoneymoonState = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/honeymoon/state/${_id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/honeymoon/state/${_id}`);
       fetchStates();
     } catch (error) {
       console.error(`Error deleting international state`, error);
@@ -343,16 +343,16 @@ const States = () => {
     let apiUrl = "";
     switch (editingState.category) {
       case "national":
-        apiUrl = `http://localhost:5001/api/trip/state/${editingState.id}`;
+        apiUrl = `https://elitetrips-backend.onrender.com/api/trip/state/${editingState.id}`;
         break;
       case "international":
-        apiUrl = `http://localhost:5001/api/admin/state/${editingState.id}`;
+        apiUrl = `https://elitetrips-backend.onrender.com/api/admin/state/${editingState.id}`;
         break;
       case "honeymoon":
-        apiUrl = `http://localhost:5001/api/honeymoon/state/${editingState.id}`;
+        apiUrl = `https://elitetrips-backend.onrender.com/api/honeymoon/state/${editingState.id}`;
         break;
       case "offer":
-        apiUrl = `http://localhost:5001/api/offer/states/${editingState.id}`;
+        apiUrl = `https://elitetrips-backend.onrender.com/api/offer/states/${editingState.id}`;
         break;
       default:
         alert("Invalid category");
@@ -536,7 +536,7 @@ const States = () => {
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
                       <img 
-                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `http://localhost:5001/upload/${state.stateImage[0]}`}
+                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
                         alt={state.stateName} 
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
@@ -642,7 +642,7 @@ const States = () => {
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
                       <img 
-                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `http://localhost:5001/upload/${state.stateImage[0]}`}
+                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
                         alt={state.stateName} 
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
@@ -748,7 +748,7 @@ const States = () => {
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
                       <img 
-                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `http://localhost:5001/upload/${state.stateImage[0]}`}
+                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
                         alt={state.stateName} 
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
@@ -854,7 +854,7 @@ const States = () => {
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
                       <img 
-                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `http://localhost:5001/upload/${state.stateImage[0]}`}
+                        src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
                         alt={state.stateName} 
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"

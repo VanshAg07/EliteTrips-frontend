@@ -12,7 +12,7 @@ const HighLevelCorporateTour = () => {
   const fetchPartners = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5001/api/corporate/partners-get"
+        "https://elitetrips-backend.onrender.com/api/corporate/partners-get"
       );
       setPartners(res.data.data);
     } catch (error) {

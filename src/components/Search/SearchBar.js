@@ -9,7 +9,7 @@ function SearchBar() {
   const navigate = useNavigate();
 
   const fetchSearch = () => {
-    fetch("http://localhost:5001/api/home/search", {
+    fetch("https://elitetrips-backend.onrender.com/api/home/search", {
       method: "GET",
     })
       .then((response) => response.json())

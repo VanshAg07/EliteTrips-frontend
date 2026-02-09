@@ -11,7 +11,7 @@ const StateInternational = () => {
     const fetchTrips = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/international/get-all-international/${name}`
+          `https://elitetrips-backend.onrender.com/api/international/get-all-international/${name}`
         );
         setTrips(response.data);
       } catch (error) {

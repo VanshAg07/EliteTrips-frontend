@@ -14,7 +14,7 @@ const Glry = () => {
   const fetchGalleryImages = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5001/api/gallery/home-galleries"
+        "https://elitetrips-backend.onrender.com/api/gallery/home-galleries"
       );
       const data = await response.json();
 

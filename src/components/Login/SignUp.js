@@ -29,7 +29,7 @@ function Signup() {
     setIsSendingOtp(true); // Set loading state
     try {
       const response = await fetch(
-        "http://localhost:5001/api/auth/send-otp",
+        "https://elitetrips-backend.onrender.com/api/auth/send-otp",
         {
           method: "POST",
           headers: {
@@ -64,7 +64,7 @@ function Signup() {
     setIsVerifyingOtp(true); // Set loading state
     try {
       const response = await fetch(
-        "http://localhost:5001/api/auth/verifyOtp",
+        "https://elitetrips-backend.onrender.com/api/auth/verifyOtp",
         {
           method: "POST",
           headers: {
@@ -105,7 +105,7 @@ function Signup() {
 
     setIsSigningUp(true); // Set loading state
     try {
-      const response = await fetch("http://localhost:5001/register", {
+      const response = await fetch("https://elitetrips-backend.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -141,7 +141,7 @@ function Signup() {
   const fetchSignInData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5001/api/popup/auth-image-user"
+        "https://elitetrips-backend.onrender.com/api/popup/auth-image-user"
       );
       const data = await response.json(); // Make sure to parse the response
       setSignInData(data[0]); // Assuming you want the first object from the array

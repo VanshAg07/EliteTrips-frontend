@@ -11,7 +11,7 @@ function AllPackagesCard() {
     const fetchAllPackages = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/honeymoon/get-all-honeymoon"
+          "https://elitetrips-backend.onrender.com/api/honeymoon/get-all-honeymoon"
         );
         const data = await response.json();
         setPackages(data);

@@ -25,7 +25,7 @@ function NavOfferComponent() {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/nav-offer"
+        "https://elitetrips-backend.onrender.com/api/home/nav-offer"
       );
       setNavOffers(response.data.navOffer || []);
     } catch (error) {
@@ -43,13 +43,13 @@ function NavOfferComponent() {
       if (editingOffer) {
         // Update offer
         await axios.put(
-          `http://localhost:5001/api/home/nav-offer/${editingOffer._id}`,
+          `https://elitetrips-backend.onrender.com/api/home/nav-offer/${editingOffer._id}`,
           { title, status }
         );
         toast.success("Navigation offer updated successfully");
       } else {
         // Add new offer
-        await axios.post("http://localhost:5001/api/home/nav-offer", {
+        await axios.post("https://elitetrips-backend.onrender.com/api/home/nav-offer", {
           title,
           status,
         });
@@ -89,7 +89,7 @@ function NavOfferComponent() {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/home/nav-offer/${deletingId}`
+        `https://elitetrips-backend.onrender.com/api/home/nav-offer/${deletingId}`
       );
       toast.success("Navigation offer deleted successfully");
       fetchNavOffers(); // Refresh the list

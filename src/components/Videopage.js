@@ -16,7 +16,7 @@ const Videopage = () => {
   const fetchHeroImage = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/hero-image"
+        "https://elitetrips-backend.onrender.com/api/home/hero-image"
       );
       setHeroImage(response.data.image);
     } catch (error) {

@@ -21,7 +21,7 @@ function EditNationalActivity() {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/admin/getActivity")
+      .get("https://elitetrips-backend.onrender.com/api/admin/getActivity")
       .then((response) => {
         setStates(response.data);
         setLoading(false);
@@ -48,7 +48,7 @@ function EditNationalActivity() {
     try {
       axios
         .delete(
-          `http://localhost:5001/api/admin/deleteActivity/${activity._id}`
+          `https://elitetrips-backend.onrender.com/api/admin/deleteActivity/${activity._id}`
         )
         .then((response) => {
           console.log(response.data);
@@ -94,7 +94,7 @@ function EditNationalActivity() {
 
     axios
       .put(
-        `http://localhost:5001/api/admin/editActivity/${selectedActivity._id}`,
+        `https://elitetrips-backend.onrender.com/api/admin/editActivity/${selectedActivity._id}`,
         formData,
         {
           headers: {
@@ -140,7 +140,7 @@ function EditNationalActivity() {
                 </p>
                 {activity.img && (
                   <img
-                    src={`http://localhost:5001/upload/${activity.img}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${activity.img}`}
                     alt={activity.stateName}
                     className="mt-2 rounded"
                   />

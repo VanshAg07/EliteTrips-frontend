@@ -37,7 +37,7 @@ const Home = () => {
   const fetchPayment = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5001/api/home/home-offer-display"
+        "https://elitetrips-backend.onrender.com/api/home/home-offer-display"
       );
       const data = await res.json();
       const activeImages = Array.isArray(data.data)
@@ -80,18 +80,18 @@ const Home = () => {
         </Link>
         {isSmallMobile ? (
           <div style={{ margin: "0px 10px 0px 10px" }}>
-            <Mobcard />
-          </div>
-        ) : (
-          <Videopg2 />
-        )}
-
-        {isSmallMobile ? (
-          <div style={{ margin: "0px 10px 0px 10px" }}>
             <Mobcardinter />
           </div>
         ) : (
           <Videopg3 />
+        )}
+
+        {isSmallMobile ? (
+          <div style={{ margin: "0px 10px 0px 10px" }}>
+            <Mobcard />
+          </div>
+        ) : (
+          <Videopg2 />
         )}
 
         {isSmallMobile ? (
@@ -124,7 +124,7 @@ const Home = () => {
           <Whyuss />
           <Review />
           <Forms />
-          <Homeyt />
+          {/* <Homeyt /> */}
         </div>
         <div className="pb-20-425 bg-white-425">
           <MainFooter />

@@ -11,7 +11,7 @@ const BlogManagement = () => {
     const fetchBlogs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5001/api/blog/blogs"
+          "https://elitetrips-backend.onrender.com/api/blog/blogs"
         );
         setBlogs(response.data.blogs);
         setIsLoading(false);
@@ -64,14 +64,14 @@ const BlogManagement = () => {
   const updateBlog = async () => {
     try {
       await axios.put(
-        `http://localhost:5001/api/blog/blogs/${selectedBlog._id}`,
+        `https://elitetrips-backend.onrender.com/api/blog/blogs/${selectedBlog._id}`,
         selectedBlog
       );
       alert("Blog updated successfully");
       setIsEditing(false);
       setSelectedBlog(null);
       // Refresh blogs
-      const response = await axios.get("http://localhost:5001/api/blog/blogs");
+      const response = await axios.get("https://elitetrips-backend.onrender.com/api/blog/blogs");
       setBlogs(response.data.blogs);
     } catch (error) {
       console.error("Error updating blog:", error);
@@ -81,7 +81,7 @@ const BlogManagement = () => {
   const deleteBlog = async (blogId) => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
-        await axios.delete(`http://localhost:5001/api/blog/blogs/${blogId}`);
+        await axios.delete(`https://elitetrips-backend.onrender.com/api/blog/blogs/${blogId}`);
         alert("Blog deleted successfully");
         // Refresh blogs
         setBlogs(blogs.filter((blog) => blog._id !== blogId));

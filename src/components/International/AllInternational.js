@@ -11,7 +11,7 @@ function AllInternational() {
     const fetchAllPackages = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/international/get-all-international"
+          "https://elitetrips-backend.onrender.com/api/international/get-all-international"
         );
         const data = await response.json();
         setPackages(data);
@@ -49,7 +49,7 @@ function AllInternational() {
                     trip.tripImages?.length > 0
                       ? trip.tripImages[0].startsWith("http")
                         ? trip.tripImages[0]
-                        : `http://localhost:5001/${trip.tripImages[0]}`
+                        : `https://elitetrips-backend.onrender.com/${trip.tripImages[0]}`
                       : "fallback-image-url"
                   }
                   alt={trip.tripName}

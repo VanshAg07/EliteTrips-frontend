@@ -75,7 +75,7 @@ const Packagedetails = () => {
     const fetchTripDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/user/findStateAndTrip/${stateName}/${tripName}`
+          `https://elitetrips-backend.onrender.com/api/user/findStateAndTrip/${stateName}/${tripName}`
         );
         setTrip(response.data.trip);
         setSharing(response.data.trip.sharing);

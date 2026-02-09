@@ -8,7 +8,7 @@ const ContinuousScroll = () => {
   const fetchHall = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5001/api/corporate/hall-of-frame"
+        "https://elitetrips-backend.onrender.com/api/corporate/hall-of-frame"
       );
       const data = await res.json();
       if (data && data.data) {

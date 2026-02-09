@@ -10,7 +10,7 @@ const TravelOptions = () => {
 
   const fetchUpcomingTrips = async () => {
     try {
-      const response = await fetch("http://localhost:5001/api/home/upcoming");
+      const response = await fetch("https://elitetrips-backend.onrender.com/api/home/upcoming");
       const data = await response.json();
       setUpcomingTrips(data.upcomingTrips);
       if (Object.keys(data.upcomingTrips).length > 0) {

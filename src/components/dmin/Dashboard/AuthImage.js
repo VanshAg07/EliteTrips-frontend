@@ -58,7 +58,7 @@ function AuthImage() {
   const fetchSignIns = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/popup/auth-image"
+        "https://elitetrips-backend.onrender.com/api/popup/auth-image"
       );
       setSignInList(response.data);
     } catch (error) {
@@ -81,7 +81,7 @@ function AuthImage() {
       if (useGoogleDrive) {
         // Send URLs directly as JSON
         response = await axios.post(
-          "http://localhost:5001/api/popup/auth-image",
+          "https://elitetrips-backend.onrender.com/api/popup/auth-image",
           {
             imageUrl: imageUrl || undefined,
             phoneImageUrl: phoneImageUrl || undefined,
@@ -95,7 +95,7 @@ function AuthImage() {
           formData.append("phoneImage", signInData.phoneImage);
 
         response = await axios.post(
-          "http://localhost:5001/api/popup/auth-image",
+          "https://elitetrips-backend.onrender.com/api/popup/auth-image",
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -117,7 +117,7 @@ function AuthImage() {
       if (useGoogleDrive) {
         // Send URLs directly as JSON
         response = await axios.put(
-          `http://localhost:5001/api/popup/auth-image/${selectedSignIn._id}`,
+          `https://elitetrips-backend.onrender.com/api/popup/auth-image/${selectedSignIn._id}`,
           {
             imageUrl: imageUrl || undefined,
             phoneImageUrl: phoneImageUrl || undefined,
@@ -131,7 +131,7 @@ function AuthImage() {
           formData.append("phoneImage", signInData.phoneImage);
 
         response = await axios.put(
-          `http://localhost:5001/api/popup/auth-image/${selectedSignIn._id}`,
+          `https://elitetrips-backend.onrender.com/api/popup/auth-image/${selectedSignIn._id}`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -153,7 +153,7 @@ function AuthImage() {
 
   const deleteSignIn = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/popup/auth-image/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/popup/auth-image/${id}`);
       setSignInList((prevList) => prevList.filter((item) => item._id !== id));
     } catch (error) {
       console.error("Error deleting sign-in:", error);
@@ -176,7 +176,7 @@ function AuthImage() {
     if (img.startsWith('http')) {
       return convertGoogleDriveUrl(img);
     }
-    return `http://localhost:5001/upload/${img}`;
+    return `https://elitetrips-backend.onrender.com/upload/${img}`;
   };
 
   return (

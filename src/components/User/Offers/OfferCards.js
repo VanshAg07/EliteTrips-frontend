@@ -10,7 +10,7 @@ function OfferCards() {
     const fetchAllPackages = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/offer/getTripDetails"
+          "https://elitetrips-backend.onrender.com/api/offer/getTripDetails"
         );
         const data = await response.json();
         setPackages(data);

@@ -17,7 +17,7 @@ const Popup2 = ({ onClose }) => {
   const fetchPopup = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5001/api/popup/assist-user"
+        "https://elitetrips-backend.onrender.com/api/popup/assist-user"
       );
       const data = await res.json();
       setPopupData(data[0]);
@@ -60,7 +60,7 @@ const Popup2 = ({ onClose }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/popup/assist-form",
+        "https://elitetrips-backend.onrender.com/api/popup/assist-form",
         formValues
       );
       console.log("Form submitted successfully:", res);

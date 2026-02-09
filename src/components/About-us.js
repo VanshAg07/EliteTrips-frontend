@@ -21,7 +21,7 @@ const Aboutus = () => {
   const fetchBackgroundImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/background-images/images"
+        "https://elitetrips-backend.onrender.com/api/background-images/images"
       );
       setBackgroundImages(response.data);
     } catch (error) {
@@ -32,7 +32,7 @@ const Aboutus = () => {
   const fetchTeamMembers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/get-team-member"
+        "https://elitetrips-backend.onrender.com/api/home/get-team-member"
       );
       setTeamMembers(response.data.data);
     } catch (error) {

@@ -27,7 +27,7 @@ function CorporateHome() {
   const fetchCorporates = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/corporate/create-corporate-landing"
+        "https://elitetrips-backend.onrender.com/api/corporate/create-corporate-landing"
       );
       setCorporates(response.data.data);
     } catch (error) {
@@ -102,13 +102,13 @@ function CorporateHome() {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5001/api/corporate/update-corporate-landing/${editingId}`,
+          `https://elitetrips-backend.onrender.com/api/corporate/update-corporate-landing/${editingId}`,
           formData
         );
         toast.success("Corporate updated successfully!");
       } else {
         await axios.post(
-          "http://localhost:5001/api/corporate/create-corporate-landing",
+          "https://elitetrips-backend.onrender.com/api/corporate/create-corporate-landing",
           formData
         );
         toast.success("Corporate added successfully!");
@@ -134,7 +134,7 @@ function CorporateHome() {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/corporate/delete-corporate-landing/${id}`
+        `https://elitetrips-backend.onrender.com/api/corporate/delete-corporate-landing/${id}`
       );
       toast.success("Corporate deleted successfully!");
       fetchCorporates();

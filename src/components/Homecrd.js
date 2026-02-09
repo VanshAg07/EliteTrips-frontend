@@ -14,7 +14,7 @@ const TripCard = () => {
   const fetchBanners = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/homepage-banner"
+        "https://elitetrips-backend.onrender.com/api/home/homepage-banner"
       );
       setBanners(response.data); // Assuming response.data is an array of banner objects
     } catch (error) {

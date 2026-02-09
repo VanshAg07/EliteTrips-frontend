@@ -24,7 +24,7 @@ const AdminPortal = () => {
 
   const handleLogout = () => {
     axios
-      .post("http://localhost:5001/api/admin/logout")
+      .post("https://elitetrips-backend.onrender.com/api/admin/logout")
       .then(() => {
         localStorage.clear();
         navigate("/");

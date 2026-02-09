@@ -5,7 +5,7 @@ const FooterSection = () => {
   const [blogs, setBlogs] = useState([]);
   const navigate = useNavigate();
   const fetchBlogs = () => {
-    fetch(`http://localhost:5001/api/blog/blog-title`)
+    fetch(`https://elitetrips-backend.onrender.com/api/blog/blog-title`)
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data.blogs);

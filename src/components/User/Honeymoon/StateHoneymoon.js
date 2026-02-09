@@ -11,7 +11,7 @@ const StateHoneymoon = () => {
     const fetchTrips = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/honeymoon/get-all-honeymoon/${name}`
+          `https://elitetrips-backend.onrender.com/api/honeymoon/get-all-honeymoon/${name}`
         );
         setTrips(response.data);
       } catch (error) {

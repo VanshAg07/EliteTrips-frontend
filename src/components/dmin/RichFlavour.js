@@ -33,7 +33,7 @@ const RichFlavour = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/trip/states")
+      .get("https://elitetrips-backend.onrender.com/api/trip/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -63,7 +63,7 @@ const RichFlavour = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/admin/addRichFlavour",
+        "https://elitetrips-backend.onrender.com/api/admin/addRichFlavour",
         formData,
         {
           headers: {

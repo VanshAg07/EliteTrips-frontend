@@ -10,7 +10,7 @@ function VideoModal() {
     const fetchReelVideo = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/reel/reels"
+          "https://elitetrips-backend.onrender.com/api/reel/reels"
         );
         const data = await response.json();
         setVideos(data);
@@ -30,7 +30,7 @@ function VideoModal() {
             videoTitle={videoTitle}
             videoSubtitle={videoSubtitle}
             video={video}
-            url={`http://localhost:5001/upload/${video[0]}`} // Assuming this is the correct way to construct the video URL
+            url={`https://elitetrips-backend.onrender.com/upload/${video[0]}`} // Assuming this is the correct way to construct the video URL
             link={urlLink} // Pass the urlLink to VideoCard
             currentlyPlayingId={currentlyPlayingId}
             setCurrentlyPlayingId={setCurrentlyPlayingId}

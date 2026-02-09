@@ -15,7 +15,7 @@ const Footer = () => {
   const fetchIcons = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/footer-icons"
+        "https://elitetrips-backend.onrender.com/api/home/footer-icons"
       );
       setIcons(response.data);
     } catch (error) {

@@ -20,7 +20,7 @@ function EditNationalShop() {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/admin/getShop")
+      .get("https://elitetrips-backend.onrender.com/api/admin/getShop")
       .then((response) => {
         setStates(response.data);
         setLoading(false);
@@ -47,7 +47,7 @@ function EditNationalShop() {
     try {
       axios
         .delete(
-          `http://localhost:5001/api/admin/deleteShop/${activity._id}`
+          `https://elitetrips-backend.onrender.com/api/admin/deleteShop/${activity._id}`
         )
         .then((response) => {
           console.log(response.data);
@@ -90,7 +90,7 @@ function EditNationalShop() {
 
     axios
       .put(
-        `http://localhost:5001/api/admin/editShop/${selectedActivity._id}`,
+        `https://elitetrips-backend.onrender.com/api/admin/editShop/${selectedActivity._id}`,
         formData,
         {
           headers: {
@@ -134,7 +134,7 @@ function EditNationalShop() {
                 </p>
                 {activity.img && (
                   <img
-                    src={`http://localhost:5001/upload/${activity.img}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${activity.img}`}
                     alt={activity.stateName}
                     className="mt-2 rounded"
                   />

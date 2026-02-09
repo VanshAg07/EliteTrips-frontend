@@ -17,7 +17,7 @@ export default function Signup() {
             return;
         }
 
-        fetch("http://localhost:5001/register", {
+        fetch("https://elitetrips-backend.onrender.com/register", {
             method: "POST",
             crossDomain: true,
             headers: {

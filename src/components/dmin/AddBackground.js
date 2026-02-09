@@ -58,7 +58,7 @@ const AddBackground = () => {
   const fetchBackgroundImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/background-images/images"
+        "https://elitetrips-backend.onrender.com/api/background-images/images"
       );
       setBackgroundImages(response.data);
     } catch (error) {
@@ -98,13 +98,13 @@ const AddBackground = () => {
         
         if (editingId) {
           await axios.put(
-            `http://localhost:5001/api/background-images/images/${editingId}`,
+            `https://elitetrips-backend.onrender.com/api/background-images/images/${editingId}`,
             jsonData
           );
           setSuccessMessage("Background image updated successfully!");
         } else {
           await axios.post(
-            "http://localhost:5001/api/background-images/images",
+            "https://elitetrips-backend.onrender.com/api/background-images/images",
             jsonData
           );
           setSuccessMessage("Background image created successfully!");
@@ -118,7 +118,7 @@ const AddBackground = () => {
 
         if (editingId) {
           await axios.put(
-            `http://localhost:5001/api/background-images/images/${editingId}`,
+            `https://elitetrips-backend.onrender.com/api/background-images/images/${editingId}`,
             formDataToSend,
             {
               headers: {
@@ -129,7 +129,7 @@ const AddBackground = () => {
           setSuccessMessage("Background image updated successfully!");
         } else {
           await axios.post(
-            "http://localhost:5001/api/background-images/images",
+            "https://elitetrips-backend.onrender.com/api/background-images/images",
             formDataToSend,
             {
               headers: {
@@ -156,7 +156,7 @@ const AddBackground = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/background-images/images/${id}`
+        `https://elitetrips-backend.onrender.com/api/background-images/images/${id}`
       );
       setSuccessMessage("Background image deleted successfully!");
       await fetchBackgroundImages();

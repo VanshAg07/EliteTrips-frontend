@@ -33,7 +33,7 @@ const AddInternActivities = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/admin/states")
+      .get("https://elitetrips-backend.onrender.com/api/admin/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -65,7 +65,7 @@ const AddInternActivities = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/admin/international/addActivity",
+        "https://elitetrips-backend.onrender.com/api/admin/international/addActivity",
         formData,
         {
           headers: {

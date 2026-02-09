@@ -50,7 +50,7 @@ function HomeGallery() {
   const fetchGalleryImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/gallery/home-galleries"
+        "https://elitetrips-backend.onrender.com/api/gallery/home-galleries"
       );
       setGalleryImages(response.data.images || []);
       if (response.data.images.length > 0) {
@@ -111,7 +111,7 @@ function HomeGallery() {
         }
 
         await axios.post(
-          `http://localhost:5001/api/gallery/home-gallery`,
+          `https://elitetrips-backend.onrender.com/api/gallery/home-gallery`,
           { images: validUrls },
           { headers: { "Content-Type": "application/json" } }
         );
@@ -131,7 +131,7 @@ function HomeGallery() {
         }
 
         await axios.post(
-          `http://localhost:5001/api/gallery/home-gallery`,
+          `https://elitetrips-backend.onrender.com/api/gallery/home-gallery`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -151,7 +151,7 @@ function HomeGallery() {
     try {
       // Send request to delete a specific image by its index
       await axios.delete(
-        `http://localhost:5001/api/gallery/home-gallery/${galleryId}/image/${imageIndex}`
+        `https://elitetrips-backend.onrender.com/api/gallery/home-gallery/${galleryId}/image/${imageIndex}`
       );
       fetchGalleryImages();
     } catch (error) {
@@ -163,7 +163,7 @@ function HomeGallery() {
     try {
       // Send request to delete the entire gallery
       await axios.delete(
-        `http://localhost:5001/api/gallery/home-gallery/${galleryId}`
+        `https://elitetrips-backend.onrender.com/api/gallery/home-gallery/${galleryId}`
       );
       fetchGalleryImages();
     } catch (error) {
@@ -176,7 +176,7 @@ function HomeGallery() {
     formData.append("image", newFile);
     try {
       await axios.put(
-        `http://localhost:5001/api/gallery/home-gallery/${galleryId}/image/${imageIndex}`,
+        `https://elitetrips-backend.onrender.com/api/gallery/home-gallery/${galleryId}/image/${imageIndex}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

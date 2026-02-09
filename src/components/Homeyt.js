@@ -14,7 +14,7 @@ const VideoSlider = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch("http://localhost:5001/api/home/youtube");
+      const response = await fetch("https://elitetrips-backend.onrender.com/api/home/youtube");
       const data = await response.json(); // Parse JSON response
       setVideos(data); // Set the videos state
     } catch (error) {

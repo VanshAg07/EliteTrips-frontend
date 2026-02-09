@@ -10,7 +10,7 @@ const DateCost = () => {
   const fetchPayment = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5001/api/corporate/payment-image"
+        "https://elitetrips-backend.onrender.com/api/corporate/payment-image"
       );
       const data = await res.json();
       const activeImages = data.data.filter((item) => item.status === "active");

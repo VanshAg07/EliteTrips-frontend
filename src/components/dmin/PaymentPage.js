@@ -17,7 +17,7 @@ function PaymentPage() {
   const fetchImages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/corporate/payment-image"
+        "https://elitetrips-backend.onrender.com/api/corporate/payment-image"
       );
       const data = response.data?.data;
       setImages(data || []);
@@ -36,7 +36,7 @@ function PaymentPage() {
       formData.append("status", newStatus);
 
       await axios.post(
-        "http://localhost:5001/api/corporate/payment-image",
+        "https://elitetrips-backend.onrender.com/api/corporate/payment-image",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -60,7 +60,7 @@ function PaymentPage() {
       formData.append("status", updatedStatus);
 
       await axios.put(
-        `http://localhost:5001/api/corporate/payment-image/${id}`,
+        `https://elitetrips-backend.onrender.com/api/corporate/payment-image/${id}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -79,7 +79,7 @@ function PaymentPage() {
   const deleteImage = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/corporate/payment-image/${id}`
+        `https://elitetrips-backend.onrender.com/api/corporate/payment-image/${id}`
       );
       fetchImages();
     } catch (error) {

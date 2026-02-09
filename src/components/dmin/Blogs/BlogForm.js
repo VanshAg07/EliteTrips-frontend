@@ -134,7 +134,7 @@ const BlogForm = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/blog/blogs", formData, {
+      const response = await axios.post("https://elitetrips-backend.onrender.com/api/blog/blogs", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

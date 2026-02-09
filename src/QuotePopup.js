@@ -38,7 +38,7 @@ function TripForms() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/contact/contact-trip",
+        "https://elitetrips-backend.onrender.com/api/contact/contact-trip",
         formData
       );
 

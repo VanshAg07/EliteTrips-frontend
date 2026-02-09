@@ -63,7 +63,7 @@ const International = () => {
   const fetchImageCard = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5001/api/popup/state-images-user/${type}`
+        `https://elitetrips-backend.onrender.com/api/popup/state-images-user/${type}`
       );
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
@@ -79,7 +79,7 @@ const International = () => {
 
   const fetchBackgroundImages = async () => {
     const response = await axios.get(
-      "http://localhost:5001/api/background-images/images"
+      "https://elitetrips-backend.onrender.com/api/background-images/images"
     );
     setBackgroundImages(response.data);
   };

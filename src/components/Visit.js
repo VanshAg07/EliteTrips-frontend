@@ -14,7 +14,7 @@ const Visit = () => {
     const fetchPlaces = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/user/getBeautifulPlaces/${name}`
+          `https://elitetrips-backend.onrender.com/api/user/getBeautifulPlaces/${name}`
         );
         // console.log(response.data);
         setPlaces(response.data.places || []);

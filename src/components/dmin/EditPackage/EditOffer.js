@@ -33,7 +33,7 @@ function EditOffer() {
   const statusOptions = ["active", "non-active"];
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/edit-packages/get-offers-packages")
+      .get("https://elitetrips-backend.onrender.com/api/edit-packages/get-offers-packages")
       .then((response) => {
         if (response.data) {
           const packages = response.data.states || [];
@@ -133,7 +133,7 @@ function EditOffer() {
 
       axios
         .put(
-          `http://localhost:5001/api/edit-packages/edit-offers-package/${selectedTrip.stateName}/${selectedTrip._id}`,
+          `https://elitetrips-backend.onrender.com/api/edit-packages/edit-offers-package/${selectedTrip.stateName}/${selectedTrip._id}`,
           formData,
           {
             headers: {
@@ -161,7 +161,7 @@ function EditOffer() {
     if (confirmed) {
       axios
         .delete(
-          `http://localhost:5001/api/edit-packages/delete-offers-package/${pkg.stateName}/${tripId}`
+          `https://elitetrips-backend.onrender.com/api/edit-packages/delete-offers-package/${pkg.stateName}/${tripId}`
         )
         .then((response) => {
           alert("Trip deleted successfully!");
@@ -369,7 +369,7 @@ function EditOffer() {
                     <button
                       onClick={() =>
                         window.open(
-                          `http://localhost:5001/upload/${pdf.filename}`,
+                          `https://elitetrips-backend.onrender.com/upload/${pdf.filename}`,
                           "_blank"
                         )
                       }
@@ -385,7 +385,7 @@ function EditOffer() {
                 {tripDetails.tripImages.map((image, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:5001/upload/${image}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${image}`}
                     alt={`Trip Image ${index + 1}`}
                     className="h-14 w-14"
                   />
@@ -401,7 +401,7 @@ function EditOffer() {
                 {tripDetails.tripBackgroundImg.map((image, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:5001/upload/${image}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${image}`}
                     alt={`Trip Image ${index + 1}`}
                     className="h-14 w-14"
                   />

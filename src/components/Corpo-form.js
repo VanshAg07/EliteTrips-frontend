@@ -33,7 +33,7 @@ const EuropeTripEnquiryForm = () => {
     try {
       // Send form data to the backend
       const res = await axios.post(
-        "http://localhost:5001/api/contact/contact-corporate",
+        "https://elitetrips-backend.onrender.com/api/contact/contact-corporate",
         formData
       );
 

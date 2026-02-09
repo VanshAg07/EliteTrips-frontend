@@ -20,7 +20,7 @@ function EditInternationalFlavour() {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/admin/international/getFlavour")
+      .get("https://elitetrips-backend.onrender.com/api/admin/international/getFlavour")
       .then((response) => {
         setStates(response.data);
         setLoading(false);
@@ -76,7 +76,7 @@ function EditInternationalFlavour() {
 
     axios
       .put(
-        `http://localhost:5001/api/admin/international/editFlavour/${selectedActivity._id}`,
+        `https://elitetrips-backend.onrender.com/api/admin/international/editFlavour/${selectedActivity._id}`,
         formData,
         {
           headers: {
@@ -98,7 +98,7 @@ function EditInternationalFlavour() {
     try {
       axios
         .delete(
-          `http://localhost:5001/api/admin/international/deleteFlavour/${activity._id}`
+          `https://elitetrips-backend.onrender.com/api/admin/international/deleteFlavour/${activity._id}`
         )
         .then((response) => {
           console.log(response.data);
@@ -133,7 +133,7 @@ function EditInternationalFlavour() {
                 </p>
                 {activity.img && (
                   <img
-                    src={`http://localhost:5001/upload/${activity.img}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${activity.img}`}
                     alt={activity.stateName}
                     className="mt-2 rounded"
                   />

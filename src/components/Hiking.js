@@ -14,7 +14,7 @@ const Hiking = () => {
     const fetchActivities = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/user/getBestActivities/${name}`
+          `https://elitetrips-backend.onrender.com/api/user/getBestActivities/${name}`
         );
         setActivities(response.data.activities || []);
       } catch (err) {

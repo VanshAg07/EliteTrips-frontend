@@ -21,7 +21,7 @@ function EditInternationalPlaces() {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/admin/international/getBeautifulPlaces")
+      .get("https://elitetrips-backend.onrender.com/api/admin/international/getBeautifulPlaces")
       .then((response) => {
         setStates(response.data);
         setLoading(false);
@@ -78,7 +78,7 @@ function EditInternationalPlaces() {
 
     axios
       .put(
-        `http://localhost:5001/api/admin/international/editBeautifulPlaces/${selectedActivity._id}`,
+        `https://elitetrips-backend.onrender.com/api/admin/international/editBeautifulPlaces/${selectedActivity._id}`,
         formData,
         {
           headers: {
@@ -100,7 +100,7 @@ function EditInternationalPlaces() {
     try {
       axios
         .delete(
-          `http://localhost:5001/api/admin/international/deletePlaces/${activity._id}`
+          `https://elitetrips-backend.onrender.com/api/admin/international/deletePlaces/${activity._id}`
         )
         .then((response) => {
           console.log(response.data);
@@ -138,7 +138,7 @@ function EditInternationalPlaces() {
                 </p>
                 {activity.img && (
                   <img
-                    src={`http://localhost:5001/upload/${activity.img}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${activity.img}`}
                     alt={activity.stateName}
                     className="mt-2 rounded"
                   />

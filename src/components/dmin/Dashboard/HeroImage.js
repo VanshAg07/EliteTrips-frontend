@@ -58,7 +58,7 @@ function HeroImage() {
   const fetchHeroImage = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/hero-image"
+        "https://elitetrips-backend.onrender.com/api/home/hero-image"
       );
       setHeroImage(response.data);
     } catch (error) {
@@ -77,7 +77,7 @@ function HeroImage() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/home/hero-image",
+        "https://elitetrips-backend.onrender.com/api/home/hero-image",
         { imageUrl: newImageUrl }
       );
 
@@ -102,7 +102,7 @@ function HeroImage() {
 
     setIsLoading(true);
     try {
-      await axios.delete("http://localhost:5001/api/home/hero-image");
+      await axios.delete("https://elitetrips-backend.onrender.com/api/home/hero-image");
       setHeroImage(null);
       toast.success("Hero image deleted successfully!");
     } catch (error) {

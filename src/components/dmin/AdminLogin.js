@@ -34,7 +34,7 @@ function AdminLogin() {
     console.log("Attempting login with:", { email, password: "***" });
     
     try {
-      const response = await fetch("http://localhost:5001/api/admin/login", {
+      const response = await fetch("https://elitetrips-backend.onrender.com/api/admin/login", {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -76,7 +76,7 @@ function AdminLogin() {
     setOtpLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/auth/request-password-reset",
+        "https://elitetrips-backend.onrender.com/api/auth/request-password-reset",
         { email }
       );
 
@@ -95,7 +95,7 @@ function AdminLogin() {
     setVerifyOtpLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/auth/verify-otp",
+        "https://elitetrips-backend.onrender.com/api/auth/verify-otp",
         { email, otp }
       );
 
@@ -120,7 +120,7 @@ function AdminLogin() {
 
     try {
       const response = await axios.put(
-        "http://localhost:5001/api/auth/reset-password",
+        "https://elitetrips-backend.onrender.com/api/auth/reset-password",
         { email, password: newPassword }
       );
       if (response.status === 200) {

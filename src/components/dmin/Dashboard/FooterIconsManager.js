@@ -17,7 +17,7 @@ const FooterIconsManager = () => {
   const fetchIcons = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/footer-icons"
+        "https://elitetrips-backend.onrender.com/api/home/footer-icons"
       );
       setIcons(response.data);
     } catch (error) {
@@ -35,7 +35,7 @@ const FooterIconsManager = () => {
 
     try {
       await axios.post(
-        "http://localhost:5001/api/home/footer-icons",
+        "https://elitetrips-backend.onrender.com/api/home/footer-icons",
         formData,
         {
           headers: {
@@ -60,7 +60,7 @@ const FooterIconsManager = () => {
 
     try {
       await axios.put(
-        `http://localhost:5001/api/home/footer-icons/${id}`,
+        `https://elitetrips-backend.onrender.com/api/home/footer-icons/${id}`,
         formData,
         {
           headers: {
@@ -77,7 +77,7 @@ const FooterIconsManager = () => {
 
   const handleDeleteIcon = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/home/footer-icons/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/home/footer-icons/${id}`);
       fetchIcons();
     } catch (error) {
       console.error("Error deleting icon:", error);

@@ -14,7 +14,7 @@ const YoutubeDetails = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/home/youtube");
+      const response = await axios.get("https://elitetrips-backend.onrender.com/api/home/youtube");
       setVideos(response.data);
     } catch (error) {
       console.error("Error fetching videos", error);
@@ -29,10 +29,10 @@ const YoutubeDetails = () => {
     }
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5001/api/home/youtube/${editingId}`, formData);
+        await axios.put(`https://elitetrips-backend.onrender.com/api/home/youtube/${editingId}`, formData);
         setEditingId(null);
       } else {
-        await axios.post("http://localhost:5001/api/home/youtube", formData);
+        await axios.post("https://elitetrips-backend.onrender.com/api/home/youtube", formData);
       }
       setFormData({ videoLink: "", title: "" });
       fetchVideos();
@@ -49,7 +49,7 @@ const YoutubeDetails = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this video?")) return;
     try {
-      await axios.delete(`http://localhost:5001/api/home/youtube/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/home/youtube/${id}`);
       fetchVideos();
     } catch (error) {
       console.error("Error deleting video", error);

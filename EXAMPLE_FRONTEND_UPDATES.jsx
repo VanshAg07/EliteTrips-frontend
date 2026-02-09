@@ -25,7 +25,7 @@ const GalleryUploadOLD = () => {
       formData.append("tripImages", file);
     });
 
-    await axios.post("http://localhost:5001/api/gallery/honeymoon", formData, {
+    await axios.post("https://elitetrips-backend.onrender.com/api/gallery/honeymoon", formData, {
       headers: { "Content-Type": "multipart/form-data" }
     });
   };
@@ -59,7 +59,7 @@ const GalleryUploadNEW = () => {
     // Split URLs by newline and filter empty lines
     const urlArray = imageUrls.split('\n').filter(url => url.trim());
     
-    await axios.post("http://localhost:5001/api/gallery/honeymoon", {
+    await axios.post("https://elitetrips-backend.onrender.com/api/gallery/honeymoon", {
       name,
       tripImages: urlArray
     });
@@ -115,7 +115,7 @@ const VideoUploadOLD = () => {
     formData.append("videoTitle", title);
     formData.append("video", videoFile);
 
-    await axios.post("http://localhost:5001/api/reel", formData, {
+    await axios.post("https://elitetrips-backend.onrender.com/api/reel", formData, {
       headers: { "Content-Type": "multipart/form-data" }
     });
   };
@@ -148,7 +148,7 @@ const VideoUploadNEW = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    await axios.post("http://localhost:5001/api/reel", {
+    await axios.post("https://elitetrips-backend.onrender.com/api/reel", {
       videoTitle: title,
       videoSubtitle: subtitle,
       urlLink,
@@ -244,7 +244,7 @@ const MultiImageUploadNEW = () => {
     e.preventDefault();
     const validUrls = urls.filter(url => url.trim());
     
-    await axios.post("http://localhost:5001/api/gallery/home", {
+    await axios.post("https://elitetrips-backend.onrender.com/api/gallery/home", {
       name,
       images: validUrls
     });
@@ -334,7 +334,7 @@ const BulkImageUploadNEW = () => {
     e.preventDefault();
     const urlArray = bulkUrls.split('\n').filter(url => url.trim());
     
-    await axios.post("http://localhost:5001/api/gallery/international", {
+    await axios.post("https://elitetrips-backend.onrender.com/api/gallery/international", {
       name,
       tripImages: urlArray
     });

@@ -134,7 +134,7 @@ const BookingOptions = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/payment/razorpay",
+        "https://elitetrips-backend.onrender.com/api/payment/razorpay",
         {
           amount: paymentAmount,
           customerPhone,
@@ -175,7 +175,7 @@ const BookingOptions = () => {
                   : "fullPayment",
             };
             const result = await axios.post(
-              "http://localhost:5001/api/payment/verify",
+              "https://elitetrips-backend.onrender.com/api/payment/verify",
               data
             );
             if (result.data.success) {

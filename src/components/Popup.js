@@ -13,7 +13,7 @@ const Popup1 = ({ onClose }) => {
 
   const fetchPopup = async () => {
     try {
-      const res = await fetch("http://localhost:5001/api/popup/signin-user");
+      const res = await fetch("https://elitetrips-backend.onrender.com/api/popup/signin-user");
       const data = await res.json();
       setPopupData(data[0]);
     } catch (error) {

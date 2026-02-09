@@ -17,7 +17,7 @@ const AddInternShops = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/admin/states")
+      .get("https://elitetrips-backend.onrender.com/api/admin/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -62,7 +62,7 @@ const AddInternShops = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/admin/international/addShop",
+        "https://elitetrips-backend.onrender.com/api/admin/international/addShop",
         formData,
         {
           headers: {

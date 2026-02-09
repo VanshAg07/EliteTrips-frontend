@@ -77,7 +77,7 @@ const PackageHoneymoon = () => {
     const fetchTripDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/honeymoon/findStateAndTrip/${stateName}/${tripName}`
+          `https://elitetrips-backend.onrender.com/api/honeymoon/findStateAndTrip/${stateName}/${tripName}`
         );
         setTrip(response.data);
       } catch (error) {

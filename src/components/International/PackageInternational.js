@@ -89,7 +89,7 @@ const PackageInternational = () => {
     const fetchTripDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/international/findStateAndTrip/${stateName}/${tripName}`
+          `https://elitetrips-backend.onrender.com/api/international/findStateAndTrip/${stateName}/${tripName}`
         );
         setTrip(response.data.trip);
         setSharing(response.data.trip.sharing);
@@ -163,7 +163,7 @@ const PackageInternational = () => {
     try {
       // Send form data to the backend
       const res = await axios.post(
-        "http://localhost:5001/api/contact/contact-trip",
+        "https://elitetrips-backend.onrender.com/api/contact/contact-trip",
         formData
       );
 

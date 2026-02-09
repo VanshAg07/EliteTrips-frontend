@@ -20,7 +20,7 @@ const ForgotPassword = () => {
   const fetchSignInData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5001/api/popup/auth-image-user"
+        "https://elitetrips-backend.onrender.com/api/popup/auth-image-user"
       );
       const data = await response.json(); // Make sure to parse the response
       setSignInData(data[0]); // Assuming you want the first object from the array
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/auth/request-password-reset",
+        "https://elitetrips-backend.onrender.com/api/auth/request-password-reset",
         { email }
       );
 
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/auth/verify-otp",
+        "https://elitetrips-backend.onrender.com/api/auth/verify-otp",
         { email, otp }
       );
 
@@ -85,7 +85,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await axios.put(
-        "http://localhost:5001/api/auth/reset-password",
+        "https://elitetrips-backend.onrender.com/api/auth/reset-password",
         { email, password: newPassword }
       );
 

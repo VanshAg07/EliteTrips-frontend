@@ -13,7 +13,7 @@ const BlogDetails = () => {
   const fetchBlog = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/blog/blogs/${blogTitle}`
+        `https://elitetrips-backend.onrender.com/api/blog/blogs/${blogTitle}`
       );
       setBlog(response.data.blog);
     } catch (error) {

@@ -57,7 +57,7 @@ const AddHoneymoon = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/honeymoon/states")
+      .get("https://elitetrips-backend.onrender.com/api/honeymoon/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -159,7 +159,7 @@ const AddHoneymoon = () => {
       }
     });
     fetch(
-      `http://localhost:5001/api/honeymoon/add-honeymoon-package/${selectedState.id}`,
+      `https://elitetrips-backend.onrender.com/api/honeymoon/add-honeymoon-package/${selectedState.id}`,
       {
         method: "POST",
         body: formData,

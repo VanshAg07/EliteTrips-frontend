@@ -55,7 +55,7 @@ function OurTeam() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/home/get-team-member")
+      .get("https://elitetrips-backend.onrender.com/api/home/get-team-member")
       .then((response) => {
         console.log(response.data); // Add this to check the response format
         const data = response.data;
@@ -124,7 +124,7 @@ function OurTeam() {
     try {
       if (teamId) {
         await axios.put(
-          `http://localhost:5001/api/home/add-team-member/${teamId}`,
+          `https://elitetrips-backend.onrender.com/api/home/add-team-member/${teamId}`,
           formData,
           {
             headers: {
@@ -135,7 +135,7 @@ function OurTeam() {
         toast.success("Team member updated successfully!");
       } else {
         await axios.post(
-          "http://localhost:5001/api/home/add-team-member",
+          "https://elitetrips-backend.onrender.com/api/home/add-team-member",
           formData,
           {
             headers: {
@@ -166,7 +166,7 @@ function OurTeam() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5001/api/home/add-team-member/${id}`)
+      .delete(`https://elitetrips-backend.onrender.com/api/home/add-team-member/${id}`)
       .then(() => {
         setReloadData(!reloadData);
       })

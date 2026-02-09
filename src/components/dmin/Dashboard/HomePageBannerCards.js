@@ -21,7 +21,7 @@ function HomePageBannerCards() {
   const fetchBanners = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/homepage-banner"
+        "https://elitetrips-backend.onrender.com/api/home/homepage-banner"
       );
       setBanners(response.data);
     } catch (error) {
@@ -60,7 +60,7 @@ function HomePageBannerCards() {
       if (currentBannerId) {
         // Update existing banner
         await axios.put(
-          `http://localhost:5001/api/home/homepage-banner/${currentBannerId}`,
+          `https://elitetrips-backend.onrender.com/api/home/homepage-banner/${currentBannerId}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -70,7 +70,7 @@ function HomePageBannerCards() {
       } else {
         // Add new banner
         await axios.post(
-          "http://localhost:5001/api/home/homepage-banner",
+          "https://elitetrips-backend.onrender.com/api/home/homepage-banner",
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -105,7 +105,7 @@ function HomePageBannerCards() {
   const handleDeleteBanner = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/home/homepage-banner/${id}`
+        `https://elitetrips-backend.onrender.com/api/home/homepage-banner/${id}`
       );
       fetchBanners();
       setSuccessMessage("Banner deleted successfully!");

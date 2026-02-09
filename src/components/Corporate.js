@@ -43,7 +43,7 @@ const Corporate = () => {
   const fetchCorporate = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5001/api/corporate/create-corporate-landing"
+        "https://elitetrips-backend.onrender.com/api/corporate/create-corporate-landing"
       );
       setCorporateData(res.data.data);
     } catch (error) {
@@ -54,7 +54,7 @@ const Corporate = () => {
 
   const fetchBackgroundImages = async () => {
     const response = await axios.get(
-      "http://localhost:5001/api/background-images/images"
+      "https://elitetrips-backend.onrender.com/api/background-images/images"
     );
     setBackgroundImages(response.data);
   };

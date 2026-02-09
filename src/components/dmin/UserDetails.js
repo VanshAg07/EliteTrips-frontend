@@ -6,7 +6,7 @@ const UserDetails = () => {
 
   useEffect(() => {
     // Fetch user data from the backend
-    axios.get('http://localhost:5001/api/admin/users')
+    axios.get('https://elitetrips-backend.onrender.com/api/admin/users')
       .then(response => {
         // Filter out users with the role of 'admin'
         const nonAdminUsers = response.data.filter(user => user.role !== 'admin');
@@ -19,7 +19,7 @@ const UserDetails = () => {
 
   const deleteUser = (userId) => {
     // Delete user from the backend
-    axios.delete(`http://localhost:5001/api/admin/users/${userId}`)
+    axios.delete(`https://elitetrips-backend.onrender.com/api/admin/users/${userId}`)
       .then(() => {
         // Remove the deleted user from the state
         setUsers(users.filter(user => user._id !== userId));

@@ -19,7 +19,7 @@ const OfferHomePage = () => {
   const fetchOffers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/home-offers"
+        "https://elitetrips-backend.onrender.com/api/home/home-offers"
       );
       setOffers(response.data.data);
     } catch (error) {
@@ -64,12 +64,12 @@ const OfferHomePage = () => {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5001/api/home/home-offers/${editingId}`,
+          `https://elitetrips-backend.onrender.com/api/home/home-offers/${editingId}`,
           formDataToSubmit
         ); // Update offer
       } else {
         await axios.post(
-          "http://localhost:5001/api/home/add-home-offer",
+          "https://elitetrips-backend.onrender.com/api/home/add-home-offer",
           formDataToSubmit
         ); // Create offer
       }
@@ -93,18 +93,18 @@ const OfferHomePage = () => {
 
     // Set the preview image to the first image of the selected offer
     if (offer.image.length > 0) {
-      setPreviewImage(`http://localhost:5001/upload/${offer.image[0]}`);
+      setPreviewImage(`https://elitetrips-backend.onrender.com/upload/${offer.image[0]}`);
     }
     if (offer.phoneImage.length > 0) {
       setPreviewPhoneImage(
-        `http://localhost:5001/upload/${offer.phoneImage[0]}`
+        `https://elitetrips-backend.onrender.com/upload/${offer.phoneImage[0]}`
       );
     }
   };
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/home/home-offers/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/home/home-offers/${id}`);
       fetchOffers();
     } catch (error) {
       console.error("Error deleting offer:", error);
@@ -193,7 +193,7 @@ const OfferHomePage = () => {
         {offers.map((offer) => (
           <li key={offer._id} className="bg-white shadow-md rounded p-4">
             <img
-              src={`http://localhost:5001/upload/${offer.image[0]}`}
+              src={`https://elitetrips-backend.onrender.com/upload/${offer.image[0]}`}
               alt="Offer"
               className="w-full h-32 object-cover rounded"
             />

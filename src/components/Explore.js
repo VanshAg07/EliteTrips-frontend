@@ -8,7 +8,7 @@ const ImageSlider = () => {
   const fetchAdventures = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5001/api/flip-card/flip"
+        "https://elitetrips-backend.onrender.com/api/flip-card/flip"
       );
       
       // Create adventure items from flipcard data

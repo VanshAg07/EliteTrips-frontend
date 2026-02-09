@@ -92,7 +92,7 @@ const TravelPackages = () => {
   const fetchVideoPages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/home/video-page"
+        "https://elitetrips-backend.onrender.com/api/home/video-page"
       );
       const indianVideo = response.data.find(
         (video) => video.type === "Indian"
@@ -126,7 +126,7 @@ const TravelPackages = () => {
   const fetchNationalPackages = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5001/api/flip-card/flip"
+        "https://elitetrips-backend.onrender.com/api/flip-card/flip"
       );
       // Get national packages from flipcard data
       if (res.data && res.data.national) {

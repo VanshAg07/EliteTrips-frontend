@@ -9,7 +9,7 @@ function Bookings() {
     const fetchTickets = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/payments/getAllTickets"
+          "https://elitetrips-backend.onrender.com/api/payments/getAllTickets"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

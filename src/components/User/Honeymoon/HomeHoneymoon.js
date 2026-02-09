@@ -39,7 +39,7 @@ const HomeHoneymoon = () => {
   const fetchNationalImages = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5001/api/package-image/honeymoon/${stateName}`
+        `https://elitetrips-backend.onrender.com/api/package-image/honeymoon/${stateName}`
       );
       // console.log(res.data);
       setNationalImages([res.data]);
@@ -53,7 +53,7 @@ const HomeHoneymoon = () => {
     const fetchSimilarPackages = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5001/api/honeymoon/getSimilarTrips/${stateName}`
+          `https://elitetrips-backend.onrender.com/api/honeymoon/getSimilarTrips/${stateName}`
         );
         const data = await response.json();
         // console.log("Fetched Packages:", data); // Check if data is correct

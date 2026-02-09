@@ -11,7 +11,7 @@ function ReelVideo() {
   // Fetch all videos
   const fetchVideos = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/reel/reel");
+      const response = await axios.get("https://elitetrips-backend.onrender.com/api/reel/reel");
       setVideos(response.data);
     } catch (error) {
       console.error("Error fetching videos:", error);
@@ -42,11 +42,11 @@ function ReelVideo() {
       if (editingId) {
         // Conditional check in URL request based on whether new files are uploaded
         await axios.put(
-          `http://localhost:5001/api/reel/reel/${editingId}`,
+          `https://elitetrips-backend.onrender.com/api/reel/reel/${editingId}`,
           formData
         );
       } else {
-        await axios.post("http://localhost:5001/api/reel/reel", formData);
+        await axios.post("https://elitetrips-backend.onrender.com/api/reel/reel", formData);
       }
       // Reset fields and fetch updated videos
       setVideoTitle("");
@@ -71,7 +71,7 @@ function ReelVideo() {
   // Handle delete button click
   const handleDeleteClick = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/reel/reel/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/reel/reel/${id}`);
       fetchVideos();
     } catch (error) {
       console.error("Error deleting video:", error);
@@ -144,7 +144,7 @@ function ReelVideo() {
                 {video.video.map((filePath, index) => (
                   <video
                     key={index}
-                    src={`http://localhost:5001/upload/${filePath}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${filePath}`}
                     controls
                     className="w-40 h-auto mt-2"
                     muted

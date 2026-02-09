@@ -33,7 +33,7 @@ const Place = () => {
   const fetchNationalImages = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5001/api/package-image/national/${stateName}`
+        `https://elitetrips-backend.onrender.com/api/package-image/national/${stateName}`
       );
       // console.log(res.data);
       setNationalImages([res.data]);
@@ -47,7 +47,7 @@ const Place = () => {
     const fetchSimilarPackages = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5001/api/user/getSimilarTrips/${stateName}`
+          `https://elitetrips-backend.onrender.com/api/user/getSimilarTrips/${stateName}`
         );
         const data = await response.json();
         setPackages(data);

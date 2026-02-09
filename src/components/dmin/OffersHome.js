@@ -36,7 +36,7 @@ const OffersHome = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/offer/states")
+      .get("https://elitetrips-backend.onrender.com/api/offer/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -130,7 +130,7 @@ const OffersHome = () => {
       }
     });
     fetch(
-      `http://localhost:5001/api/offer/add-offer-package/${selectedState.id}`,
+      `https://elitetrips-backend.onrender.com/api/offer/add-offer-package/${selectedState.id}`,
       {
         method: "POST",
         body: formData,

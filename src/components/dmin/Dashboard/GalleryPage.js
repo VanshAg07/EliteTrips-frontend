@@ -18,7 +18,7 @@ function GalleryPage() {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:5001/api/home/gallery-page"
+        "https://elitetrips-backend.onrender.com/api/home/gallery-page"
       );
       setImages(res.data);
     } catch (error) {
@@ -42,7 +42,7 @@ function GalleryPage() {
 
     try {
       await axios.post(
-        "http://localhost:5001/api/home/gallery-page",
+        "https://elitetrips-backend.onrender.com/api/home/gallery-page",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -61,7 +61,7 @@ function GalleryPage() {
     setIsLoading(true);
     try {
       await axios.delete(
-        `http://localhost:5001/api/home/gallery-page/delete-image/${id}/${encodeURIComponent(
+        `https://elitetrips-backend.onrender.com/api/home/gallery-page/delete-image/${id}/${encodeURIComponent(
           imagePath
         )}`
       );
@@ -141,7 +141,7 @@ function GalleryPage() {
                 {gallery.images.map((imgPath, idx) => (
                   <div key={idx} className="relative">
                     <img
-                      src={`http://localhost:5001/${imgPath}`}
+                      src={`https://elitetrips-backend.onrender.com/${imgPath}`}
                       alt="Gallery"
                       className="w-full h-32 object-cover rounded-lg shadow-md cursor-pointer"
                       onClick={() => openModal(imgPath)}
@@ -165,7 +165,7 @@ function GalleryPage() {
         <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center">
           <div className="bg-white p-4 rounded-lg shadow-lg relative">
             <img
-              src={`http://localhost:5001/${currentImage}`}
+              src={`https://elitetrips-backend.onrender.com/${currentImage}`}
               alt="Current"
               className="max-w-full h-auto rounded-lg"
             />

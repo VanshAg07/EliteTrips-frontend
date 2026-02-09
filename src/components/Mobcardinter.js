@@ -21,7 +21,7 @@ export default function Card() {
   const fetchStateNames = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/flip-card/flip"
+        "https://elitetrips-backend.onrender.com/api/flip-card/flip"
       );
       setStateData(response.data); // Assuming the response data is in the expected format
     } catch (error) {

@@ -44,7 +44,7 @@ const Nav = () => {
   };
 
   const fetchNavBar = () => {
-    fetch("http://localhost:5001/api/home/nav-offer", {
+    fetch("https://elitetrips-backend.onrender.com/api/home/nav-offer", {
       method: "GET",
     })
       .then((response) => response.json())

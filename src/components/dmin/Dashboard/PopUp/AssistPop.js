@@ -17,7 +17,7 @@ function AssistPop() {
   const fetchSignIns = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/popup/assist"
+        "https://elitetrips-backend.onrender.com/api/popup/assist"
       );
       setSignInList(response.data);
     } catch (error) {
@@ -49,7 +49,7 @@ function AssistPop() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/popup/assist",
+        "https://elitetrips-backend.onrender.com/api/popup/assist",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -69,7 +69,7 @@ function AssistPop() {
 
     try {
       const response = await axios.put(
-        `http://localhost:5001/api/popup/assist/${selectedSignIn._id}`,
+        `https://elitetrips-backend.onrender.com/api/popup/assist/${selectedSignIn._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -87,7 +87,7 @@ function AssistPop() {
 
   const deleteSignIn = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/popup/assist/${id}`);
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/popup/assist/${id}`);
       setSignInList((prevList) => prevList.filter((item) => item._id !== id));
     } catch (error) {
       console.error("Error deleting sign-in:", error);
@@ -171,7 +171,7 @@ function AssistPop() {
             </p>
             {signIn.image[0] && (
               <img
-                src={`http://localhost:5001/upload/${signIn.image[0]}`}
+                src={`https://elitetrips-backend.onrender.com/upload/${signIn.image[0]}`}
                 alt={signIn.title}
                 className="mt-2 rounded-lg w-32 h-32 object-cover"
               />

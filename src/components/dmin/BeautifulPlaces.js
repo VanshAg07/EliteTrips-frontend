@@ -18,7 +18,7 @@ const BeautifulPlaces = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/trip/states")
+      .get("https://elitetrips-backend.onrender.com/api/trip/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -63,7 +63,7 @@ const BeautifulPlaces = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/admin/addBeautifulPlaces",
+        "https://elitetrips-backend.onrender.com/api/admin/addBeautifulPlaces",
         formData,
         {
           headers: {

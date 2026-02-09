@@ -29,7 +29,7 @@ function HoneymoonEdit() {
   const statusOptions = ["active", "non-active"];
   useEffect(() => {
     axios
-      .get("http://localhost:5001/api/edit-packages/get-honeymoon-packages")
+      .get("https://elitetrips-backend.onrender.com/api/edit-packages/get-honeymoon-packages")
       .then((response) => {
         if (response.data) {
           const packages = response.data.states || [];
@@ -114,7 +114,7 @@ function HoneymoonEdit() {
 
       axios
         .put(
-          `http://localhost:5001/api/edit-packages/edit-honeymoon-package/${selectedTrip.stateName}/${selectedTrip._id}`,
+          `https://elitetrips-backend.onrender.com/api/edit-packages/edit-honeymoon-package/${selectedTrip.stateName}/${selectedTrip._id}`,
           formData, // Change this line to send formData
           {
             headers: {
@@ -139,7 +139,7 @@ function HoneymoonEdit() {
     if (confirmed) {
       axios
         .delete(
-          `http://localhost:5001/api/edit-packages/delete-honeymoon-package/${pkg.stateName}/${tripId}`
+          `https://elitetrips-backend.onrender.com/api/edit-packages/delete-honeymoon-package/${pkg.stateName}/${tripId}`
         )
         .then((response) => {
           alert("Trip deleted successfully!");
@@ -289,7 +289,7 @@ function HoneymoonEdit() {
                 {tripDetails?.tripImages?.map((image, index) => (
                   <img
                     key={index}
-                    src={`http://localhost:5001/upload/${image}`}
+                    src={`https://elitetrips-backend.onrender.com/upload/${image}`}
                     alt={`Trip Image ${index + 1}`}
                     className="h-14 w-14"
                   />
@@ -306,7 +306,7 @@ function HoneymoonEdit() {
                   tripDetails.tripBackgroundImg.map((image, index) => (
                     <img
                       key={index}
-                      src={`http://localhost:5001/upload/${image}`}
+                      src={`https://elitetrips-backend.onrender.com/upload/${image}`}
                       alt={`Trip Image ${index + 1}`}
                       className="h-14 w-14"
                     />

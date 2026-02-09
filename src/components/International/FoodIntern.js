@@ -15,7 +15,7 @@ const Food = () => {
       // console.log("Fetching activities..."); 
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/user/getInternFlavour/${name}`
+          `https://elitetrips-backend.onrender.com/api/user/getInternFlavour/${name}`
         );
         // console.log(response.data); 
         setActivities(response.data.activities || []); 

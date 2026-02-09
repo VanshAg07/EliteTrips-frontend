@@ -78,7 +78,7 @@ const AdminPanel = () => {
   const fetchStates = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5001/api/trip/states")
+      .get("https://elitetrips-backend.onrender.com/api/trip/states")
       .then((response) => {
         const statesList = response.data.map((state) => ({
           name: state.stateName,
@@ -236,7 +236,7 @@ const AdminPanel = () => {
       }
     });
 
-    fetch(`http://localhost:5001/api/trip/state/${selectedState.id}/trip`, {
+    fetch(`https://elitetrips-backend.onrender.com/api/trip/state/${selectedState.id}/trip`, {
       method: "POST",
       body: formData,
     })

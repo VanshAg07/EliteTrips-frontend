@@ -23,7 +23,7 @@ const GroupDetailsEdit = () => {
   const fetchGroupDetails = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/group-tours/group-details"
+        "https://elitetrips-backend.onrender.com/api/group-tours/group-details"
       );
       setGroupDetails(response.data.data);
     } catch (error) {
@@ -64,13 +64,13 @@ const GroupDetailsEdit = () => {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5001/api/group-tours/group-details/${editingId}`,
+          `https://elitetrips-backend.onrender.com/api/group-tours/group-details/${editingId}`,
           formData
         );
         toast.success("Group detail updated successfully!"); // Success toast
       } else {
         await axios.post(
-          "http://localhost:5001/api/group-tours/group-details",
+          "https://elitetrips-backend.onrender.com/api/group-tours/group-details",
           formData
         );
         toast.success("Group detail added successfully!"); // Success toast
@@ -111,7 +111,7 @@ const GroupDetailsEdit = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5001/api/group-tours/group-details/${id}`
+        `https://elitetrips-backend.onrender.com/api/group-tours/group-details/${id}`
       );
       toast.success("Group detail deleted successfully!"); // Success toast
       fetchGroupDetails(); // Refresh the list after deletion

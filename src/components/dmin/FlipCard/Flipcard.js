@@ -32,9 +32,9 @@ const Flipcard = () => {
   const fetchStateNames = async () => {
     try {
       const [internationalRes, nationalRes, honeymoonRes] = await Promise.all([
-        axios.get("http://localhost:5001/api/admin/states"),
-        axios.get("http://localhost:5001/api/trip/states"),
-        axios.get("http://localhost:5001/api/honeymoon/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/admin/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/trip/states"),
+        axios.get("https://elitetrips-backend.onrender.com/api/honeymoon/states"),
       ]);
       
       console.log("📌 International States:", internationalRes.data);
@@ -56,7 +56,7 @@ const Flipcard = () => {
   const fetchFlipcards = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5001/api/flip-card/flip"
+        "https://elitetrips-backend.onrender.com/api/flip-card/flip"
       );
       const flipcardData = response.data;
 
@@ -112,14 +112,14 @@ const Flipcard = () => {
     try {
       if (isEditing && editFlipcardId) {
         await axios.put(
-          `http://localhost:5001/api/flip-card/flip/${selectedCategory}/${editFlipcardId}`,
+          `https://elitetrips-backend.onrender.com/api/flip-card/flip/${selectedCategory}/${editFlipcardId}`,
           formData
         );
         toast.success("Flipcard updated successfully!");
         setIsEditing(false);
         setEditFlipcardId(null);
       } else {
-        await axios.post("http://localhost:5001/api/flip-card/flip", formData);
+        await axios.post("https://elitetrips-backend.onrender.com/api/flip-card/flip", formData);
         toast.success("Flipcard added successfully!");
       }
       fetchFlipcards(); // Refresh the list
@@ -200,7 +200,7 @@ const Flipcard = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:5001/api/flip-card/flip`, {
+      await axios.delete(`https://elitetrips-backend.onrender.com/api/flip-card/flip`, {
         data: {
           category: category,
           stateName: stateName,
