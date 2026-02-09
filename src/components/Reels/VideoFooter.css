@@ -1,0 +1,51 @@
+.videoFooter{
+    position: relative;
+    margin-left: 20px;
+    bottom:50px;
+}
+
+.videoFooter__text{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.videoFooter__text > h3 {
+    margin-left: 10px;
+}
+
+.videoFooter__text > h3 > button {
+    color: rgb(255, 255, 255);
+    font-weight: 1200;
+    text-transform: inherit;
+}
+
+.videoFooter__actions {
+    display: flex;
+    position: absolute;
+    width:95%;
+    color: white;
+}
+
+.videoFooter__actionsLeft > .MuiSvgIcon-root{
+    padding: 0 10px;
+}
+
+.videoFooter__actionsRight {
+    display: flex;
+}
+
+.videoFooter__stat{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.videoFooter__icon{
+    position: absolute;
+    left: 5px;
+    color:white;
+}

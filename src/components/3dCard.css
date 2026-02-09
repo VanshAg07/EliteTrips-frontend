@@ -1,0 +1,64 @@
+.cards-wrapper1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    .card-container {
+        width: 426px;
+        min-height: 500px;
+        /* background: aqua; */
+        background: url("https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-size: cover; /* Make the background image cover the entire container */
+        background-position: center; /* Center the background image */
+        border-radius: 30px;
+        border: 4px solid rgb(255, 255, 255);
+        overflow: hidden; /* Ensure content does not overflow the card */
+        cursor: pointer;
+        position: relative; /* Set container as a reference for absolutely positioned children */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .card-content {
+            position: absolute; /* Position content on top of the background image */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Text color for readability */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+            padding: 20px;
+            text-align: center;
+        }
+    }
+    
+}
+
+.card-links {
+    margin: 10px 0; /* Add space between elements */
+    color: white; /* Ensure text is readable on the image */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Optional text shadow for readability */
+}
+
+.button-card {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white button */
+    color: #333; /* Dark text color for the button */
+    font-size: 16px;
+    font-weight: medium;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-card:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+}
+

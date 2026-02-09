@@ -1,0 +1,189 @@
+.footer-wrapper {
+  background-color: #fff;
+  padding-top: 25px;
+  color: #000;
+  height: 100%;
+  overflow: visible;
+  /* padding-bottom: 30px; */
+}
+
+.footer-info {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem; /* Base font size */
+}
+
+.footer-p{
+  font-weight: 600;
+  font-size: 1.1rem; /* Adjust paragraph size */
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.footer-icons img,
+.footer-icons .email-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.gmail-color {
+  color: #D14836; /* Gmail red color */
+}
+
+/* Base sizes for the larger screen */
+.icon-lrge {
+  font-size: 28px;
+}
+
+.icon-lrge-1 {
+  font-size: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-info h1 {
+    font-size: 1.8rem; /* Adjust title size */
+  }
+
+  .footer-info > p {
+    width: 100vw;
+    padding: 0 120px;
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .footer-icons {
+    gap: 40px; /* Reduce gap between icons */
+  }
+
+  .footer-icons img,
+  .footer-icons .email-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .icon-lrge {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .footer-info > p {
+    padding: 0 60px;
+    font-size: 0.9rem;
+  }
+
+  .footer-icons {
+    gap: 30px;
+  }
+
+  .footer-icons img,
+  .footer-icons .email-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .icon-lrge {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-info h1 {
+    font-size: 1.4rem;
+  }
+
+  .footer-info > p {
+    font-size: 0.8rem;
+    padding: 0 30px;
+  }
+
+  .footer-icons {
+    gap: 20px;
+  }
+
+  .footer-icons img,
+  .footer-icons .email-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .icon-lrge {
+    font-size: 20px;
+  }
+
+  .icon-lrge-1 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 425px) {
+
+  .footer-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .footer-info > p {
+    font-size: 0.7rem;
+  }
+
+  .footer-icons {
+    gap: 15px;
+  }
+
+  .footer-icons img,
+  .footer-icons .email-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .icon-lrge {
+    font-size: 18px;
+  }
+
+  .icon-lrge-1 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .footer-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .footer-info > p {
+    font-size: 0.7rem;
+  }
+
+  .footer-icons {
+    gap: 15px;
+  }
+
+  .footer-icons img,
+  .footer-icons .email-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .icon-lrge {
+    font-size: 18px;
+  }
+
+  .icon-lrge-1 {
+    font-size: 12px;
+  }
+}
+
+
+

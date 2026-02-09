@@ -1,0 +1,77 @@
+.marquee-container {
+  width: 90%; /* 100% - 20% from each side */
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.marquee {
+  display: flex;
+  width: max-content; /* Set width to accommodate all images */
+  animation: marquee 40s linear infinite; /* Adjust duration for smooth scrolling */
+}
+
+.marquee-image {
+  width: 350px; /* Fixed width for large screens */
+  height: 350px; /* Fixed height for large screens */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  margin-right: 20px; /* Padding between images */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container > h1 {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .marquee-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .marquee-container > h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .marquee-container > h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .marquee-container > h1 {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 426px) {
+    .marquee-wrapper {
+      display: none;
+    }
+  }
+  
+}

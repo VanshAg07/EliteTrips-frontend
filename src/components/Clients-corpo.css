@@ -1,0 +1,43 @@
+/* Keyframes for smooth, continuous scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Apply animation to the scrolling row */
+.animate-scroll {
+  display: flex;
+  animation: scroll 50s linear infinite;
+  width: 200%; /* Double the width to accommodate seamless flow */
+  gap: 20px; /* Adds space between images */
+  margin-bottom: 10px;
+}
+
+.animate-scroll-reverse {
+  display: flex;
+  animation: scroll-reverse 50s linear infinite;
+  width: 200%; /* Double the width to accommodate seamless flow */
+  gap: 20px; /* Adds space between images */
+  margin-bottom: 10px;
+}
+/* Styling for the container */
+.scroll-container {
+  width: 90%; /* Make container 80% of screen width */
+  margin: 0 auto; /* Center the container horizontally */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  white-space: nowrap;
+}

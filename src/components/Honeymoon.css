@@ -1,0 +1,217 @@
+.honey-h {
+    font-size: 2.5rem; /* Default size for large screens */
+    color: #2C3E50;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  
+  /* Styling for the yellow line after the h1 */
+  .honey-h::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2px;
+    width: 10%;
+    height: 4px;
+    background-color: yellow;
+    border-radius: 2px;
+  }
+
+  .honey-heading {
+    font-size: 2.5rem; /* Default font size */
+    color: #2C3E50;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  
+  .honey-heading::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2px;
+    width: 10%;
+    height: 4px;
+    background-color: yellow;
+    border-radius: 2px;
+   
+  }
+  
+  .honey-description {
+    font-size: 1.2rem; /* Default font size */
+    color: black;
+    text-align: center;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 30px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 640px) { /* For small mobile screens */
+    .honey-heading {
+      font-size: 2rem; /* Decrease font size for small screens */
+    }
+  
+    .honey-description {
+      font-size: 1rem; /* Decrease font size for small screens */
+    }
+  }
+  
+  @media (max-width: 480px) { /* For extra small mobile screens */
+    .honey-heading {
+      font-size: 1.5rem; /* Further decrease font size */
+    }
+  
+    .honey-description {
+      font-size: 0.9rem; /* Further decrease font size */
+    }
+  }
+  
+  
+  /* Responsive adjustments for medium screens (tablets, small laptops) */
+  @media (max-width: 1024px) {
+    .honey-h {
+      font-size: 2rem; /* Reduce font size */
+    }
+    .honey-h::after {
+      width: 8%; /* Adjust the width of the yellow line */
+    }
+  }
+  
+  /* Responsive adjustments for small screens (mobile devices) */
+  @media (max-width: 768px) {
+    .honey-h {
+      font-size: 1.7rem; /* Further reduce font size */
+    }
+    .honey-h::after {
+      width: 6%; /* Further adjust width of the yellow line */
+    }
+  }
+  
+  /* Responsive adjustments for extra small screens (small mobile devices) */
+  @media (max-width: 480px) {
+    .honey-h {
+      font-size: 0.7rem; /* Smallest font size for small mobile screens */
+      margin-top: 20px; /* Adjust margin for better spacing */
+      margin-bottom: 8px;
+    }
+    .honey-h::after {
+      width: 5%; /* Narrow the width of the yellow line */
+    }
+  }
+
+  .honeymoon-heading {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem; /* Default size for large screens */
+    color: white;
+    text-align: center;
+  }
+  
+  .honeymoon-paragraph {
+    position: absolute;
+    top: 52%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7rem; /* Default size for large screens */
+    background-color: yellow;
+    color: black;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Medium screens (tablets, smaller laptops) */
+  @media (max-width: 1024px) {
+    .honeymoon-heading {
+      font-size: 2.5rem;
+      left: 35%; /* Adjust positioning as screen size decreases */
+    }
+  
+    .honeymoon-paragraph {
+      font-size: 1.4rem;
+      left: 30%;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 768px) {
+    .honeymoon-heading {
+      font-size: 2rem;
+      left: 40%;
+    }
+  
+    .honeymoon-paragraph {
+      font-size: 1.2rem;
+      padding: 12px;
+      left: 35%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .honeymoon-heading {
+      font-size: 1.8rem;
+      left: 40%;
+    }}
+
+    @media (max-width: 575px) {
+        .honeymoon-heading {
+          font-size: 1.6rem;
+          left: 40%;
+        }}
+
+        @media (max-width: 511px) {
+            .honeymoon-heading {
+              font-size: 1.4rem;
+              left: 40%;
+            }}
+  
+  /* Extra small screens (smaller phones) */
+  @media (max-width: 480px) {
+    .honeymoon-heading {
+      font-size: 1.5rem;
+      left: 45%;
+    }
+  
+    .honeymoon-paragraph {
+      font-size: 1rem;
+      left: 40%;
+    }
+  }
+
+  @media (max-width: 437px) {
+    .honeymoon-heading {
+      font-size: 1.5rem;
+      left: 45%;
+    }
+  
+    .honeymoon-paragraph {
+      font-size: 0.7rem;
+      left: 40%;
+    }
+  }
+
+  @media (max-width: 321px) {
+    .honeymoon-heading {
+      font-size: 1.5rem;
+      left: 45%;
+    }
+  
+    .honeymoon-paragraph {
+      font-size: 0.6rem;
+      padding: 10px;
+      left: 40%;
+    }
+  }
+  
+  

@@ -1,0 +1,39 @@
+.travel-guidelines-container {
+    margin-top: 100px; /* Adjust this value as needed */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+  
+.guidelines-heading {
+    font-size: 2em; 
+    color: #555; 
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px;
+    border-left: 4px solid #ffcc00; /* Yellow left border */
+    padding-left: 10px; /* Space between text and border */
+}
+  
+.guidelines-description {
+    font-size: 1.1em;
+    color: #121212cc; /* Medium grey for paragraph text */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify; /* Justify text for a cleaner look */
+}
+  
+.guidelines-list {
+    list-style-type: decimal; /* Numbered list */
+    padding-left: 20px; /* Space between list numbers and text */
+}
+  
+.guidelines-list li {
+    font-size: 1em;
+    color: #444; /* Slightly darker text for list items */
+    line-height: 1.5;
+    margin-bottom: 10px; /* Space between list items */
+}

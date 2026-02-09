@@ -1,0 +1,68 @@
+.travel-guidelines-container {
+    margin-top: 100px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #ffffe6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.guidelines-heading {
+    font-size: 2.5vw; /* Responsive text size based on viewport width */
+    color: #555;
+    text-align: left;
+    margin-bottom: 20px;
+    border-left: 4px solid #ffcc00;
+    padding-left: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.guidelines-description {
+    font-size: 1.2rem; /* Responsive font size */
+    color: #121212cc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    transition: all 0.3s ease-in-out;
+}
+
+.guidelines-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.guidelines-list li {
+    font-size: 1.1rem; /* Responsive font size */
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Media Queries for smaller devices */
+@media (max-width: 768px) {
+    .guidelines-heading {
+        font-size: 4vw; /* Further reduce font size for tablets */
+        color: #111;
+    }
+
+    .guidelines-description,
+    .guidelines-list li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .guidelines-heading {
+        font-size: 5vw; /* Reduce font size for small screens */
+        color:#111;
+    }
+
+    .guidelines-description,
+    .guidelines-list li {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+}

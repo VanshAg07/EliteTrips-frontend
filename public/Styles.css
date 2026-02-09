@@ -1,0 +1,17 @@
+.icon-f {
+  border-radius: 50%;
+}
+body {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAECAIAAABLi1R9AAAAKklEQVQI12MAAQAABgABDQEBoAEAVAEFAQAA/h9LQAECAUQFAQIAUEAADhMAAwAAAABJRU5ErkJggg==")
+    repeat;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+}
+@media (min-width: 1280px) and (max-width: 1366px) and (min-height: 720px) and (max-height: 768px) {
+  body {
+    width: 80%;
+    margin: auto;
+  }
+}

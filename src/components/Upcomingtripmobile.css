@@ -1,0 +1,137 @@
+/* Mobile slider container */
+.mobile-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 70vh;
+    background-color: #f0f8ff;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Wrapper for slider content */
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Arrow buttons */
+  .slider-arrow-left,
+  .slider-arrow-right {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .slider-arrow-left:hover,
+  .slider-arrow-right:hover {
+    color: #ff6347;
+  }
+  
+  /* Slider content */
+  .slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .slider-image {
+    width: 100%;
+    max-width: 350px;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .slider-info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .slider-location {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .slider-details {
+    margin-top: 0.5rem;
+  }
+  
+  .slider-duration,
+  .slider-date,
+  .slider-departure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.2rem 0;
+  }
+  
+  .icon {
+    margin-right: 0.5rem;
+    color: #333;
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .mobile-slider-container {
+      width: 50vw;
+    }
+    .slider-image {
+      max-width: 400px;
+      height: 60vh;
+    }
+  }
+  
+  /* Existing styles remain the same */
+
+/* Hide scrollbar but maintain functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Month buttons container */
+.month-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Optional: Add fade effect on edges */
+.month-scroll-container::before,
+.month-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.month-scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 230, 1), rgba(255, 255, 230, 0));
+}
+
+.month-scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 230, 1), rgba(255, 255, 230, 0));
+}
+
+/* Ensure buttons maintain consistent width */
+.month-button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}

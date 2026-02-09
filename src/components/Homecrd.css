@@ -1,0 +1,20 @@
+@media (max-width: 1270px) {
+    .homecrd-wrpper{
+        margin-left: 450px;
+        margin-top: 130px;
+    }
+}
+
+@media (max-width: 1230px) {
+    .homecrd-wrpper{
+        margin-left: 450px;
+        margin-top: 200px;
+    }
+}
+
+@media (max-width: 1185px) {
+    .homecrd-wrpper{
+        margin-left: 350px;
+
+    }
+}

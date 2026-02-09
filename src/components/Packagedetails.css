@@ -1,0 +1,172 @@
+.full-width-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cssbuttons-io-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.5em 0.8em 1.2em;
+  color: white;
+  background: linear-gradient(0deg, rgba(77, 54, 208, 1) 0%, rgba(132, 116, 254, 1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  z-index: 99;
+  top: 70%;
+  left: 45%;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 8px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
+}
+
+.icon-text-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
+  padding-left: 40px;
+}
+
+.icon {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.icon-text {
+  font-size: 1em;
+  color: #333;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon-text-container{
+  border: 1px solid black;
+}
+.package-nav {
+  display: flex;
+  justify-content: space-around;
+  /* width: 60%; */
+  padding: 1em 0; 
+  border-radius: 10px; 
+  background-color: #0fbee1;
+  position: sticky;
+  
+}
+
+.package-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.package-nav a:hover {
+  color: white;
+  border-radius: 5px; /* Optional rounded corners on hover */
+}
+
+.package-nav a.active {
+  color: #ffffff;
+  border-radius: 5px;
+  border-bottom-width: 1px;
+}
+
+.place-head{
+  padding-left: 20%;
+  font-size: 2rem; /* Large font size for prominence */
+  font-weight: bold; /* Bold font weight for emphasis */
+  color: #000; /* Darker color for contrast */
+  margin-bottom: 10px; /* Space below the h1 */
+  margin-top: 20px; /* Space below the h1 */
+}
+
+.toggle-button {
+  color: #0c4fdf;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: right;
+float: right;
+margin-top: -40px;
+}
+.toggle-button-1 {
+  color: #0c4fdf;
+  border: none;
+  padding: 20px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: right;
+float: right;
+margin-top: -40px;
+}
+
+.day-container {
+  margin-bottom: 20px;
+  background-color: #F5FDFF;
+  padding: 10px;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.day-header h3 {
+  margin: 0;
+}
+
+.day-header p {
+  margin: 0;
+  margin-right: auto;
+}
+
+.plus-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #007bff; /* Blue color for the plus icon */
+}
+
+
+@media (max-width: 425px) {
+  .pb-425 {
+    padding-bottom: 8rem; /* Equivalent to pb-20 */
+  }
+
+  .bg-425 {
+    background-color: #fff;
+  }
+
+  .btn-itin{
+    bottom: 20%;
+  }
+  .sh-btn{
+    margin-left: -30px;
+    /* margin-bottom: 3px; */
+    font-size: 20px;
+  }
+}

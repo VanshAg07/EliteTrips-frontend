@@ -1,0 +1,27 @@
+@media (min-width: 1024px) {
+    .yt-p{
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 425px) {
+    .yt-left {
+        left: 10%;
+        font-size: 16px;
+    }
+
+    .yt-right {
+        right: 10%;
+        font-size: 16px;
+    }
+
+}
+
+
+@media (min-width: 425px) {
+    .yt-p{
+        font-size: 10px;
+        line-height: 20px;
+    }
+}

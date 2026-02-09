@@ -1,0 +1,66 @@
+.video-background {
+  height: 100vh; /* Default height for larger screens */
+}
+
+/* Responsive heights for different screen sizes */
+@media (max-width: 1024px) {
+  .video-background {
+    height: 95vh; /* For large screens (e.g., laptops) */
+  }
+  .gradient-bg {
+    height: 95vh;
+    width: 50vw;
+    background: rgba(0, 0, 0, 0.433);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-background {
+    height: 95vh; /* For medium screens (e.g., tablets) */
+  }
+  .gradient-bg {
+    height: 95vh;
+    width: 50vw;
+    background: rgba(0, 0, 0, 0.433);
+  }
+}
+
+@media (max-width: 426px) {
+  .videopg-wrpper {
+    height: 61vh;
+  }
+  .video-background {
+    height: 40vh; /* For medium screens (e.g., tablets) */
+  }
+  .gradient-bg {
+    height: 40vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.433);
+  }
+  .videopg-p {
+    margin-top: -175px;
+    left: 2rem;
+  }
+  .videopg-btn {
+    margin-top: -240px;
+    left: 2rem;
+  }
+
+  .video-hed {
+    margin-top: -80px;
+    left: 2rem;
+  }
+
+  .line1 .line2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    font-size: 20px;
+  }
+}
+/* styles.css */
+.gradient-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}

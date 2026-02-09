@@ -1,0 +1,39 @@
+/* SearchModal.css */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end; /* Aligns modal to the bottom */
+    background: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    max-width: 425px;
+    height: 35%;
+    position: relative;
+  }
+    
+  .modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .modal-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  

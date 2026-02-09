@@ -1,0 +1,27 @@
+@media (max-width: 1024px) {
+  .mainreview-wrapper{
+      margin-top: -65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainreview-wrapper{
+      margin-top: -60px;
+  }
+}
+
+@media (max-width: 426px) {
+   .mainreview-wrapper{
+    margin-top: -180px;
+}
+ 
+    .footer-text-small {
+      font-size: 8px; /* Decrease the font size for smaller screens */
+    }
+  
+    .star-small {
+      width: 0.6rem; /* Adjust the star size */
+      height: 0.6rem;
+    }
+  }
+  

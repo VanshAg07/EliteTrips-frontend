@@ -1,0 +1,36 @@
+.faq-section {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .faq-section h1 {
+    text-align: center; /* Center the heading */
+    font-size: 2.5em; /* Increase the font size */
+    margin-bottom: 40px; /* Add some space below the heading */
+    color: #000; /* Optional: Change the color if you want */
+  }
+  
+  .faq-item {
+    border: 1px solid black;
+    margin-bottom: 30px;
+    background-color: #fff; 
+    border-radius: 10px;
+    padding: 20px;
+    color: #000; /* White text for contrast */
+  }
+  
+  .faq-question {
+    font-size: 1.5em; /* Increase font size for questions */
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .faq-answer {
+    font-size: 1.2em; /* Slightly larger font size for answers */
+    color: #000; /* Answer text color */
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+  

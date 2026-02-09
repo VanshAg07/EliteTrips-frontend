@@ -1,0 +1,290 @@
+.place-container {
+  padding-top: 60px; /* Adjust this value based on your Nav height */
+}
+
+.place-hero {
+  position: relative; /* Ensure positioning context for absolutely positioned content */
+  height: 83vh; /* Ensure it takes up the full height of the viewport */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align items to the top */
+  text-align: left; /* Align text to the left */
+  color: #fff; /* Set default text color */
+  padding: 0 20px; /* Add padding to ensure text doesn’t touch the edges */
+}
+
+.pl-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute; /* Position image absolutely */
+  top: 0;
+  left: 0;
+  z-index: 1; /* Ensure image is behind other content */
+}
+
+.review-img {
+  position: absolute; /* Position image absolutely */
+  top: 35%; /* Adjust this value based on your design */
+  left: 30%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 2; /* Place image above the background image */
+  width: 70%; /* Increase width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.place-hero h1,
+.place-hero p {
+  position: relative; /* Ensure text is positioned relative to its container */
+  z-index: 3; /* Ensure text is above the review image */
+  margin: 0; /* Remove default margin */
+  padding-left: 60px;
+}
+
+.place-hero h1 {
+  font-size: 3rem; /* Default size for large screens */
+  font-weight: bold; /* Bold text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* Relative positioning */
+  margin-top: 150px; /* Top margin */
+}
+
+/* For medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  .place-hero h1 {
+    font-size: 2.5rem; /* Decrease font size slightly */
+    margin-top: 100px; /* Adjust margin as well */
+  }
+}
+
+/* For small screens (mobile devices, phones) */
+@media (max-width: 768px) {
+  .place-hero h1 {
+    font-size: 2rem; /* Further decrease font size */
+    margin-top: 80px;
+  }
+}
+
+/* For extra small screens (small mobile devices) */
+@media (max-width: 480px) {
+  .place-hero h1 {
+    font-size: 1.5rem; /* Smallest size for small mobile devices */
+    margin-top: 60px;
+  }
+}
+
+/* For the h1 element */
+.place-hero h1 {
+  font-size: 3rem; /* Default size for large screens */
+  font-weight: bold; /* Bold text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
+  margin-bottom: 20px; /* Space below the heading */
+  position: relative; /* Relative positioning */
+  margin-top: 150px; /* Top margin */
+}
+
+/* Add line before the h1 */
+.place-hero h1::before {
+  content: ""; /* Create an empty pseudo-element */
+  position: absolute; /* Position it absolutely within the h1 */
+  left: 40px; /* Adjust this value based on the desired distance from the text */
+  top: 50%; /* Center the line vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  width: 5px; /* Line width */
+  height: 80%; /* Line height should match the height of the h1 */
+  background-color: yellow; /* Line color */
+}
+
+/* Responsive styling for the paragraph */
+.place-hero p {
+  font-size: 1.5rem; /* Default font size */
+  line-height: 1.6; /* Line height for readability */
+  background-color: yellow; /* Background color */
+  display: inline; /* Ensure background color extends only to text */
+  padding: 10px 20px; /* Padding around the text */
+  color: black; /* Text color */
+  margin-left: 60px; /* Left margin for positioning */
+}
+
+/* For medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  .place-hero h1 {
+    font-size: 2.5rem; /* Decrease heading size */
+    margin-top: 100px; /* Adjust top margin */
+  }
+  .place-hero h1::before {
+    left: 30px; /* Adjust the line position */
+  }
+  .place-hero p {
+    font-size: 1.3rem; /* Adjust paragraph font size */
+    margin-left: 40px; /* Adjust margin for smaller screens */
+  }
+}
+
+/* For small screens (mobile devices) */
+@media (max-width: 768px) {
+  .place-hero h1 {
+    font-size: 2rem; /* Further decrease heading size */
+    margin-top: 80px;
+  }
+  .place-hero h1::before {
+    left: 25px; /* Adjust the line position */
+  }
+  .place-hero p {
+    font-size: 1.1rem; /* Smaller paragraph font size */
+    margin-left: 30px; /* Adjust margin */
+  }
+}
+
+/* For extra small screens (small mobile devices) */
+@media (max-width: 480px) {
+  .place-hero h1 {
+    font-size: 1.5rem; /* Smallest heading size */
+    margin-top: 60px;
+  }
+  .place-hero h1::before {
+    left: 20px; /* Adjust the line position */
+  }
+  .place-hero p {
+    font-size: 1rem; /* Smallest paragraph font size */
+    margin-left: 20px; /* Further adjust margin */
+    padding: 8px 15px; /* Reduce padding for small screens */
+  }
+}
+
+/* For extra small screens (small mobile devices) */
+@media (max-width: 406px) {
+  .place-hero h1 {
+    font-size: 1.5rem; /* Smallest heading size */
+    margin-top: 60px;
+  }
+  .place-hero h1::before {
+    left: 20px; /* Adjust the line position */
+  }
+  .place-hero p {
+    font-size: 0.7rem; /* Smallest paragraph font size */
+    margin-left: 20px; /* Further adjust margin */
+    padding: 6px 8px; /* Reduce padding for small screens */
+  }
+}
+.hiking-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.hiking-container h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+  margin-bottom: 1rem; /* Space below the heading */
+  color: #333; /* Change the color if needed */
+}
+
+.hiking-container p {
+  font-size: 1.125rem; /* Adjust size as needed */
+  line-height: 1.6; /* Adjust line height for readability */
+  color: #666; /* Change the color if needed */
+  margin-top: 0; /* Adjust the space above the paragraph */
+}
+
+.Visiting-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.Visiting-container h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+  margin-bottom: 1rem; /* Space below the heading */
+  color: #333; /* Change the color if needed */
+}
+
+.Visiting-container p {
+  font-size: 1.125rem; /* Adjust size as needed */
+  line-height: 1.6; /* Adjust line height for readability */
+  color: #666; /* Change the color if needed */
+  margin-top: 0; /* Adjust the space above the paragraph */
+}
+
+.food-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.food-container h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+  margin-bottom: 1rem; /* Space below the heading */
+  color: #333; /* Change the color if needed */
+}
+
+.food-container p {
+  font-size: 1.125rem; /* Adjust size as needed */
+  line-height: 1.6; /* Adjust line height for readability */
+  color: #666; /* Change the color if needed */
+  margin-top: 0; /* Adjust the space above the paragraph */
+}
+
+.shop-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.shop-container h1 {
+  font-size: 2.5rem; /* Adjust size as needed */
+  margin-bottom: 1rem; /* Space below the heading */
+  color: #333; /* Change the color if needed */
+}
+
+.shop-container p {
+  font-size: 1.125rem; /* Adjust size as needed */
+  line-height: 1.6; /* Adjust line height for readability */
+  color: #666; /* Change the color if needed */
+  margin-top: 0; /* Adjust the space above the paragraph */
+}
+
+.travel-guidelines1-container {
+  margin-top: 100px; /* Adjust this value as needed */
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 80px;
+}
+
+.guidelines1-heading {
+  font-size: 2em;
+  color: #555;
+  text-align: left; /* Align text to the left */
+  margin-bottom: 20px;
+  border-left: 4px solid #ffcc00; /* Yellow left border */
+  padding-left: 10px; /* Space between text and border */
+}
+
+.guidelines1-description {
+  font-size: 1.1em;
+  color: #121212cc; /* Medium grey for paragraph text */
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify; /* Justify text for a cleaner look */
+}
+
+.guidelines1-list {
+  list-style-type: decimal; /* Numbered list */
+  padding-left: 20px; /* Space between list numbers and text */
+}
+
+.guidelines1-list li {
+  font-size: 1em;
+  color: #444; /* Slightly darker text for list items */
+  line-height: 1.5;
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.why {
+  padding-bottom: 80px;
+}

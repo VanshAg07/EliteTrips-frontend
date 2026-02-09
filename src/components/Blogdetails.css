@@ -1,0 +1,89 @@
+.blog-details {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 130px;
+}
+
+.blog-details h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; /* Centers the main heading */
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+
+.blog-details h2 {
+  font-size: 2rem;
+  color: #444;
+  margin-top: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  text-align: left; /* Ensures subheadings are left-aligned */
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+.blog-details h3 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 20px;
+  text-align: left; /* Ensures subheadings are left-aligned */
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+.blog-details p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: left; /* Ensures paragraphs are left-aligned */
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+.blog-details ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  text-align: left; /* Ensures list items are left-aligned */
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+.blog-details li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 2px;
+}
+
+.blog-details img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .blog-details {
+    padding-bottom: 10px;
+    padding-top: 100px;
+  }
+
+  .blog-details h1 {
+    font-size: 2rem;
+  }
+
+  .blog-details h2 {
+    font-size: 1.75rem;
+  }
+
+  .blog-details h3 {
+    font-size: 1.25rem;
+  }
+
+  .blog-details p {
+    font-size: 0.9rem;
+  }
+}

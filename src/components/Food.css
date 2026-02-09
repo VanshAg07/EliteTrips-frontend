@@ -1,0 +1,76 @@
+.food-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 20px; /* Space between cards */
+  width: 80vw;
+  margin: 0 auto; /* Center align the grid */
+}
+
+.food-card {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  text-align: left;
+}
+
+.food-card-img {
+  width: 100%;
+  height: 280px; /* Fixed height for images */
+  object-fit: cover; /* Ensure image covers the area */
+}
+
+.food-card-content {
+  padding: 10px;
+  position: relative; /* Positioning context for the location-info */
+  height: 130px;
+}
+
+.food-card h1 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.location-info,
+.food-info {
+  display: flex;
+  align-items: center; /* Vertically align icon and text */
+  justify-content: flex-start; /* Align text and icon to the left */
+  padding-top: 2px;
+}
+
+.location-icon,
+.food-icon {
+  font-size: 18px; /* Adjust the size of the icon */
+  color: black; /* Set icon color to yellow */
+  margin-right: 8px; /* Add space between icon and text */
+}
+
+.location-text,
+.food-text {
+  font-size: 0.9rem; /* Ensure text size is proportional */
+  color: #333;
+}
+
+.food-info {
+  margin-top: 5px; /* Add space between location and food info */
+}
+
+.food-icon{
+  margin-left: 4px;
+}
+
+/* Optional Responsive Design */
+@media (max-width: 1024px) {
+  .food-cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .food-cards-grid {
+    grid-template-columns: 1fr; /* One card per row on small screens */
+  }
+}

@@ -1,0 +1,433 @@
+.nav-wrapper {
+  color: #fff;
+  width: 100vw;
+  background-color: #03346e;
+  position: fixed;
+  z-index: 9999;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gradient-background {
+  background: linear-gradient(to right, rgba(169, 166, 165, 0.8), rgba(167, 157, 150, 0.8));
+  position: fixed; /* Make it cover the entire viewport */
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it is behind other content */
+}
+
+.active-link {
+  position: relative;
+  color: #fff; /* Ensure the text is visible against your navbar background */
+}
+
+.active-link::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 2px; /* Adjust thickness of underline */
+  background-color: #fff; /* Color of the underline */
+  bottom: -5px; /* Adjust distance of underline from text */
+  left: 3px;
+  transition: width 0.3s ease; /* Smooth transition effect */
+  justify-content: center;
+  align-items: center;
+}
+.mob-no {
+  border: 2px solid #fff;
+  border-radius: 25px;
+  padding: 5px 15px;
+}
+
+.logo {
+  padding-left: 20px; /* Padding for spacing on larger screens */
+  height: 100%;
+  max-height: 58px;
+  width: auto;
+  object-fit: contain;
+}
+
+.cta {
+  position: relative;
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 100%;
+  height: 35px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #03346e;
+  font-weight: 600;
+}
+
+.cta svg {
+  position: relative;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #03346e;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+/* Button with Icon */
+.Btn-n {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: white;
+  margin-right: 20px; /* Adjusted for smaller screens */
+}
+
+.sign-n {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-n svg {
+  width: 17px;
+}
+
+.sign-n svg path {
+  fill: black;
+}
+
+.text-n {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 400;
+  transition-duration: 0.3s;
+  margin-bottom: 1px;
+}
+
+.Btn-n:hover {
+  background-color: black;
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.Btn-n:hover .sign-n {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+
+.Btn-n:hover .sign-n svg path {
+  fill: white;
+}
+
+.Btn-n:hover .text-n {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+
+.Btn-n:active {
+  transform: translate(2px, 2px);
+}
+
+/* Menu Icon for Mobile */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding-right: 20px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1343px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .lappi-nav{
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 30%; /* Menu takes up 30% of the screen on larger mobile screens */
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    font-size: 1.3rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow effect */
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-align: left;
+    display: flex;
+    align-items: center; /* Ensure icons align with text */
+    gap: 8px; /* Add space between icons and text */
+    color: #000;
+  }
+
+  .nav-links .flex {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-wrapper {
+    height: 60px; /* Reduced navbar height for smaller screens */
+     z-index: 1001;
+  }
+
+  .logo {
+    height: 90px; /* Reduced logo size */
+    padding-left: 15px; /* Adjust padding */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 40%; /* Menu takes up 30% of the screen on smaller screens */
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    font-size: 1rem;
+    transform: translateX(100%);
+  }
+
+  .nav-links.open {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 20px; /* Increase padding for better touch targets */
+    margin: 5px 0; /* Increase space between links */
+    text-align: left;
+    display: flex;
+    align-items: center; /* Ensure icons align with text */
+    gap: 8px; /* Add space between icons and text */
+    color: #000; /* Ensure text and icons are visible */
+  }
+
+  .nav-links .flex {
+    justify-content: flex-start;
+  }
+  /* Small screen adjustments for Sign In button */
+  .cta {
+    margin-right: 20px; /* Reduced margin */
+    padding: 8px 12px; /* Adjust padding */
+    gap: 6px; /* Adjust gap between text and icon */
+  }
+
+  .cta span {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .cta svg {
+    margin-left: 0; /* Remove margin to bring the arrow closer */
+    stroke-width: 1.5;
+  }
+}
+
+@media (max-width: 677px) {
+  .menu-icon {
+    font-size: 22px; /* Adjust menu icon size for very small screens */
+    padding-right: 10px;
+  }
+
+  .nav-links {
+    width: 40%; /* Ensure it takes 30% of the screen width */
+    top: 60px; /* Align with the smaller navbar */
+    padding: 10px; /* Reduced padding for smaller screens */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .nav-links a {
+    padding: 12px 10px; /* Adjust padding */
+    margin: 8px 0; /* Adjust spacing */
+    display: flex;
+    align-items: center; /* Ensure icons align with text */
+    gap: 8px; /* Add space between icons and text */
+    color: #000; /* Ensure text and icons are visible */
+  }
+
+  .cta {
+    margin-right: 10px; /* Further reduced margin */
+    padding: 6px 10px; /* Further adjust padding */
+    gap: 4px; /* Further reduce gap for very small screens */
+  }
+
+  .cta span {
+    font-size: 14px; /* Further adjust font size */
+  }
+
+  .cta svg {
+    stroke-width: 1.5; /* Adjust stroke width */
+  }
+}
+
+@media (max-width: 593px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+
+@media (max-width: 460px) {
+  .cta {
+    margin-right: 5px;
+    padding: 4px 8px;
+    gap: 2px;
+  }
+
+  .cta span {
+    font-size: 12px; /* Slightly reduce font size */
+  }
+
+  .cta svg {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cta {
+    margin-right: 20px; /* Reduced margin for smaller screens */
+    padding: 8px 10px; /* Adjust padding to ensure button stays in one line */
+    /* gap: 2px; Reduce the gap between text and icon */
+  }
+  .nav-wrapper {
+    padding: 10px; /* Add padding to the navbar */
+  }
+  .cta span {
+    font-size: 14px; /* Slightly reduce font size */
+  }
+
+  .cta svg {
+    width: 12px; /* Adjust the size of the SVG */
+    height: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  .nav-links a {
+    margin-bottom: 4px; /* Remove any bottom margin */
+    padding-bottom: 0; /* Remove any bottom padding */
+    margin-top: 2px;
+  }
+
+  
+
+  .nav-links {
+    margin-bottom: 0; /* Remove any bottom margin from the nav links container */
+    width: 60%;
+  }
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* Prevent scrollbar from showing up */
+.overflow-y-auto {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

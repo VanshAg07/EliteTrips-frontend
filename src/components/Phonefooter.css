@@ -1,0 +1,13 @@
+/* styles.css */
+.hide-above-425px {
+  display: flex;  /* Default state: visible */
+}
+
+@media (min-width: 426px) {
+  .hide-above-425px {
+    display: none;  /* Hide for screens larger than 425px */
+  }
+}
+.phone-z {
+  z-index: 999; /* Make sure the footer is on top */
+}

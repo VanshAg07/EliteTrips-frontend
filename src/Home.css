@@ -1,0 +1,74 @@
+.fixed-button-1 {
+    position: fixed;
+   bottom: 7%;
+    right: -20px;
+    width: 8%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.home-wr{
+    overflow-x: hidden;
+    background-color: #ffffe6;
+}
+
+@media (max-width: 1024px) {
+    .fixed-button-1 {
+        right: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fixed-button-1 {
+        width: 10%;
+        right: -10px;
+    }
+    .home-wr{
+        overflow-x: hidden;
+        background-color: #ffffff;
+    }
+}
+
+@media (max-width: 640px) {
+    .fixed-button-1 {
+        width: 13%;
+        right: -10px;
+    }
+}
+
+@media (max-width: 620px) {
+    .fixed-button-1 {
+        width: 15%;
+        right: -10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .fixed-button-1 {
+        width: 20%;
+        right: -10px;
+        bottom: 20%;
+    }
+    .home-wr{
+        overflow-x: hidden;
+        background-color: #ffffff;
+    }
+}
+
+@media (max-width:375px) {
+    .fixed-button-1 {
+        width: 24%;
+        right: -10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .pb-20-425 {
+      padding-bottom: 5rem; /* Equivalent to pb-20 */
+    }
+  
+    .bg-white-425 {
+      background-color: #fff;
+    }
+  }
+  

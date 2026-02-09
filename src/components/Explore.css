@@ -1,0 +1,7 @@
+.custom-dashed-border {
+    border-style: dashed;
+    border-color: white;
+    border-width: 2px;
+    border-spacing: 10px; /* Adjust to increase space between dashes */
+  }
+  
