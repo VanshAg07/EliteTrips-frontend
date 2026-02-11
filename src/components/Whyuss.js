@@ -23,7 +23,7 @@ const WhyTravello = () => {
     {
       title: "24/7 Support",
       description:
-        "Round-the-clock assistance throughout your journey. We're always just a call away, anytime, anywhere.",
+        "Round-the-clock help throughout your journey. We're always just a call away, anytime, anywhere.",
       icon: "🎧",
       color: "from-purple-500 to-pink-400",
       bgColor: "bg-purple-50",
@@ -55,7 +55,7 @@ const WhyTravello = () => {
         <p className="text-center text-gray-600 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
           We make your travel dreams come true with exceptional service and unforgettable experiences
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((reason, index) => (
             <div
@@ -64,12 +64,12 @@ const WhyTravello = () => {
             >
               {/* Gradient overlay on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${reason.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-              
+
               {/* Icon circle */}
               <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${reason.color} flex items-center justify-center text-3xl mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 {reason.icon}
               </div>
-              
+
               {/* Content */}
               <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#03346e] transition-colors duration-300">
                 {reason.title}
@@ -77,7 +77,7 @@ const WhyTravello = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {reason.description}
               </p>
-              
+
               {/* Bottom decorative line */}
               <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${reason.color} group-hover:w-full transition-all duration-500`}></div>
             </div>

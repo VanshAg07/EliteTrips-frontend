@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Helper function to convert Google Drive URL for preview
+// helper function to convert Google Drive URL for preview
 const convertGoogleDriveUrl = (url) => {
   if (!url) return url;
 

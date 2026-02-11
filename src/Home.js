@@ -28,7 +28,7 @@ import PhoneFooter from "./components/PhoneFooter.js";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isLargeMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const isSmallMobile = useMediaQuery({ query: "(max-width: 426px)" });

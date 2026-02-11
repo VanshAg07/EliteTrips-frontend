@@ -53,7 +53,7 @@ const TravelPackages = () => {
   const [mediaType, setMediaType] = useState("video"); // State for media type
   const [isGoogleDriveVideo, setIsGoogleDriveVideo] = useState(false); // State for Google Drive video
 
-  // Helper function to convert Google Drive URL to embeddable format
+  // helper function to convert Google Drive URL to embeddable format
   const convertToGoogleDriveEmbedUrl = (url) => {
     if (!url) return url;
 

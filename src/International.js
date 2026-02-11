@@ -76,7 +76,7 @@ const International = () => {
     }
   };
 
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
 
   const fetchBackgroundImages = async () => {
     const response = await axios.get(
@@ -113,9 +113,9 @@ const International = () => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img 
-                  key={index} 
-                  src={imgUrl} 
+                <img
+                  key={index}
+                  src={imgUrl}
                   alt={`Image ${index}`}
                   referrerPolicy="no-referrer"
                   crossOrigin="anonymous"
@@ -172,12 +172,12 @@ const International = () => {
       </div>
       <div className="justify-center pt-10 items-center flex flex-col w-full relative ">
         <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-center leading-tight sm:text-xl">
-          All Packages
+          Our Packages
         </h1>
         <div className="bg-[#ffff00] h-1 w-14 md:w-20 lg:w-40 mt-2"></div>
         <div>
           <p className=" pt-2 inter-description">
-            Discover Your Dream Journey with Our Best-Selling Travel Packages
+            Discover Our Most Loved Travel Packages
           </p>
         </div>
       </div>

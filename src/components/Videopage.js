@@ -86,9 +86,9 @@ const Videopage = () => {
           onClick={handleGetQuotesClick}
           className="z-50"
         >
-          <button className=" absolute left-14 bottom-36 bg-white text-black md:py-2 md:px-6 md:rounded-full rounded-lg md:text-sm font-bold text-xs p-2">
+          {/* <button className=" absolute left-14 bottom-36 bg-white text-black md:py-2 md:px-6 md:rounded-full rounded-lg md:text-sm font-bold text-xs p-2">
             Travel Now
-          </button>
+          </button> */}
         </div>
 
 

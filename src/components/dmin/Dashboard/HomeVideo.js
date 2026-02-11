@@ -29,12 +29,12 @@ function HomeVideo() {
     }
   };
 
-  // Helper function to convert Google Drive/Photos URL to embeddable format
+  // helper function to convert Google Drive/Photos URL to embeddable format
   const convertToEmbeddableUrl = (url) => {
     // YouTube: Extract video ID and create embed URL
     if (url.includes("youtube.com") || url.includes("youtu.be")) {
       let videoId = "";
-      
+
       if (url.includes("youtube.com/watch?v=")) {
         videoId = url.split("v=")[1]?.split("&")[0];
       } else if (url.includes("youtu.be/")) {
@@ -42,31 +42,31 @@ function HomeVideo() {
       } else if (url.includes("youtube.com/embed/")) {
         videoId = url.split("embed/")[1]?.split("?")[0];
       }
-      
+
       if (videoId) {
         return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1`;
       }
     }
-    
+
     // Google Drive: Convert sharing link to preview format
     if (url.includes("drive.google.com")) {
       let fileId = null;
-      
+
       const fileIdMatch1 = url.match(/\/d\/([^/]+)/);
       const fileIdMatch2 = url.match(/[?&]id=([^&]+)/);
-      
+
       if (fileIdMatch1) {
         fileId = fileIdMatch1[1];
       } else if (fileIdMatch2) {
         fileId = fileIdMatch2[1];
       }
-      
+
       if (fileId) {
         fileId = fileId.split('?')[0];
         return `https://drive.google.com/file/d/${fileId}/preview`;
       }
     }
-    
+
     // Google Photos or direct URL
     return url;
   };
@@ -74,7 +74,7 @@ function HomeVideo() {
   // Create or update video
   const handleAddOrUpdateVideo = async () => {
     const urlToUse = editIndex !== null ? editUrl : newVideoUrl;
-    
+
     if (!urlToUse.trim()) {
       toast.error("Please enter a video URL.");
       return;
@@ -83,7 +83,7 @@ function HomeVideo() {
     setIsLoading(true);
     try {
       const embeddableUrl = convertToEmbeddableUrl(urlToUse);
-      
+
       const response = await axios.post(
         "https://elitetrips-backend.onrender.com/api/home/create-home-page-video",
         { video: [embeddableUrl] }, // Send as array
@@ -147,12 +147,12 @@ function HomeVideo() {
     <div className="container mx-auto p-4 max-w-4xl">
       <ToastContainer />
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Home Page Background Video</h1>
-      
+
       {/* Instructions */}
       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
         <h3 className="font-bold text-blue-800 mb-2">📹 Supported Video Sources:</h3>
         <div className="text-sm text-gray-700 space-y-3">
-          
+
           <div className="bg-white p-3 rounded">
             <strong className="text-green-600">✅ RECOMMENDED: YouTube (Unlisted)</strong>
             <ol className="list-decimal ml-5 mt-1 space-y-1">
@@ -227,20 +227,20 @@ function HomeVideo() {
               {/* Show URL info and type detection */}
               <div className="mb-4 p-3 bg-blue-50 rounded-lg">
                 <p className="text-sm text-gray-700 mb-2">
-                  <strong>Video URL:</strong> 
+                  <strong>Video URL:</strong>
                   <br />
                   <span className="break-all text-xs">{videos[0]}</span>
                 </p>
                 <p className="text-sm text-gray-700">
                   <strong>Type Detected:</strong>{" "}
                   <span className="font-semibold">
-                    {videos[0].includes("youtube.com") || videos[0].includes("youtu.be") 
-                      ? "🎬 YouTube Video" 
+                    {videos[0].includes("youtube.com") || videos[0].includes("youtu.be")
+                      ? "🎬 YouTube Video"
                       : videos[0].includes("drive.google.com")
-                      ? "📁 Google Drive (Preview Only)"
-                      : videos[0].includes("cloudinary.com")
-                      ? "☁️ Cloudinary Video"
-                      : "🎥 Direct Video URL"}
+                        ? "📁 Google Drive (Preview Only)"
+                        : videos[0].includes("cloudinary.com")
+                          ? "☁️ Cloudinary Video"
+                          : "🎥 Direct Video URL"}
                   </span>
                 </p>
                 {(videos[0].includes("youtube.com") || videos[0].includes("youtu.be")) && (
@@ -252,7 +252,7 @@ function HomeVideo() {
                   </p>
                 )}
               </div>
-              
+
               {/* Video Preview */}
               {(videos[0].includes("youtube.com") || videos[0].includes("youtu.be")) ? (
                 // YouTube Preview
@@ -274,9 +274,9 @@ function HomeVideo() {
                 />
               ) : (
                 // Direct Video Preview
-                <video 
-                  src={videos[0]} 
-                  controls 
+                <video
+                  src={videos[0]}
+                  controls
                   className="w-full rounded-lg mb-4"
                   style={{ maxHeight: "400px" }}
                   onError={(e) => {
@@ -287,7 +287,7 @@ function HomeVideo() {
                   Your browser does not support the video tag.
                 </video>
               )}
-              
+
               <div className="flex items-center justify-between mt-4">
                 <div className="flex gap-2">
                   <button

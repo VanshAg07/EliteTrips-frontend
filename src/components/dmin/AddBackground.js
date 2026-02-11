@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// Helper function to convert Google Drive URL to lh3 format for preview
+// helper function to convert Google Drive URL to lh3 format for preview
 const convertGoogleDriveUrl = (url) => {
   if (!url) return '';
 

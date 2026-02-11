@@ -2,40 +2,40 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-// Helper function to convert Google Drive URL to displayable format
+// helper function to convert Google Drive URL to displayable format
 const convertGoogleDriveUrl = (url) => {
   if (!url) return url;
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1];
   }
-  
+
   // Format: https://drive.google.com/uc?id=FILE_ID
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) {
     fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -174,7 +174,7 @@ const AdminPanel = () => {
     setLoading(true);
 
     const formData = new FormData();
-    
+
     // Add Google Drive URLs if using Google Drive
     if (useGoogleDrive) {
       // Filter out empty URLs
@@ -186,7 +186,7 @@ const AdminPanel = () => {
         formData.append("tripBackgroundImgUrl", tripBackgroundImgUrl);
       }
     }
-    
+
     Object.keys(tripData).forEach((key) => {
       if (key === "tripImages") {
         // Only append file images if not using Google Drive
@@ -691,40 +691,40 @@ const AdminPanel = () => {
             ))}
           </div>
           <div>
-          <label className="block text-l font-medium">Sharing Options</label>
-          {tripData.sharing.map((share, index) => (
-            <div key={index}>
-              <select
-                name="title"
-                value={share.title}
-                placeholder="Sharing Type"
-                className="mt-1 block w-full border-gray-300 rounded-md border-2 p-1 mb-2"
-                onChange={(e) => handleSharingChange(e, index, "title")}
-              >
-                <option value="">Select Sharing Type</option>
-                <option value="Double">Double</option>
-                <option value="Triple">Triple</option>
-                <option value="Quad">Quad</option>
-              </select>
-              <input
-                type="number"
-                name="price"
-                value={share.price}
-                placeholder="Price"
-                className="mt-1 block w-full border-gray-300 rounded-md border-2 p-1 mb-2"
-                onChange={(e) => handleSharingChange(e, index, "price")}
-                required
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={addSharingField}
-            className="mt-2 p-1 text-white bg-green-600 rounded"
-          >
-            Add Sharing Options
-          </button>
-        </div>
+            <label className="block text-l font-medium">Sharing Options</label>
+            {tripData.sharing.map((share, index) => (
+              <div key={index}>
+                <select
+                  name="title"
+                  value={share.title}
+                  placeholder="Sharing Type"
+                  className="mt-1 block w-full border-gray-300 rounded-md border-2 p-1 mb-2"
+                  onChange={(e) => handleSharingChange(e, index, "title")}
+                >
+                  <option value="">Select Sharing Type</option>
+                  <option value="Double">Double</option>
+                  <option value="Triple">Triple</option>
+                  <option value="Quad">Quad</option>
+                </select>
+                <input
+                  type="number"
+                  name="price"
+                  value={share.price}
+                  placeholder="Price"
+                  className="mt-1 block w-full border-gray-300 rounded-md border-2 p-1 mb-2"
+                  onChange={(e) => handleSharingChange(e, index, "price")}
+                  required
+                />
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={addSharingField}
+              className="mt-2 p-1 text-white bg-green-600 rounded"
+            >
+              Add Sharing Options
+            </button>
+          </div>
           <div>
             <label className="block text-l font-medium">
               Pick and Drop (eg. Guwahati - Guwahati)
@@ -869,7 +869,7 @@ const AdminPanel = () => {
           </div>
           <div>
             <label className="block text-l font-medium">
-              Upload PDF (i.e. Itinerary) - Optional<br/>
+              Upload PDF (i.e. Itinerary) - Optional<br />
               <span className="text-gray-500 text-sm">Note: PDF size max 60mb</span>
             </label>
             <input
@@ -899,9 +899,8 @@ const AdminPanel = () => {
         </div>
         <button
           type="submit"
-          className={`w-full py-2 px-4 bg-blue-600 text-white font-bold rounded ${
-            loading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className={`w-full py-2 px-4 bg-blue-600 text-white font-bold rounded ${loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           disabled={loading}
         >
           {loading ? (

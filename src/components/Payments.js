@@ -9,7 +9,7 @@ import MainFooter from "./Footer/MainFooter";
 
 const Payments = () => {
   const [paymentImages, setPaymentImages] = useState([]);
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
 
   const fetchPayment = async () => {
     try {

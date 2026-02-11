@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import axios from "axios";
 
-// Helper function to convert Google Drive URL to displayable format
+// helper function to convert Google Drive URL to displayable format
 const convertGoogleDriveUrl = (url) => {
   if (!url) return url;
   if (url.includes('lh3.googleusercontent.com')) return url;
-  
+
   let fileId = null;
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) fileId = fileMatch[1];
-  
+
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) fileId = openMatch[1];
-  
+
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) fileId = ucMatch[1];
-  
+
   if (fileId) return `https://lh3.googleusercontent.com/d/${fileId}`;
   return url;
 };
@@ -25,14 +25,14 @@ const AddInternPackage = () => {
   const [states, setStates] = useState([]);
   const [selectedState, setSelectedState] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
   // Google Drive states
   const [useGoogleDrive, setUseGoogleDrive] = useState(false);
   const [tripImagesUrls, setTripImagesUrls] = useState([""]);
   const [tripBackgroundImgUrl, setTripBackgroundImgUrl] = useState("");
   const [tripImagesPreview, setTripImagesPreview] = useState([]);
   const [backgroundImgPreview, setBackgroundImgPreview] = useState("");
-  
+
   const [tripDetails, setTripDetails] = useState({
     tripName: "",
     tripPrice: "",
@@ -119,7 +119,7 @@ const AddInternPackage = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    
+
     // Add Google Drive URLs if using Google Drive
     if (useGoogleDrive) {
       const validUrls = tripImagesUrls.filter(url => url.trim() !== '');
@@ -130,7 +130,7 @@ const AddInternPackage = () => {
         formData.append("tripBackgroundImgUrl", tripBackgroundImgUrl);
       }
     }
-    
+
     Object.keys(tripDetails).forEach((key) => {
       if (key === "tripImages") {
         // Only append file images if not using Google Drive
@@ -1021,9 +1021,8 @@ const AddInternPackage = () => {
         </div>
         <button
           type="submit"
-          className={`bg-blue-500 text-white py-2 px-4 rounded ${
-            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className={`bg-blue-500 text-white py-2 px-4 rounded ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           disabled={isSubmitting} // Disable button while submitting
         >
           {isSubmitting ? "Submitting..." : "Submit Package"}

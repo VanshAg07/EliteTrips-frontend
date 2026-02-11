@@ -14,14 +14,9 @@ const FooterSection = () => {
               About Us
             </h2>
             <p className="leading-relaxed text-[#fff] text-sm md:text-base lg:text-lg">
-              EliteTrips specializes in Travel &
-              Transport services, exclusively for the academic sector. We
-              arrange educational & fun tours for students all over India,
-              providing insights on history, geography, and culture. Our
-              services extend to school tours, college tours, corporate tours,
-              and family trips across India. With years of experience, we ensure
-              quality, authenticity, and exceptional service. We believe in
-              "Service with Quality & Smile."
+              EliteTrips is a trusted specialist in Travel & Transport services exclusively for the academic sector. We curate educational and fun-filled tours for students across India, offering meaningful insights into history, geography, and culture.
+
+              Our expertise spans school tours, college tours, corporate travel, and family trips to destinations nationwide. Backed by years of industry experience, we are committed to delivering quality, authenticity, and exceptional service — driven by our belief in “Service with Quality & a Smile."
             </p>
           </div>
 
@@ -33,34 +28,42 @@ const FooterSection = () => {
             <ul className="text-[#fff] space-y-2 text-sm md:text-base lg:text-lg">
               <li>
                 <Link
-                  to="/Privcy"
+                  to="/National"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
-                  Privacy Policy
+                  National
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/Cancellation"
+                  to="/International"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
-                  Cancellation Policy
+                  International
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/Termcondition"
+                  to="/Honeymoon"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
-                  Terms & Conditions
+                  Honeymoon
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/Disclaimer"
+                  to="/Contact"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
-                  Disclaimer
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Gallery"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Gallery
                 </Link>
               </li>
               <li>

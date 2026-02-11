@@ -15,9 +15,8 @@ const Disclaimer = () => {
             DISCLAIMER
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-            The information provided on www.EliteTrips.com is for general informational purposes only.
-            Welcome to www.EliteTrips.com The terms and conditions of your use of this Site are described below.
-            These terms and conditions may be updated or changed without any notice to you.
+           The information available on www.EliteTrips.com
+ is provided for general informational purposes only. By accessing and using this website, you agree to comply with the terms and conditions outlined below. EliteTrips reserves the right to update, modify, or change these terms at any time without prior notice.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mt-4">
             The website, www.EliteTrips.com is developed, owned and operated by EliteTripsIndia Pvt.Ltd having

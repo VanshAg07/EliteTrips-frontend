@@ -59,7 +59,7 @@ const Forms = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center py-4 md:py-8">
       <h1 className="text-center md:text-2xl text-xl lg:text-4xl font-bold mb-4">
-        Need Assistance
+        Need assistance
       </h1>
       <div className="flex items-center justify-center px-4 flex-1 ">
         <div className="shadow-[0_10px_15px_rgba(0,0,0,0.5)] rounded-lg flex flex-col lg:flex-row items-stretch justify-center w-full max-w-[90vw] lg:max-w-[80vw] h-auto lg:h-full lg:max-h-[75vh]">
@@ -68,7 +68,7 @@ const Forms = () => {
           </div>
           <div className="bg-[#e1feff] rounded-lg shadow-lg p-4 md:p-6 w-full lg:w-[40vw] flex-shrink-0 flex flex-col justify-center overflow-y-auto">
             <h2 className="text-cyan-500 text-lg font-bold mb-1">
-              Need Assistance?
+              Need assistance?
             </h2>
             <h3 className="text-base font-semibold mb-4">
               Contact us now!

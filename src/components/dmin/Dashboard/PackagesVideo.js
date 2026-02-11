@@ -1,78 +1,78 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// Helper function to convert Google Drive URL to lh3 format for images
+// helper function to convert Google Drive URL to lh3 format for images
 const convertGoogleDriveUrl = (url) => {
   if (!url) return '';
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1];
   }
-  
+
   // Format: https://drive.google.com/uc?id=FILE_ID
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) {
     fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
-// Helper function to convert Google Drive URL to direct video URL
+// helper function to convert Google Drive URL to direct video URL
 const convertGoogleDriveVideoUrl = (url) => {
   if (!url) return '';
-  
+
   // Already a direct URL
   if (url.includes('drive.google.com/uc?export=download')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1];
   }
-  
+
   // Format: https://drive.google.com/uc?id=FILE_ID
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) {
     fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     // Use export=download for video streaming
     return `https://drive.google.com/uc?export=download&id=${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -81,7 +81,7 @@ function PackagesVideo() {
   const [formData, setFormData] = useState({ type: "", backgroundVideo: "" });
   const [editing, setEditing] = useState(null);
   const [file, setFile] = useState(null);
-  
+
   // New state for media type and Google Drive URL
   const [mediaType, setMediaType] = useState('video'); // 'video' or 'image'
   const [useGoogleDrive, setUseGoogleDrive] = useState(false);
@@ -117,7 +117,7 @@ function PackagesVideo() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       if (useGoogleDrive) {
         // Send Google Drive URL as JSON
@@ -125,13 +125,13 @@ function PackagesVideo() {
           type: formData.type,
           mediaType: mediaType,
         };
-        
+
         if (mediaType === 'image' && imageUrl) {
           jsonData.imageUrl = imageUrl;
         } else if (mediaType === 'video' && videoUrl) {
           jsonData.videoUrl = videoUrl;
         }
-        
+
         if (editing) {
           await axios.put(
             `https://elitetrips-backend.onrender.com/api/home/video-page/${editing}`,
@@ -145,7 +145,7 @@ function PackagesVideo() {
         const data = new FormData();
         data.append("type", formData.type);
         data.append("mediaType", mediaType);
-        
+
         if (mediaType === 'video') {
           data.append("backgroundVideo", file);
         } else {
@@ -219,7 +219,7 @@ function PackagesVideo() {
             <option value="Honeymoon">Honeymoon</option>
           </select>
         </div>
-        
+
         {/* Toggle for Google Drive URL mode */}
         <div className="flex items-center space-x-4">
           <label className="flex items-center cursor-pointer">
@@ -361,7 +361,7 @@ function PackagesVideo() {
                 </label>
               </div>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 {mediaType === 'video' ? 'Background Video' : 'Background Image'}
@@ -377,7 +377,7 @@ function PackagesVideo() {
             </div>
           </>
         )}
-        
+
         <button
           type="submit"
           className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
@@ -396,7 +396,7 @@ function PackagesVideo() {
             <p className="text-sm text-gray-500 mb-2">
               Type: {videoPage.mediaType === 'image' ? 'Image' : 'Video'}
             </p>
-            
+
             {videoPage.mediaType === 'image' && videoPage.backgroundImage ? (
               <img
                 src={videoPage.backgroundImage}
@@ -417,7 +417,7 @@ function PackagesVideo() {
             ) : (
               <p className="text-gray-400">No media available</p>
             )}
-            
+
             <div className="flex justify-end mt-4 space-x-2">
               <button
                 onClick={() => handleEdit(videoPage)}

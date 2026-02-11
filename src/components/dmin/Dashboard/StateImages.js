@@ -1,40 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// Helper function to convert Google Drive URL to lh3 format for preview
+// helper function to convert Google Drive URL to lh3 format for preview
 const convertGoogleDriveUrl = (url) => {
   if (!url) return '';
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1];
   }
-  
+
   // Format: https://drive.google.com/uc?id=FILE_ID
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) {
     fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -46,7 +46,7 @@ function StateImages() {
   });
   const [signInList, setSignInList] = useState([]);
   const [selectedSignIn, setSelectedSignIn] = useState(null);
-  
+
   // New state for Google Drive URL mode
   const [useGoogleDrive, setUseGoogleDrive] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
@@ -84,7 +84,7 @@ function StateImages() {
   const createSignIn = async () => {
     try {
       let response;
-      
+
       if (useGoogleDrive && imageUrl) {
         // Send URL directly as JSON
         response = await axios.post(
@@ -108,7 +108,7 @@ function StateImages() {
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       }
-      
+
       setSignInList((prevList) => [...prevList, response.data]);
       setSignInData({ stateName: "", type: "", image: null });
       setImageUrl('');
@@ -120,7 +120,7 @@ function StateImages() {
   const updateSignIn = async () => {
     try {
       let response;
-      
+
       if (useGoogleDrive && imageUrl) {
         // Send URL directly as JSON
         response = await axios.put(
@@ -144,7 +144,7 @@ function StateImages() {
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       }
-      
+
       setSignInList((prevList) =>
         prevList.map((item) =>
           item._id === response.data._id ? response.data : item
@@ -177,7 +177,7 @@ function StateImages() {
     setImageUrl('');
   };
 
-  // Helper to get displayable image URL
+  // helper to get displayable image URL
   const getImageUrl = (img) => {
     if (!img) return '';
     if (img.startsWith('http')) {
@@ -219,7 +219,7 @@ function StateImages() {
           <option value="International">International</option>
           <option value="Honeymoon">Honeymoon</option>
         </select>
-        
+
         {/* Toggle for upload mode */}
         <div className="flex items-center space-x-4">
           <label className="flex items-center cursor-pointer">

@@ -4,6 +4,7 @@ import Nav from "../Nav";
 import "../Places.css";
 import { useRef } from "react";
 import Whyuss from "../Whyuss";
+import Forms from "../../components/Forms.js";
 import Review from "../Review";
 import Dropnav from "../../components/Dropnav";
 import cont from "../../img/cont-button.json";
@@ -34,7 +35,7 @@ const InernationalPlaces = () => {
   // console.log(name);
   const [packages, setPackages] = useState([]);
 
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
   const [nationalImages, setNationalImages] = useState([]);
   const stateName = name;
   useEffect(() => {
@@ -173,7 +174,7 @@ const InernationalPlaces = () => {
 
         <div className="">
           <div className="pt-72">
-          {/* {isMobile ? (
+            {/* {isMobile ? (
             <div className="pl-[10px] pr-[10px] relative">
               <MobileHomeGallery />
             </div>
@@ -186,95 +187,7 @@ const InernationalPlaces = () => {
           <Whyuss />
           {/* <Review /> */}
           {/* <Guide /> */}
-          <h1 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-8">
-            Contact Form
-          </h1>
-          <div className=" flex items-center pb-14 justify-center px-4">
-            {/* Outer div with 80% width */}
-            <div className="bg-[#e1feff] rounded-lg shadow-md shadow-black p-6 md:p-8 w-full max-w-4xl lg:w-4/5">
-              {/* Inner form container with 60% width */}
-              <div className="w-full md:w-3/5 mx-auto">
-                <h2 className="text-cyan-500 text-lg font-bold mb-1">
-                  EliteTrips Calling?
-                </h2>
-                <h3 className="text-base font-semibold mb-6">
-                  Allow Us to Call You Back!
-                </h3>
-                <form>
-                  {/* Name */}
-                  <div className="mb-4">
-                    <label
-                      className="block text-sm font-medium mb-1"
-                      htmlFor="name"
-                    >
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      placeholder="e.g. John Smith"
-                      className="w-full border border-gray-300 p-2 rounded-md"
-                    />
-                  </div>
 
-                  {/* Phone Number */}
-                  <div className="mb-4">
-                    <label
-                      className="block text-sm font-medium mb-1"
-                      htmlFor="phone"
-                    >
-                      Phone Number *
-                    </label>
-                    <input
-                      type="text"
-                      id="phone"
-                      placeholder="Enter your 10 digit number"
-                      className="w-full border border-gray-300 p-2 rounded-md"
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div className="mb-4">
-                    <label
-                      className="block text-sm font-medium mb-1"
-                      htmlFor="email"
-                    >
-                      Email ID *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="john@example.com"
-                      className="w-full border border-gray-300 p-2 rounded-md"
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div className="mb-6">
-                    <label
-                      className="block text-sm font-medium mb-1"
-                      htmlFor="message"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      placeholder="Any Message"
-                      className="w-full border border-gray-300 p-2 rounded-md"
-                    ></textarea>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full bg-cyan-500 text-white font-bold py-2 rounded-md transition duration-300"
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <MainFooter />

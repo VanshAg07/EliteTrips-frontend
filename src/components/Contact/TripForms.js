@@ -3,7 +3,7 @@ import React from "react";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
 
 function TripForms() {
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",

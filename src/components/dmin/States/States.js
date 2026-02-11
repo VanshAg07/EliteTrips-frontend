@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// Helper function to convert Google Drive URL for preview
+// helper function to convert Google Drive URL for preview
 const convertGoogleDriveUrl = (url) => {
   if (!url || typeof url !== 'string') return url;
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com') || url.includes('googleusercontent.com')) {
     return url;
   }
-  
+
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileIdMatch = url.match(/\/d\/([^/]+)/);
   if (fileIdMatch) {
     fileId = fileIdMatch[1].split('?')[0];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID or uc?id=
   if (!fileId) {
     const ucMatch = url.match(/[?&]id=([^&]+)/);
     if (ucMatch) fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -37,7 +37,7 @@ const States = () => {
   const [nationalStates, setNationalStates] = useState([]);
   const [honeymoonStates, setHoneymoonStates] = useState([]);
   const [offerStates, setOfferStates] = useState([]);
-  
+
   // New state forms with URL support
   const [newInternationalState, setNewInternationalState] = useState({
     name: "",
@@ -103,16 +103,16 @@ const States = () => {
       alert("Please upload an image file");
       return;
     }
-    
+
     const formData = new FormData();
     formData.append("stateName", newInternationalState.name);
-    
+
     if (!newInternationalState.useFileUpload && newInternationalState.imageUrl) {
       formData.append("stateImageUrl", newInternationalState.imageUrl);
     } else if (newInternationalState.image) {
       formData.append("stateImage", newInternationalState.image);
     }
-    
+
     try {
       const response = await axios.post(
         `https://elitetrips-backend.onrender.com/api/admin/international-state`,
@@ -146,16 +146,16 @@ const States = () => {
       alert("Please upload an image file");
       return;
     }
-    
+
     const formData = new FormData();
     formData.append("stateName", newOffer.name);
-    
+
     if (!newOffer.useFileUpload && newOffer.imageUrl) {
       formData.append("stateImageUrl", newOffer.imageUrl);
     } else if (newOffer.image) {
       formData.append("stateImage", newOffer.image);
     }
-    
+
     try {
       const response = await axios.post(
         `https://elitetrips-backend.onrender.com/api/offer/states`,
@@ -189,16 +189,16 @@ const States = () => {
       alert("Please upload an image file");
       return;
     }
-    
+
     const formData = new FormData();
     formData.append("stateName", newNationalState.name);
-    
+
     if (!newNationalState.useFileUpload && newNationalState.imageUrl) {
       formData.append("stateImageUrl", newNationalState.imageUrl);
     } else if (newNationalState.image) {
       formData.append("stateImage", newNationalState.image);
     }
-    
+
     try {
       const response = await axios.post(
         `https://elitetrips-backend.onrender.com/api/trip/state`,
@@ -218,7 +218,7 @@ const States = () => {
       console.error(`Error adding national state`, error);
     }
   };
-  
+
   const addHoneymoonState = async () => {
     if (!newHoneymoonState.name) {
       alert("Please enter a state name");
@@ -232,16 +232,16 @@ const States = () => {
       alert("Please upload an image file");
       return;
     }
-    
+
     const formData = new FormData();
     formData.append("stateName", newHoneymoonState.name);
-    
+
     if (!newHoneymoonState.useFileUpload && newHoneymoonState.imageUrl) {
       formData.append("stateImageUrl", newHoneymoonState.imageUrl);
     } else if (newHoneymoonState.image) {
       formData.append("stateImage", newHoneymoonState.image);
     }
-    
+
     try {
       const response = await axios.post(
         `https://elitetrips-backend.onrender.com/api/honeymoon/states`,
@@ -298,7 +298,7 @@ const States = () => {
       console.error(`Error deleting international state`, error);
     }
   };
-  
+
   // Edit state management
   const [editModal, setEditModal] = useState(false);
   const [editingState, setEditingState] = useState({
@@ -307,9 +307,9 @@ const States = () => {
     imageUrl: "",
     category: "", // 'national', 'international', 'honeymoon', 'offer'
   });
-  
+
   const openEditModal = (state, category) => {
-    const currentImageUrl = state.stateImage && state.stateImage[0] 
+    const currentImageUrl = state.stateImage && state.stateImage[0]
       ? (state.stateImage[0].startsWith('http') ? state.stateImage[0] : '')
       : '';
     setEditingState({
@@ -320,12 +320,12 @@ const States = () => {
     });
     setEditModal(true);
   };
-  
+
   const closeEditModal = () => {
     setEditModal(false);
     setEditingState({ id: "", name: "", imageUrl: "", category: "" });
   };
-  
+
   const updateState = async () => {
     if (!editingState.name) {
       alert("Please enter a state name");
@@ -335,11 +335,11 @@ const States = () => {
       alert("Please provide a Google Drive image URL");
       return;
     }
-    
+
     const formData = new FormData();
     formData.append("stateName", editingState.name);
     formData.append("stateImageUrl", editingState.imageUrl);
-    
+
     let apiUrl = "";
     switch (editingState.category) {
       case "national":
@@ -358,7 +358,7 @@ const States = () => {
         alert("Invalid category");
         return;
     }
-    
+
     try {
       await axios.put(apiUrl, formData, {
         headers: { "Content-Type": "multipart/form-data" },
@@ -372,7 +372,7 @@ const States = () => {
       alert("Error updating state");
     }
   };
-  
+
   const handleImageChange = (e, setState) => {
     const file = e.target.files[0];
     if (file) {
@@ -384,7 +384,7 @@ const States = () => {
       <h1 className="text-3xl font-extrabold mb-8 text-center text-blue-600">
         Manage States
       </h1>
-      
+
       {/* Info Box */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
         <h3 className="font-semibold text-blue-800 mb-2">📌 How to Use Google Drive Images:</h3>
@@ -396,13 +396,13 @@ const States = () => {
           <li>Format: <code className="bg-blue-100 px-1 rounded">https://drive.google.com/file/d/FILE_ID/view</code></li>
         </ol>
       </div>
-      
+
       {/* Edit Modal */}
       {editModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl p-6 w-full max-w-md mx-4 shadow-2xl">
             <h2 className="text-xl font-bold mb-4 text-gray-800">Edit State</h2>
-            
+
             <div className="mb-4">
               <label className="block text-sm font-medium mb-2 text-gray-700">State Name:</label>
               <input
@@ -412,7 +412,7 @@ const States = () => {
                 className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
-            
+
             <div className="mb-4">
               <label className="block text-sm font-medium mb-2 text-gray-700">Google Drive Image URL:</label>
               <input
@@ -423,13 +423,13 @@ const States = () => {
                 placeholder="https://drive.google.com/file/d/FILE_ID/view"
               />
             </div>
-            
+
             {editingState.imageUrl && (
               <div className="mb-4 bg-gray-50 p-3 rounded border">
                 <p className="text-xs text-gray-600 mb-2 font-semibold">Preview:</p>
-                <img 
+                <img
                   src={convertGoogleDriveUrl(editingState.imageUrl)}
-                  alt="Preview" 
+                  alt="Preview"
                   className="w-full h-40 object-cover rounded"
                   referrerPolicy="no-referrer"
                   crossOrigin="anonymous"
@@ -439,7 +439,7 @@ const States = () => {
                 />
               </div>
             )}
-            
+
             <div className="flex gap-3">
               <button
                 onClick={updateState}
@@ -457,7 +457,7 @@ const States = () => {
           </div>
         </div>
       )}
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* State Category Cards */}
 
@@ -474,7 +474,7 @@ const States = () => {
             className="border border-gray-300 rounded-lg p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
-          
+
           {/* Toggle between URL and File Upload */}
           <label className="flex items-center space-x-2 cursor-pointer mb-3">
             <input
@@ -485,7 +485,7 @@ const States = () => {
             />
             <span className="text-sm">Use file upload instead</span>
           </label>
-          
+
           {!newNationalState.useFileUpload ? (
             <>
               <input
@@ -498,9 +498,9 @@ const States = () => {
               {newNationalState.imageUrl && (
                 <div className="mb-3 bg-gray-50 p-2 rounded border">
                   <p className="text-xs text-gray-600 mb-1">Preview:</p>
-                  <img 
+                  <img
                     src={convertGoogleDriveUrl(newNationalState.imageUrl)}
-                    alt="Preview" 
+                    alt="Preview"
                     className="w-full h-24 object-cover rounded"
                     referrerPolicy="no-referrer"
                     crossOrigin="anonymous"
@@ -518,7 +518,7 @@ const States = () => {
               className="border border-gray-300 rounded-lg p-3 w-full mb-4 text-sm"
             />
           )}
-          
+
           <button
             onClick={addNationalState}
             className="bg-blue-500 text-white font-medium rounded-lg p-3 mb-4 w-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
@@ -535,9 +535,9 @@ const States = () => {
                 >
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
-                      <img 
+                      <img
                         src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
-                        alt={state.stateName} 
+                        alt={state.stateName}
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
                         crossOrigin="anonymous"
@@ -566,7 +566,7 @@ const States = () => {
             )}
           </ul>
         </div>
-        
+
         {/* INTERNATIONAL STATE CARD */}
         <div className="bg-white shadow-md rounded-xl p-6 border border-gray-200">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">
@@ -580,7 +580,7 @@ const States = () => {
             className="border border-gray-300 rounded-lg p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
-          
+
           {/* Toggle between URL and File Upload */}
           <label className="flex items-center space-x-2 cursor-pointer mb-3">
             <input
@@ -591,7 +591,7 @@ const States = () => {
             />
             <span className="text-sm">Use file upload instead</span>
           </label>
-          
+
           {!newInternationalState.useFileUpload ? (
             <>
               <input
@@ -604,9 +604,9 @@ const States = () => {
               {newInternationalState.imageUrl && (
                 <div className="mb-3 bg-gray-50 p-2 rounded border">
                   <p className="text-xs text-gray-600 mb-1">Preview:</p>
-                  <img 
+                  <img
                     src={convertGoogleDriveUrl(newInternationalState.imageUrl)}
-                    alt="Preview" 
+                    alt="Preview"
                     className="w-full h-24 object-cover rounded"
                     referrerPolicy="no-referrer"
                     crossOrigin="anonymous"
@@ -624,7 +624,7 @@ const States = () => {
               className="border border-gray-300 rounded-lg p-3 w-full mb-4 text-sm"
             />
           )}
-          
+
           <button
             onClick={addInternationalState}
             className="bg-blue-500 text-white font-medium rounded-lg p-3 mb-4 w-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
@@ -641,9 +641,9 @@ const States = () => {
                 >
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
-                      <img 
+                      <img
                         src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
-                        alt={state.stateName} 
+                        alt={state.stateName}
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
                         crossOrigin="anonymous"
@@ -672,7 +672,7 @@ const States = () => {
             )}
           </ul>
         </div>
-        
+
         {/* HONEYMOON STATE CARD */}
         <div className="bg-white shadow-md rounded-xl p-6 border border-gray-200">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">
@@ -686,7 +686,7 @@ const States = () => {
             className="border border-gray-300 rounded-lg p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
-          
+
           {/* Toggle between URL and File Upload */}
           <label className="flex items-center space-x-2 cursor-pointer mb-3">
             <input
@@ -697,7 +697,7 @@ const States = () => {
             />
             <span className="text-sm">Use file upload instead</span>
           </label>
-          
+
           {!newHoneymoonState.useFileUpload ? (
             <>
               <input
@@ -710,9 +710,9 @@ const States = () => {
               {newHoneymoonState.imageUrl && (
                 <div className="mb-3 bg-gray-50 p-2 rounded border">
                   <p className="text-xs text-gray-600 mb-1">Preview:</p>
-                  <img 
+                  <img
                     src={convertGoogleDriveUrl(newHoneymoonState.imageUrl)}
-                    alt="Preview" 
+                    alt="Preview"
                     className="w-full h-24 object-cover rounded"
                     referrerPolicy="no-referrer"
                     crossOrigin="anonymous"
@@ -730,7 +730,7 @@ const States = () => {
               className="border border-gray-300 rounded-lg p-3 w-full mb-4 text-sm"
             />
           )}
-          
+
           <button
             onClick={addHoneymoonState}
             className="bg-blue-500 text-white font-medium rounded-lg p-3 mb-4 w-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
@@ -747,9 +747,9 @@ const States = () => {
                 >
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
-                      <img 
+                      <img
                         src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
-                        alt={state.stateName} 
+                        alt={state.stateName}
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
                         crossOrigin="anonymous"
@@ -778,7 +778,7 @@ const States = () => {
             )}
           </ul>
         </div>
-        
+
         {/* OFFERS STATE CARD */}
         <div className="bg-white shadow-md rounded-xl p-6 border border-gray-200">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">
@@ -792,7 +792,7 @@ const States = () => {
             className="border border-gray-300 rounded-lg p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
-          
+
           {/* Toggle between URL and File Upload */}
           <label className="flex items-center space-x-2 cursor-pointer mb-3">
             <input
@@ -803,7 +803,7 @@ const States = () => {
             />
             <span className="text-sm">Use file upload instead</span>
           </label>
-          
+
           {!newOffer.useFileUpload ? (
             <>
               <input
@@ -816,9 +816,9 @@ const States = () => {
               {newOffer.imageUrl && (
                 <div className="mb-3 bg-gray-50 p-2 rounded border">
                   <p className="text-xs text-gray-600 mb-1">Preview:</p>
-                  <img 
+                  <img
                     src={convertGoogleDriveUrl(newOffer.imageUrl)}
-                    alt="Preview" 
+                    alt="Preview"
                     className="w-full h-24 object-cover rounded"
                     referrerPolicy="no-referrer"
                     crossOrigin="anonymous"
@@ -836,7 +836,7 @@ const States = () => {
               className="border border-gray-300 rounded-lg p-3 w-full mb-4 text-sm"
             />
           )}
-          
+
           <button
             onClick={addOfferState}
             className="bg-blue-500 text-white font-medium rounded-lg p-3 mb-4 w-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
@@ -853,9 +853,9 @@ const States = () => {
                 >
                   <div className="flex items-center gap-2">
                     {state.stateImage && state.stateImage[0] && (
-                      <img 
+                      <img
                         src={state.stateImage[0].startsWith('http') ? state.stateImage[0] : `https://elitetrips-backend.onrender.com/upload/${state.stateImage[0]}`}
-                        alt={state.stateName} 
+                        alt={state.stateName}
                         className="w-8 h-8 object-cover rounded"
                         referrerPolicy="no-referrer"
                         crossOrigin="anonymous"

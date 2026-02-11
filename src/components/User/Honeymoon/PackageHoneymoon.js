@@ -20,7 +20,7 @@ import TripForms from "../../Contact/TripForms";
 import QuotePopup from "../../../QuotePopup";
 import { FaShareFromSquare } from "react-icons/fa6";
 const PackageHoneymoon = () => {
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("overview");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -38,26 +38,26 @@ const PackageHoneymoon = () => {
     }
   };
 
-    // Handle sharing
-    const handleShare = () => {
-      const shareLink = window.location.href; // Get current URL of the page
-      if (navigator.share) {
-        // Native sharing on mobile browsers
-        navigator
-          .share({
-            title: "Trip Itinerary",
-            url: shareLink,
-          })
-          .catch((error) => console.error("Error sharing:", error));
-      } else {
-        // Fallback for desktop browsers that don't support the Share API
-        navigator.clipboard.writeText(shareLink).then(() => {
-          alert(
-            "Link copied to clipboard! You can now share it on your social platform."
-          );
-        });
-      }
-    };
+  // Handle sharing
+  const handleShare = () => {
+    const shareLink = window.location.href; // Get current URL of the page
+    if (navigator.share) {
+      // Native sharing on mobile browsers
+      navigator
+        .share({
+          title: "Trip Itinerary",
+          url: shareLink,
+        })
+        .catch((error) => console.error("Error sharing:", error));
+    } else {
+      // Fallback for desktop browsers that don't support the Share API
+      navigator.clipboard.writeText(shareLink).then(() => {
+        alert(
+          "Link copied to clipboard! You can now share it on your social platform."
+        );
+      });
+    }
+  };
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
@@ -89,7 +89,7 @@ const PackageHoneymoon = () => {
     };
     fetchTripDetails();
   }, [name, tripName]);
-  const handleDatesAndCostingClick = () => {};
+  const handleDatesAndCostingClick = () => { };
   const [isQuotePopupVisible, setQuotePopupVisible] = useState(false);
 
   const handleGetQuotesClick = () => {
@@ -102,44 +102,44 @@ const PackageHoneymoon = () => {
   };
   return (
     <div>
-        {isQuotePopupVisible && <QuotePopup onClose={closeQuotePopup} />}
+      {isQuotePopupVisible && <QuotePopup onClose={closeQuotePopup} />}
 
       <Nav />
       <Dropnav />
       <div className="relative">
-          <img
-            src={trips.tripBackgroundImg}
-            alt="Descriptive Alt Text"
-            className="md:h-screen w-full"
-            referrerPolicy="no-referrer"
-            crossOrigin="anonymous"
-          />
-          {trips.pdf && (
-            <>
-              <button
-                className="absolute rounded-3xl md:bottom-28 bottom-5 left-1/2 transform -translate-x-1/2 
+        <img
+          src={trips.tripBackgroundImg}
+          alt="Descriptive Alt Text"
+          className="md:h-screen w-full"
+          referrerPolicy="no-referrer"
+          crossOrigin="anonymous"
+        />
+        {trips.pdf && (
+          <>
+            <button
+              className="absolute rounded-3xl md:bottom-28 bottom-5 left-1/2 transform -translate-x-1/2 
                  flex items-center justify-center 
                  text-sm sm:text-base md:text-lg lg:text-xl 
                  bg-[#fee60b] text-black p-2 sm:p-3 md:p-4 lg:p-3 
                  transition-all duration-300"
-                onClick={handleDownload}
-              >
-                <FaFileDownload className="mr-2" /> {/* Updated icon */}
-                <span>Download Itinerary</span>
-              </button>
+              onClick={handleDownload}
+            >
+              <FaFileDownload className="mr-2" /> {/* Updated icon */}
+              <span>Download Itinerary</span>
+            </button>
 
-              <button
-                className="absolute sh-btn rounded-3xl md:bottom-28 bottom-5 left-1/2 transform 
+            <button
+              className="absolute sh-btn rounded-3xl md:bottom-28 bottom-5 left-1/2 transform 
     translate-x-28 flex items-center justify-center ml-3 text-sm sm:text-base md:text-lg lg:text-3xl 
      text-white p-2 sm:p-3 md:p-4 lg:p-3 
     transition-all duration-300"
-                onClick={handleShare}
-              >
-                <FaShareFromSquare className="mr-2" />
-              </button>
-            </>
-          )}
-        </div>
+              onClick={handleShare}
+            >
+              <FaShareFromSquare className="mr-2" />
+            </button>
+          </>
+        )}
+      </div>
 
       <div className="flex w-[95%] justify-center mb-16 m-2">
         {/* Main div responsive */}
@@ -183,19 +183,19 @@ const PackageHoneymoon = () => {
                     {trips && trips.tripDuration}
                   </span>
                 </div>
-                
+
               </div>
               <div
-                  className="flex flex-row cursor-pointer w-auto items-center gap-5 bg-gray-700 rounded-lg border-2 p-4 inline-flex"
-                  onClick={handleShare} // Added the same onClick handler as the button
-                >
-                  <FaShareFromSquare className="text-white" />
-                  <div className="flex flex-col">
-                    <span className="text-white text-sm md:text-base">
-                      Share Itinerary
-                    </span>
-                  </div>
+                className="flex flex-row cursor-pointer w-auto items-center gap-5 bg-gray-700 rounded-lg border-2 p-4 inline-flex"
+                onClick={handleShare} // Added the same onClick handler as the button
+              >
+                <FaShareFromSquare className="text-white" />
+                <div className="flex flex-col">
+                  <span className="text-white text-sm md:text-base">
+                    Share Itinerary
+                  </span>
                 </div>
+              </div>
             </div>
             {/* Navigation section */}
             <div className="mt-10 mb-5">
@@ -268,8 +268,8 @@ const PackageHoneymoon = () => {
               </p>
 
               {trips &&
-              trips.tripItinerary &&
-              trips.tripItinerary.length > 0 ? (
+                trips.tripItinerary &&
+                trips.tripItinerary.length > 0 ? (
                 trips.tripItinerary.map((itineraryItem, index) => (
                   <div
                     className="mb-5 cursor-pointer bg-blue-100 p-3 rounded-lg shadow-md"
@@ -329,8 +329,8 @@ const PackageHoneymoon = () => {
               </h1>
               <ul className="list-none p-0 m-0 rounded-lg">
                 {trips &&
-                trips.tripInclusions &&
-                trips.tripInclusions.length > 0 ? (
+                  trips.tripInclusions &&
+                  trips.tripInclusions.length > 0 ? (
                   trips.tripInclusions.map((inclusion, index) => (
                     <li
                       className="flex flex-row items-start gap-4 mt-2 text-xs sm:text-sm md:text-base"
@@ -359,8 +359,8 @@ const PackageHoneymoon = () => {
               </h1>
               <ul className="list-none p-0 m-0 rounded-lg">
                 {trips &&
-                trips.tripExclusions &&
-                trips.tripExclusions.length > 0 ? (
+                  trips.tripExclusions &&
+                  trips.tripExclusions.length > 0 ? (
                   trips.tripExclusions.map((exclusion, index) => (
                     <li
                       className="flex flex-row items-start text-xs sm:text-sm md:text-base gap-4 mt-2" // Changed items-center to items-start

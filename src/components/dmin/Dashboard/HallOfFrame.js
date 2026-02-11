@@ -2,40 +2,40 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-// Helper function to convert Google Drive URL to displayable format
+// helper function to convert Google Drive URL to displayable format
 const convertGoogleDriveUrl = (url) => {
   if (!url) return url;
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1];
   }
-  
+
   // Format: https://drive.google.com/uc?id=FILE_ID
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) {
     fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -96,10 +96,10 @@ function HallOfFrame() {
     } else {
       if (!newImage) return setError("Image file is required.");
     }
-    
+
     try {
       const formData = new FormData();
-      
+
       if (useGoogleDrive && imageUrl) {
         formData.append("imageUrl", imageUrl);
       } else {
@@ -132,10 +132,10 @@ function HallOfFrame() {
     } else {
       if (!updatedImage) return setError("Updated image file is required.");
     }
-    
+
     try {
       const formData = new FormData();
-      
+
       if (editUseGoogleDrive && editImageUrl) {
         formData.append("imageUrl", editImageUrl);
       } else {
@@ -282,7 +282,7 @@ function HallOfFrame() {
                     <span className="text-sm font-medium">Use Google Drive URL</span>
                   </label>
                 </div>
-                
+
                 {editUseGoogleDrive ? (
                   <div className="space-y-2">
                     <input
@@ -309,7 +309,7 @@ function HallOfFrame() {
                     onChange={(e) => setUpdatedImage(e.target.files[0])}
                   />
                 )}
-                
+
                 <div className="flex justify-end mt-2">
                   <button
                     onClick={() => updateImage(img._id)}

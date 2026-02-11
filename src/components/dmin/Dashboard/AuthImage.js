@@ -1,40 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// Helper function to convert Google Drive URL to lh3 format for preview
+// helper function to convert Google Drive URL to lh3 format for preview
 const convertGoogleDriveUrl = (url) => {
   if (!url) return '';
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1];
   }
-  
+
   // Format: https://drive.google.com/uc?id=FILE_ID
   const ucMatch = url.match(/uc\?.*id=([^&]+)/);
   if (ucMatch) {
     fileId = ucMatch[1];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -45,7 +45,7 @@ function AuthImage() {
   });
   const [signInList, setSignInList] = useState([]);
   const [selectedSignIn, setSelectedSignIn] = useState(null);
-  
+
   // New state for Google Drive URL mode
   const [useGoogleDrive, setUseGoogleDrive] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
@@ -73,11 +73,11 @@ function AuthImage() {
       [name]: files[0],  // Update only the relevant field (either phoneImage or image)
     }));
   };
-  
+
   const createSignIn = async () => {
     try {
       let response;
-      
+
       if (useGoogleDrive) {
         // Send URLs directly as JSON
         response = await axios.post(
@@ -100,7 +100,7 @@ function AuthImage() {
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       }
-      
+
       setSignInList((prevList) => [...prevList, response.data]);
       setSignInData({ phoneImage: null, image: null });
       setImageUrl('');
@@ -113,7 +113,7 @@ function AuthImage() {
   const updateSignIn = async () => {
     try {
       let response;
-      
+
       if (useGoogleDrive) {
         // Send URLs directly as JSON
         response = await axios.put(
@@ -136,7 +136,7 @@ function AuthImage() {
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       }
-      
+
       setSignInList((prevList) =>
         prevList.map((item) =>
           item._id === response.data._id ? response.data : item
@@ -170,7 +170,7 @@ function AuthImage() {
     setPhoneImageUrl('');
   };
 
-  // Helper to get displayable image URL
+  // helper to get displayable image URL
   const getImageUrl = (img) => {
     if (!img) return '';
     if (img.startsWith('http')) {

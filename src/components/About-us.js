@@ -41,7 +41,7 @@ const Aboutus = () => {
   };
 
   const [teamMembers, setTeamMembers] = useState([]);
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
 
   const nationalImages = backgroundImages.filter(
     (item) => item.type === "About Us"
@@ -89,36 +89,16 @@ const Aboutus = () => {
         {/* Introduction Section */}
         <div className="py-8 px-4 sm:px-8 lg:px-24 w-full lg:w-[80%] mx-auto text-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
-            What Do We Strive for and What Fuels Our Ambition?
+            Our Vision and What Inspires Us
           </h1>
           <p className="mb-4 text-sm sm:text-base lg:text-lg">
-            EliteTrips is a specialist for Travel &
-            Transport serving exclusively the academic sector by arranging
-            educational & fun tours for students of every age all over India.
+            At EliteTrips, our ambition is driven by creating meaningful travel experiences exclusively for the academic sector across India. We design educational yet fun tours that help students of all ages explore history, geography, and culture beyond textbooks.
           </p>
           <p className="text-sm sm:text-base lg:text-lg">
-            We are different as we educate and inform students about
-            historical/geographical/cultural values etc. wherever the tour takes
-            place. We also doing school tour , colleges tour , corporate tour &
-            Family's tour for all place in India.
+            We specialize in school, college, corporate, and family tours, offering carefully planned journeys to every major destination in India. With years of combined industry experience, we deliver unmatched quality, authenticity, and dependable service in group travel.
           </p>
           <p className="text-sm sm:text-base lg:text-lg">
-            We have over many years combined experience in providing the almost
-            in quality, authenticity and service in the group travel industry.
-          </p>
-          <p className="text-sm sm:text-base lg:text-lg">
-            We have strong hold in the domestic market as well. We believe in
-            “Service with quality & Smile”.
-          </p>
-          <p className="text-sm sm:text-base lg:text-lg">
-            We use the best system for operations which adds “Valued Efficiency”
-            to our teamwork thus making hospitality not a business affair but a
-            “Commitment & Pledge” towards client’s satisfaction.
-          </p>
-          <p className="text-sm sm:text-base lg:text-lg">
-            At EliteTrips understand that planning a
-            group trip can be a lot of work and that is why we believe in
-            providing value every step of the way.
+            Backed by strong domestic expertise and efficient systems, we believe in “Service with Quality & a Smile”, turning every trip into a commitment toward complete client satisfaction.
           </p>
         </div>
 
@@ -127,7 +107,7 @@ const Aboutus = () => {
 
         <section className="text-center py-12 sm:py-16 bg-gray-50 px-4 sm:px-8 lg:px-24">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-            Meet Our Amazing Team. The Perfect Blend of Talent and Dedication
+            The Minds and Hearts Behind Our Mission
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {teamMembers.map((member, index) => (

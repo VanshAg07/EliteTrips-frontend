@@ -20,7 +20,7 @@ import QuotePopup from "../../QuotePopup";
 import TripForms from "../Contact/TripForms";
 import { FaShareFromSquare } from "react-icons/fa6";
 const PackageInternational = () => {
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
   const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
     name: "",
@@ -133,7 +133,7 @@ const PackageInternational = () => {
           stateName: stateNames.stateName,
           tripBookingAmount: trips.tripBookingAmount,
           tripSeats: trips.tripSeats,
-          tripOfferPrice : trips.tripOfferPrice
+          tripOfferPrice: trips.tripOfferPrice
         },
       });
     } else {

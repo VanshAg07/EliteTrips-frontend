@@ -21,7 +21,7 @@ const National = () => {
   });
   const [backgroundImages, setBackgroundImages] = useState([]);
 
-  const whatsappMessage = "Hello, I need assistance with my issue.";
+  const whatsappMessage = "Hello, I need help with my issue.";
   const fetchBackgroundImages = async () => {
     const response = await axios.get(
       "https://elitetrips-backend.onrender.com/api/background-images/images"
@@ -54,9 +54,9 @@ const National = () => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img 
-                  key={index} 
-                  src={imgUrl} 
+                <img
+                  key={index}
+                  src={imgUrl}
                   alt={`Image ${index}`}
                   referrerPolicy="no-referrer"
                   crossOrigin="anonymous"
