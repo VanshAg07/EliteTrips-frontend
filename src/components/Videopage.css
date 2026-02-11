@@ -84,8 +84,8 @@
 
 @media (max-width: 426px) {
   .hero-section {
-    height: calc(100vh - 110px);
-    min-height: 280px;
+    height: 400px;
+    min-height: 400px;
   }
 
   .gradient-bg {
@@ -112,8 +112,8 @@
 
 @media (max-width: 375px) {
   .hero-section {
-    min-height: 220px;
-    height: calc(100vh - 60px - 45px);
+    height: 400px;
+    min-height: 400px;
   }
 
   .hero-title {

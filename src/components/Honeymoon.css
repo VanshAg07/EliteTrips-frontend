@@ -247,20 +247,27 @@
 
 .hero-section-left-1 {
   position: relative;
-  height: 90vh;
+  height: calc(100vh - 165px);
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
-@media (max-width: 480px) {
+.hero-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
   .hero-section-left-1 {
-    position: relative;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    height: 400px;
+    min-height: 400px;
   }
 }

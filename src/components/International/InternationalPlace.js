@@ -76,32 +76,32 @@ const InernationalPlaces = () => {
       <div className="wrpper-inter">
         <Nav />
         <Dropnav />
-        <div className="hero-section-left-1">
-          {nationalImages.length > 0 ? (
-            nationalImages.map((image, index) => (
-              <img
-                className="hero-img"
-                key={index}
-                src={image.imageUrl} // Assuming each image object has a 'url' property
-                alt={image.name || "National Image"} // Assuming each image object has a 'name' property
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-              />
-            ))
-          ) : (
-            <p>No images available for this location.</p>
-          )}
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0"></div>
-          <div className="relative flex flex-col items-center">
-            <div className="relative w-full flex items-start justify-center">
-              <h1 className="ml-6 text-center text-white font-bold text-2xl xs:text-2xl sm:text3xl lg:text-4xl leading-tight mt-4 sm:mt-8">
-                {name} Tour Packages
-              </h1>
+        <div className="relative">
+          <div className="hero-section-left-1 mt-[60px] md:mt-[105px]">
+            {nationalImages.length > 0 ? (
+              nationalImages.map((image, index) => (
+                <img
+                  className="hero-img z-0"
+                  key={index}
+                  src={image.imageUrl} // Assuming each image object has a 'url' property
+                  alt={image.name || "National Image"} // Assuming each image object has a 'name' property
+                  referrerPolicy="no-referrer"
+                  crossOrigin="anonymous"
+                />
+              ))
+            ) : (
+              <p>No images available for this location.</p>
+            )}
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 z-10"></div>
+            <div className="relative flex flex-col items-center z-20">
+              <div className="relative w-full flex items-start justify-center">
+                <h1 className="ml-6 text-center text-white font-bold text-2xl xs:text-2xl sm:text3xl lg:text-4xl leading-tight mt-4 sm:mt-8">
+                  {name} Tour Packages
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="mt-[180px] md:mt-0">
           <Mainreview />
         </div>
         <div className="justify-center pt-10 items-center flex flex-col w-full ">

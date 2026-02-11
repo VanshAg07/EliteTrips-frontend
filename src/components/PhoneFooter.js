@@ -46,11 +46,7 @@ function Footer() {
           <AiOutlineFlag className="text-2xl" />
           <span className="text-xs">Trips</span>
         </div>
-        <Link to="/reel-slider">
-          <div className="bg-teal-500 text-white rounded-full w-14 h-14 flex items-center justify-center -mt-8">
-            <FaPlay className="text-2xl" />
-          </div>
-        </Link>
+
 
         <div
           className="flex flex-col items-center text-white"

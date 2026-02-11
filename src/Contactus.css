@@ -1,8 +1,10 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  width: 100%; /* Make the form take full width on small screens */
-  max-width: 400px; /* Limit the form width on larger screens */
+  width: 100%;
+  /* Make the form take full width on small screens */
+  max-width: 400px;
+  /* Limit the form width on larger screens */
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
@@ -10,11 +12,11 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form > h2 {
+.contact-form>h2 {
   font-size: 1.5rem;
 }
 
-.contact-form > h4 {
+.contact-form>h4 {
   font-size: 1.2rem;
 }
 
@@ -56,31 +58,64 @@
 
 .contact-wrapper {
   display: flex;
-  justify-content: center; /* Center the content horizontally */
+  justify-content: center;
+  /* Center the content horizontally */
   align-items: center;
   padding-top: 20px;
   padding-bottom: 30px;
-  gap: 20px; /* Adjust spacing between image and form */
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 20px;
+  /* Adjust spacing between image and form */
+  flex-wrap: wrap;
+  /* Allow items to wrap on smaller screens */
 }
 
 .contact-wrapper img {
   max-width: 100%;
-  height: auto; /* Make image responsive */
+  height: auto;
+  /* Make image responsive */
+}
+
+.hero-section-left-1 {
+  position: relative;
+  height: calc(100vh - 165px);
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #333;
+  /* Fallback */
+}
+
+.hero-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section-left-1 {
+    height: 400px;
+    min-height: 400px;
+  }
 }
 
 .heading-section-1 {
-  padding-top: 20px;
   text-align: center;
   color: rgb(238, 38, 38);
-  font-size: 3rem; /* Adjust the size as needed */
+  font-size: 3rem;
+  /* Adjust the size as needed */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .contact-form {
-    max-width: 350px; 
+    max-width: 350px;
   }
 
   .heading-section-1 {
@@ -93,10 +128,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+
   }
 
-  .contact-form form{
+  .contact-form form {
     width: 10%;
     padding: 15px;
   }
@@ -115,8 +150,10 @@
   }
 
   .contact-form {
-    width: 80%; /* Full width on mobile */
-    max-width: none; /* Remove max-width limitation */
+    width: 80%;
+    /* Full width on mobile */
+    max-width: none;
+    /* Remove max-width limitation */
     padding-left: 30px;
     left: 50px;
   }

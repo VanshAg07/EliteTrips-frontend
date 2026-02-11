@@ -59,7 +59,7 @@ const Home = () => {
         <Nav />
         <Dropnav />
         <Videopage />
-        {isSmallMobile ? (
+        {isMobile ? (
           <div style={{ margin: "0px 10px 0px 10px" }}>
             <Mobcardinter />
           </div>
@@ -67,7 +67,7 @@ const Home = () => {
           <Videopg3 />
         )}
 
-        {isSmallMobile ? (
+        {isMobile ? (
           <div style={{ margin: "0px 10px 0px 10px" }}>
             <Mobcard />
           </div>
@@ -75,7 +75,7 @@ const Home = () => {
           <Videopg2 />
         )}
 
-        {isSmallMobile ? (
+        {isMobile ? (
           <div style={{ margin: "0px 10px 0px 10px" }}>
             <Mobcardhoney />
           </div>
@@ -85,7 +85,7 @@ const Home = () => {
           )}
 
         <div>
-          {isLargeMobile ? <ExploreMobile /> : <Explore />}
+          {isMobile ? <ExploreMobile /> : <Explore />}
 
 
           <Whyuss />

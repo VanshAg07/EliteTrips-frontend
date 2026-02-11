@@ -25,11 +25,11 @@ const FooterSection = () => {
             <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">
               Quick Links
             </h2>
-            <ul className="text-[#fff] space-y-2 text-sm md:text-base lg:text-lg">
+            <ul className="text-[#b0b0b0] space-y-2 text-sm md:text-base lg:text-lg">
               <li>
                 <Link
                   to="/National"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   National
                 </Link>
@@ -37,7 +37,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/International"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   International
                 </Link>
@@ -45,7 +45,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/Honeymoon"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Honeymoon
                 </Link>
@@ -53,7 +53,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/Contact"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Contact Us
                 </Link>
@@ -61,7 +61,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/Gallery"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Gallery
                 </Link>
@@ -69,7 +69,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/Aboutus"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   About Us
                 </Link>
@@ -82,11 +82,11 @@ const FooterSection = () => {
             <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">
               Trips
             </h2>
-            <ul className="text-[#fff] space-y-2 text-sm md:text-base lg:text-lg">
+            <ul className="text-[#b0b0b0] space-y-2 text-sm md:text-base lg:text-lg">
               <li>
                 <Link
                   to="/places/Ladakh"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Ladakh
                 </Link>
@@ -94,7 +94,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Kashmir"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Kashmir
                 </Link>
@@ -102,7 +102,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Spiti"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Spiti
                 </Link>
@@ -110,7 +110,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Himachal"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Himachal
                 </Link>
@@ -118,7 +118,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Thailand"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Thailand
                 </Link>
@@ -126,7 +126,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Australia"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Australia
                 </Link>
@@ -134,7 +134,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Maldives"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Maldives
                 </Link>
@@ -142,7 +142,7 @@ const FooterSection = () => {
               <li>
                 <Link
                   to="/places/Dubai"
-                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                  className="hover:text-[#FFD700] transition-all ease-in-out duration-200"
                 >
                   Dubai
                 </Link>

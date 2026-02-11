@@ -104,7 +104,7 @@
 }
 
 .phone-icon {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* User section */
@@ -313,8 +313,8 @@
 .mobile-menu {
   position: fixed;
   top: 60px;
-  right: -70%;
-  width: 70%;
+  right: -40%;
+  width: 40%;
   height: calc(100vh - 60px);
   background-color: #03346e;
   z-index: 999;
@@ -364,6 +364,7 @@
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .mobile-logout-btn {
@@ -518,16 +519,35 @@
   }
 
   .mobile-menu {
-    width: 75%;
-    right: -75%;
+    width: 40%;
+    right: -40%;
+  }
+
+  .mobile-phone {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .phone-icon {
+    font-size: 10px;
   }
 }
 
 /* Small Mobile - below 480px */
 @media (max-width: 479px) {
   .mobile-menu {
-    width: 85%;
-    right: -85%;
+    width: 40%;
+    right: -40%;
+  }
+
+  .mobile-phone {
+    font-size: 11px;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .phone-icon {
+    font-size: 9px;
   }
 
   .logo {
@@ -542,8 +562,18 @@
 /* Very Small Mobile - below 360px */
 @media (max-width: 359px) {
   .mobile-menu {
-    width: 90%;
-    right: -90%;
+    width: 40%;
+    right: -40%;
+  }
+
+  .mobile-phone {
+    font-size: 9px;
+    padding: 6px;
+    gap: 3px;
+  }
+
+  .phone-icon {
+    font-size: 7px;
   }
 
   .logo {

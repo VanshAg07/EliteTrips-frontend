@@ -54,41 +54,42 @@ const National = () => {
     <div className="wrpper-inter">
       <Nav />
       <Dropnav />
-      <div className=" object-cover hero-section-left-1">
-        {nationalImages.map((item) => (
-          <div key={item._id} className="relative">
-            {item.image.map((imgUrl, index) =>
-              imgUrl.endsWith(".mp4") ? (
-                <video
-                  key={index}
-                  className="w-full h-auto"
-                  autoPlay
-                  muted
-                  loop
-                >
-                  <source src={imgUrl} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <img
-                  key={index}
-                  src={imgUrl}
-                  alt={`Image ${index}`}
-                  referrerPolicy="no-referrer"
-                  crossOrigin="anonymous"
-                />
-              )
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <h1 className="text-white font-bold text-2xl xs:text-2xl sm:text-3xl lg:text-4xl leading-tight mt-4 sm:mt-8 text-center">
-                {item.heading}
-              </h1>
+      <div className="relative">
+        <div className="hero-section-left-1 mt-[60px] md:mt-[105px]">
+          {nationalImages.map((item) => (
+            <div key={item._id} className="relative w-full h-full">
+              {item.image.map((imgUrl, index) =>
+                imgUrl.endsWith(".mp4") ? (
+                  <video
+                    key={index}
+                    className="hero-img z-0"
+                    autoPlay
+                    muted
+                    loop
+                  >
+                    <source src={imgUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    key={index}
+                    src={imgUrl}
+                    alt={`Image ${index}`}
+                    className="hero-img z-0"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
+                  />
+                )
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 z-10"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
+                <h1 className="text-white font-bold text-2xl xs:text-2xl sm:text-3xl lg:text-4xl leading-tight mt-4 sm:mt-8 text-center">
+                  {item.heading}
+                </h1>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-[130px] z-10 md:mt-0">
+          ))}
+        </div>
         <Mainreview />
       </div>
       <div className="lottie-wr">

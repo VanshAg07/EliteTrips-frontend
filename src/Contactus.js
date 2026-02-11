@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "./Contactus.css";
 import Con from "./img/con-bg.png";
 import { Link } from "react-router-dom";
+import Nav from "./components/Nav";
+import Dropnav from "./components/Dropnav";
+import MainFooter from "./components/Footer/MainFooter";
+import Mainreview from "./components/Mainreview";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -39,9 +43,22 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="heading-section-1">
-        <h1>Need Assistance?</h1>
+      <Nav />
+      <Dropnav />
+      <div className="relative">
+        <div className="hero-section-left-1 mt-[60px] md:mt-[105px]">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 z-10"></div>
+          <div className="relative flex flex-col items-center z-20">
+            <div className="relative w-full flex items-start justify-center">
+              <h1 className="ml-6 text-center text-white font-bold text-2xl xs:text-2xl sm:text-3xl lg:text-4xl leading-tight mt-4 sm:mt-8">
+                Need Assistance?
+              </h1>
+            </div>
+          </div>
+        </div>
+        <Mainreview />
       </div>
+
       <div className="contact-wrapper">
         <div>
           <img src={Con} alt="Contact Illustration" />
@@ -91,10 +108,13 @@ const ContactForm = () => {
               required
             />
 
-            <a class="btn-con"> Submit</a>
+            <button type="submit" className="btn-con">
+              Submit
+            </button>
           </form>
         </div>
       </div>
+      <MainFooter />
     </>
   );
 };

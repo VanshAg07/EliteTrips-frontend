@@ -52,14 +52,14 @@ const Aboutus = () => {
       <Nav />
       <Dropnav />
       <div>
-        <div className="object-cover hero-section-left-1">
+        <div className="hero-section-left-1 mt-[60px] md:mt-[105px]">
           {nationalImages.map((item) => (
-            <div key={item._id} className="relative">
+            <div key={item._id} className="relative w-full h-full">
               {item.image.map((imgUrl, index) =>
                 imgUrl.endsWith(".mp4") ? (
                   <video
                     key={index}
-                    className="w-full h-auto"
+                    className="hero-img z-0"
                     autoPlay
                     muted
                     loop
@@ -72,13 +72,14 @@ const Aboutus = () => {
                     key={index}
                     src={imgUrl}
                     alt={`Image ${index}`}
+                    className="hero-img z-0"
                     referrerPolicy="no-referrer"
                     crossOrigin="anonymous"
                   />
                 )
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0"></div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 z-10"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
                 <h1 className="text-white font-bold text-2xl xs:text-2xl sm:text-3xl lg:text-4xl leading-tight mt-4 sm:mt-8 text-center">
                   {item.heading}
                 </h1>
@@ -115,7 +116,7 @@ const Aboutus = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full object-cover mb-4 shadow-lg"
+                  className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full object-cover object-top mb-4 shadow-lg"
                   referrerPolicy="no-referrer"
                   crossOrigin="anonymous"
                 />

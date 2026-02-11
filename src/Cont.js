@@ -7,12 +7,12 @@ import Forms from "./components/Forms.js";
 const Form = () => {
   return (
     <>
-    <Nav />
-    <Dropnav />
-    <div className=' pb-[20px] pt-[120px]'>
-    <Forms />  
-    </div>
-    <MainFooter />
+      <Nav />
+      <Dropnav />
+      <div className='pb-[20px] pt-[60px] md:pt-[105px]'>
+        <Forms />
+      </div>
+      <MainFooter />
     </>
   );
 };

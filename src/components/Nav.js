@@ -121,9 +121,6 @@ const Nav = () => {
           <Link to="/Honeymoon" onClick={() => setIsMenuOpen(false)} className="mobile-link">
             Honeymoon Packages
           </Link>
-          <Link to="/Corporate" onClick={() => setIsMenuOpen(false)} className="mobile-link">
-            Corporate Trips
-          </Link>
           <Link to="/Aboutus" onClick={() => setIsMenuOpen(false)} className="mobile-link">
             About Us
           </Link>

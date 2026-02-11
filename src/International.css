@@ -1,118 +1,128 @@
 .wrpper-inter {
-    position: relative;
+  position: relative;
 }
 
 .hero-section-left-1 {
-    position: relative;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  height: calc(100vh - 165px);
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .hero-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Send the image to the background */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section-left-1 {
+    height: 400px;
+    min-height: 400px;
+  }
 }
 
 .hero-heading {
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2.7rem;
-    text-align: center;
-    z-index: 1;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.7rem;
+  text-align: center;
+  z-index: 1;
 }
 
-.hero-heading>span{
+.hero-heading>span {
   background-color: yellow;
   padding: 20px 10px;
   font-size: 2.3rem;
 }
 
-.hero-section-right-1{
-    position: absolute;
-    left: 70%;
+.hero-section-right-1 {
+  position: absolute;
+  left: 70%;
 }
 
-.hero-section-h2{
-    text-align: center;
+.hero-section-h2 {
+  text-align: center;
 }
 
-  /* CodeSnippet.css */
+/* CodeSnippet.css */
 
 .code-container {
-    position: relative;
-    width: 70%;
-    margin: 20px auto;
-    padding: 10px;
-    margin-top: 80px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 10px;
+  margin-top: 80px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
 }
 
 pre {
-    max-height: 3.6em; /* Show approximately 2 lines */
-    overflow: hidden;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    transition: max-height 0.3s ease;
+  max-height: 3.6em;
+  /* Show approximately 2 lines */
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  transition: max-height 0.3s ease;
 }
 
 .code-container.expanded pre {
-    max-height: none;  
+  max-height: none;
 }
 
 
 /* Ensure the button container takes the full width of its parent */
 .code-container {
-    position: relative;
-    padding: 20px;
+  position: relative;
+  padding: 20px;
 }
 
 .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-                7px 7px 20px 0px rgba(0, 0, 0, 0.1),
-                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-    outline: none;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
 .btn-12 {
-    background: rgb(96, 9, 240);
-    background: linear-gradient(0deg, rgba(96, 9, 240, 1) 0%, rgba(129, 5, 240, 1) 100%);
-    border: none;
+  background: rgb(96, 9, 240);
+  background: linear-gradient(0deg, rgba(96, 9, 240, 1) 0%, rgba(129, 5, 240, 1) 100%);
+  border: none;
 }
 
 .btn-12:before {
-    height: 0%;
-    width: 2px;
+  height: 0%;
+  width: 2px;
 }
 
 .btn-12:hover {
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
-                -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
-                inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* Center align the button */
@@ -126,7 +136,8 @@ pre {
 }
 
 .truncated-text {
-  max-height: 4.8em; /* Approx 2 lines of text */
+  max-height: 4.8em;
+  /* Approx 2 lines of text */
   padding: 0 0.5em;
   position: relative;
 }
@@ -150,32 +161,37 @@ pre {
   border-radius: 4px;
 }
 
-.hero-lottie{
-    width: 40%;
-    height: 70%;
+.hero-lottie {
+  width: 40%;
+  height: 70%;
 }
 
-.lottie-wr{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.lottie-wr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .cards-container-2 {
   display: flex;
-  justify-content: space-around; /* Space between the cards */
+  justify-content: space-around;
+  /* Space between the cards */
   align-items: center;
-  margin: 50px auto; /* Center the cards container and give it some top and bottom space */
-  padding: 20px; /* Padding around the cards container */
+  margin: 50px auto;
+  /* Center the cards container and give it some top and bottom space */
+  padding: 20px;
+  /* Padding around the cards container */
 }
 
 .card-container-2 {
-  margin: 20px; /* Space around each card */
+  margin: 20px;
+  /* Space around each card */
 }
 
 .inter-h {
-  font-size: 2.5rem; /* Default size for large screens */
+  font-size: 2.5rem;
+  /* Default size for large screens */
   color: #2C3E50;
   text-align: center;
   margin-top: 40px;
@@ -201,37 +217,48 @@ pre {
 /* Responsive adjustments for medium screens (tablets, small laptops) */
 @media (max-width: 1024px) {
   .inter-h {
-    font-size: 2rem; /* Reduce font size */
+    font-size: 2rem;
+    /* Reduce font size */
   }
+
   .inter-h::after {
-    width: 8%; /* Adjust the width of the yellow line */
+    width: 8%;
+    /* Adjust the width of the yellow line */
   }
 }
 
 /* Responsive adjustments for small screens (mobile devices) */
 @media (max-width: 768px) {
   .inter-h {
-    font-size: 1.7rem; /* Further reduce font size */
+    font-size: 1.7rem;
+    /* Further reduce font size */
   }
+
   .inter-h::after {
-    width: 6%; /* Further adjust width of the yellow line */
+    width: 6%;
+    /* Further adjust width of the yellow line */
   }
 }
 
 /* Responsive adjustments for extra small screens (small mobile devices) */
 @media (max-width: 480px) {
   .inter-h {
-    font-size: 0.7rem; /* Smallest font size for small mobile screens */
-    margin-top: 20px; /* Adjust margin for better spacing */
+    font-size: 0.7rem;
+    /* Smallest font size for small mobile screens */
+    margin-top: 20px;
+    /* Adjust margin for better spacing */
     margin-bottom: 8px;
   }
+
   .inter-h::after {
-    width: 5%; /* Narrow the width of the yellow line */
+    width: 5%;
+    /* Narrow the width of the yellow line */
   }
 }
 
 .inter-heading {
-  font-size: 2.5rem; /* Default font size */
+  font-size: 2.5rem;
+  /* Default font size */
   color: #2C3E50;
   text-align: center;
   margin-top: 40px;
@@ -251,11 +278,12 @@ pre {
   height: 4px;
   background-color: yellow;
   border-radius: 2px;
- 
+
 }
 
 .inter-description {
-  font-size: 1.2rem; /* Default font size */
+  font-size: 1.2rem;
+  /* Default font size */
   color: black;
   text-align: center;
   margin-bottom: 30px;
@@ -266,22 +294,30 @@ pre {
 }
 
 /* Responsive styles */
-@media (max-width: 640px) { /* For small mobile screens */
+@media (max-width: 640px) {
+
+  /* For small mobile screens */
   .honey-heading {
-    font-size: 2rem; /* Decrease font size for small screens */
+    font-size: 2rem;
+    /* Decrease font size for small screens */
   }
 
   .inter-description {
-    font-size: 1rem; /* Decrease font size for small screens */
+    font-size: 1rem;
+    /* Decrease font size for small screens */
   }
 }
 
-@media (max-width: 480px) { /* For extra small mobile screens */
+@media (max-width: 480px) {
+
+  /* For extra small mobile screens */
   .honey-heading {
-    font-size: 1.5rem; /* Further decrease font size */
+    font-size: 1.5rem;
+    /* Further decrease font size */
   }
 
   .inter-description {
-    font-size: 0.9rem; /* Further decrease font size */
+    font-size: 0.9rem;
+    /* Further decrease font size */
   }
 }

@@ -54,7 +54,7 @@ const TravelOptions = () => {
   }, []);
 
   return (
-    <div className="w-full explore-mob-wrper bg-white h-auto px-4 mb-12 block md:hidden lg:block">
+    <div className="w-full explore-mob-wrper bg-white h-auto px-4 pb-8 mb-12 block md:hidden lg:block">
       <h1 className="text-center text-lg font-bold mb-6">
         Explore Your Adventure
       </h1>

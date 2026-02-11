@@ -38,7 +38,7 @@ const Videopage = () => {
   return (
     <div className="w-full relative">
       {/* Hero Section - positioned below fixed navbars */}
-      <div className="relative w-full flex flex-col justify-center items-start mt-[105px] hero-section">
+      <div className="relative w-full flex flex-col justify-center items-start mt-[60px] md:mt-[105px] hero-section">
         {/* Gradient overlay from black to transparent */}
         <div className="absolute top-0 left-0 w-[50vw] h-full z-10 gradient-bg"></div>
 
