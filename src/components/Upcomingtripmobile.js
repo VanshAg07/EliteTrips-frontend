@@ -29,7 +29,7 @@ const TravelOptions = () => {
   const tripsToShow = window.innerWidth < 1024 ? 100 : 4;
 
   return (
-    <div className="w-full bg-[#ffffe6] mt-10 h-[80vh] px-2 mb-96">
+    <div className="w-full mt-10 h-[80vh] px-2 mb-96">
       <div className="flex justify-between items-center mb-4 h-[10vh]">
         <div className="flex mt-24 ml-4 flex-col">
           <h1 className="text-lg font-bold">Upcoming Trips</h1>

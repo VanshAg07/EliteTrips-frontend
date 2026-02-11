@@ -57,16 +57,16 @@ const Forms = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center py-4">
+    <div className="min-h-screen flex flex-col justify-center py-4 md:py-8">
       <h1 className="text-center md:text-2xl text-xl lg:text-4xl font-bold mb-4">
         Need Assistance
       </h1>
-      <div className="flex items-center justify-center px-4 flex-1 max-h-[85vh]">
-        <div className="shadow-[0_10px_15px_rgba(0,0,0,0.5)] rounded-lg flex flex-col md:flex-row items-stretch justify-center w-[80vw] h-full max-h-[75vh]">
-          <div className="md:w-[40vw] flex-shrink-0 bg-white flex items-center justify-center rounded-lg hidden md:flex">
-            <img src="/Contact.png" alt="Illustration" className="w-[90%] h-auto max-h-[70vh] object-contain" />
+      <div className="flex items-center justify-center px-4 flex-1 ">
+        <div className="shadow-[0_10px_15px_rgba(0,0,0,0.5)] rounded-lg flex flex-col lg:flex-row items-stretch justify-center w-full max-w-[90vw] lg:max-w-[80vw] h-auto lg:h-full lg:max-h-[75vh]">
+          <div className="w-full lg:w-[40vw] flex-shrink-0 bg-white flex items-center justify-center rounded-lg">
+            <img src="/Contact.png" alt="Illustration" className="w-full md:w-[90%] h-auto max-h-[40vh] md:max-h-[50vh] lg:max-h-[70vh] object-contain" />
           </div>
-          <div className="bg-[#e1feff] rounded-lg shadow-lg p-4 md:p-6 md:w-[40vw] flex-shrink-0 flex flex-col justify-center overflow-y-auto">
+          <div className="bg-[#e1feff] rounded-lg shadow-lg p-4 md:p-6 w-full lg:w-[40vw] flex-shrink-0 flex flex-col justify-center overflow-y-auto">
             <h2 className="text-cyan-500 text-lg font-bold mb-1">
               Need Assistance?
             </h2>

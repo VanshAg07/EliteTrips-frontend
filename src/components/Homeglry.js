@@ -36,57 +36,52 @@ const Gallery = () => {
   };
 
   return (
-    <div className="relative mt-[30rem] mb-80">
-      <div className="flex relative flex-row">
-        <div className="arrow-wrapper">
-          <div className="arrow-glry arrow-left-glry" onClick={handlePrevious}>
-            <FaChevronCircleLeft className="" /> {/* Use left icon */}
-          </div>
-          <div className="gallery-wrap" onWheel={handleWheel}>
-            {/* Heading */}
-            <h1 className="text-center text-3xl md:text-4xl pt-4 lg:text-5xl font-bold mb-4">
-              Travel Gallery
-            </h1>
-            <p className="text-center md:text-xl text-lg homeglry-p font-semibold mb-2 text-gray-800">
-              Moments In Motion
-            </p>
+    <div className="relative pt-40 pb-32">
+      <div className="gallery-wrap" onWheel={handleWheel}>
+        {/* Heading */}
+        <h1 className="text-center text-3xl md:text-4xl pt-4 lg:text-5xl font-bold mb-4">
+          Travel Gallery
+        </h1>
+        <p className="text-center md:text-xl text-lg homeglry-p font-semibold mb-2 text-gray-800">
+          Moments In Motion
+        </p>
+        <div
+          className="gallery-center"
+          ref={galleryCenterRef}
+          style={{
+            transform: `translate(-50%, -50%) perspective(2800px) rotateY(${rotation}deg)`,
+          }}
+        >
+          {galleryImages.map((image, index) => (
             <div
-              className="gallery-center"
-              ref={galleryCenterRef}
+              className="gallery-box"
+              key={index}
               style={{
-                transform: `translate(-50%, -50%) perspective(2800px) rotateY(${rotation}deg)`,
+                transform: `translate(-50%, -50%) rotateY(${index * -30
+                  }deg) translateZ(-1000px)`,
               }}
             >
-              {galleryImages.map((image, index) => (
-                <div
-                  className="gallery-box"
-                  key={index}
-                  style={{
-                    transform: `translate(-50%, -50%) rotateY(${index * -30
-                      }deg) translateZ(-1000px)`,
+              <a>
+                <img
+                  className="img-glry"
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  referrerPolicy="no-referrer"
+                  crossOrigin="anonymous"
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/300x200?text=Image+Error';
                   }}
-                >
-                  <a>
-                    <img
-                      className="img-glry"
-                      src={image}
-                      alt={`Image ${index + 1}`}
-                      referrerPolicy="no-referrer"
-                      crossOrigin="anonymous"
-                      onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/300x200?text=Image+Error';
-                      }}
-                    />
-                  </a>
-                </div>
-              ))}
+                />
+              </a>
             </div>
-          </div>
+          ))}
         </div>
-        <div className="arrow-wrapper">
-          <div className="arrow-glry arrow-right-glry" onClick={handleNext}>
-            <FaChevronCircleRight />
-          </div>
+        {/* Arrows inside gallery-wrap */}
+        <div className="arrow-glry arrow-left-glry" onClick={handlePrevious}>
+          <FaChevronCircleLeft />
+        </div>
+        <div className="arrow-glry arrow-right-glry" onClick={handleNext}>
+          <FaChevronCircleRight />
         </div>
       </div>
     </div>

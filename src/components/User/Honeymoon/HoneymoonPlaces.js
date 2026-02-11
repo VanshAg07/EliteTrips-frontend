@@ -45,7 +45,7 @@ const HoneymoonPlaces = () => {
         <div className="why">
           <Whyuss />
         </div>
-        <Review />
+        {/* <Review /> */}
         <h1 className="pt-14 md:pt-20 text-2xl md:text-4xl font-bold text-center text-gray-800">
           Contact Form
         </h1>

@@ -141,10 +141,10 @@ const HomeHoneymoon = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-[#ffffe6]">
+        <div className="">
           {/* <Homeglry /> */}
           <Whyuss />
-          <Review />
+          {/* <Review /> */}
           {/* <Guide /> */}
 
           <h1 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-8">

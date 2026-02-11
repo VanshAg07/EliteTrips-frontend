@@ -535,8 +535,8 @@ const PackageInternational = () => {
             </div>
           </div>
         </div>
-        <div className="pb-7 bg-[#ffffe6]">
-          <Review />
+        <div className="pb-7">
+          {/* <Review /> */}
         </div>
         <div className="mb-[100px]">
           <MainFooter />

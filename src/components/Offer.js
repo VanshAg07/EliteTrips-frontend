@@ -85,9 +85,9 @@ const National = () => {
           <OfferCards />
         </div>
       </div>
-      <div className="bg-[#ffffe6]">
+      <div className="">
         <Whyuss />
-        <Review />
+        {/* <Review /> */}
 
         <h1 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-8">
           Contact Form

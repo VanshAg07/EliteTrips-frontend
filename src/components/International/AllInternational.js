@@ -4,7 +4,6 @@ import { FaClock, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 function AllInternational() {
   const [packages, setPackages] = useState([]);
-  const [visiblePackages, setVisiblePackages] = useState(6);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,9 +21,7 @@ function AllInternational() {
     fetchAllPackages();
   }, []);
 
-  const loadMorePackages = () => {
-    setVisiblePackages((prevVisible) => prevVisible + 6);
-  };
+
 
   const handlePackageClick = (stateName, tripName) => {
     const sanitizedTripName = tripName.replace(/\//g, "-");
@@ -37,7 +34,7 @@ function AllInternational() {
     <div className="container mx-auto w-[80%]">
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6">
         {packages.length > 0 ? (
-          packages.slice(0, visiblePackages).map((pkg, index) =>
+          packages.map((pkg, index) =>
             pkg.trips.map((trip, tripIndex) => (
               <div
                 key={`${index}-${tripIndex}`}
@@ -119,16 +116,7 @@ function AllInternational() {
         )}
       </div>
 
-      {visiblePackages < packages.length && (
-        <div className="flex justify-center mb-6">
-          <button
-            onClick={loadMorePackages}
-            className="px-6 py-2 bg-[#03346e] text-white text-lg font-semibold rounded-lg"
-          >
-            Load More
-          </button>
-        </div>
-      )}
+
     </div>
   );
 }

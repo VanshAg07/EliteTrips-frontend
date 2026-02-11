@@ -47,7 +47,7 @@ const Videopage = () => {
           <img
             src={heroImage}
             alt="Hero Background"
-            className="relative h-full w-full overflow-hidden object-cover z-0"
+            className="relative h-full w-full overflow-hidden vid-img-main object-cover z-0"
             referrerPolicy="no-referrer"
             crossOrigin="anonymous"
             onError={(e) => {

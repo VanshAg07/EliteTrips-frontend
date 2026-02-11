@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Footer.css";
 import WhatsAppIcon from "./img/icons8-whatsapp.svg";
 import GmailIcon from "./img/icons8-gmail.svg";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const [icons, setIcons] = useState([]);
@@ -34,7 +34,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={GmailIcon} alt="Gmail" className="h-8 w-8" />
+            <img src={GmailIcon} alt="Gmail" className="footer-icon" />
           </a>
           <a
             className="footer-anchors"
@@ -42,7 +42,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="h-8 w-8 text-[#0077B5]" />
+            <FaLinkedin className="footer-icon text-[#0077B5]" />
           </a>
           <a
             className="footer-anchors"
@@ -50,7 +50,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={WhatsAppIcon} alt="WhatsApp" className="h-8 w-8" />
+            <FaWhatsapp className="footer-icon text-[#25D366]" />
           </a>
           <a
             className="footer-anchors"
@@ -58,7 +58,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="h-8 w-8 text-[#E4405F]" />
+            <FaInstagram className="footer-icon text-[#E4405F]" />
           </a>
           {icons && Array.isArray(icons) && icons.map((icon) => (
             <a
@@ -71,7 +71,7 @@ const Footer = () => {
               <img
                 src={icon.iconImage[0]}
                 alt={icon.name}
-                className="h-8 w-8 rounded-full"
+                className="footer-icon rounded-full"
               />
             </a>
           ))}

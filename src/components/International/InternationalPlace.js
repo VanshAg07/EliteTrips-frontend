@@ -171,9 +171,9 @@ const InernationalPlaces = () => {
           <ShopIntern />
         </div>
 
-        <div className="bg-[#ffffe6]">
+        <div className="">
           <div className="pt-72">
-          {isMobile ? (
+          {/* {isMobile ? (
             <div className="pl-[10px] pr-[10px] relative">
               <MobileHomeGallery />
             </div>
@@ -181,10 +181,10 @@ const InernationalPlaces = () => {
             <div className="px-28 relative">
               <Homeglry />
             </div>
-          )}
+          )} */}
           </div>
           <Whyuss />
-          <Review />
+          {/* <Review /> */}
           {/* <Guide /> */}
           <h1 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-8">
             Contact Form

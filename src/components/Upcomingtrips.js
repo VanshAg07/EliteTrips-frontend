@@ -139,7 +139,7 @@ const App = () => {
   const totalDots = Math.ceil(allTrips.length / tripsToShow); // Total groups of trips
 
   return (
-    <div className="min-h-screen bg-[#ffffe6] p-2 flex justify-center">
+    <div className="min-h-screen p-2 flex justify-center">
       <div className="w-[90vw]">
         <h1 className="text-3xl pl-12 font-bold mb-6">Upcoming Trips</h1>
         <div className="flex pl-10 mb-6 w-full justify-between">

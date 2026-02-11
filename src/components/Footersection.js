@@ -82,7 +82,7 @@ const FooterSection = () => {
             <ul className="text-[#fff] space-y-2 text-sm md:text-base lg:text-lg">
               <li>
                 <Link
-                  to="/place/Ladakh"
+                  to="/places/Ladakh"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
                   Ladakh
@@ -90,7 +90,7 @@ const FooterSection = () => {
               </li>
               <li>
                 <Link
-                  to="/place/Kashmir"
+                  to="/places/Kashmir"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
                   Kashmir
@@ -98,7 +98,7 @@ const FooterSection = () => {
               </li>
               <li>
                 <Link
-                  to="/place/Spiti"
+                  to="/places/Spiti"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
                   Spiti
@@ -106,10 +106,42 @@ const FooterSection = () => {
               </li>
               <li>
                 <Link
-                  to="/place/Himachal"
+                  to="/places/Himachal"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
                   Himachal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/places/Thailand"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Thailand
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/places/Australia"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Australia
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/places/Maldives"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Maldives
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/places/Dubai"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Dubai
                 </Link>
               </li>
             </ul>

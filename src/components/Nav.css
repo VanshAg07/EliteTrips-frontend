@@ -4,6 +4,7 @@
   width: 100%;
   background-color: #03346e;
   position: fixed;
+  top: 0;
   z-index: 9999;
   height: 60px;
   display: flex;

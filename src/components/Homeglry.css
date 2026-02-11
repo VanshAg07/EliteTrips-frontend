@@ -6,19 +6,20 @@
 
 .img-glry {
   max-width: 100%;
-  height: 650px;
+  height: 550px;
   object-fit: cover;
   position: relative;
 }
 
 .gallery-wrap {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  width: 80%;
+  height: 800px;
+  overflow: visible;
   position: relative;
   justify-content: center;
   align-items: center;
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  z-index: 10;
 }
 
 .gallery-center {
@@ -30,7 +31,7 @@
 }
 
 .gallery-box {
-  width: 530px;
+  width: 450px;
   position: absolute;
   transform: translate(-50%, -50%);
   backface-visibility: hidden;
@@ -41,58 +42,76 @@
   margin-bottom: 10%;
 }
 
-/* Updated Arrow Wrapper */
-.arrow-wrapper {
-  /* Changed from relative to absolute */
-  width: 100%;
-}
-
-/* Updated Arrow Styles */
+/* Arrow Styles */
 .arrow-glry {
-  /* position: fixed; */
+  position: absolute;
   font-size: 2rem;
   color: #000000;
   cursor: pointer;
-  border-radius: 20px;
-  padding: 5px;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
-  /* Added to ensure arrows stay above images */
-  top: calc(50% + 150px);
+  z-index: 999;
+  transition: transform 0.2s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow-glry:hover {
+  transform: translateY(-50%) scale(1.1);
 }
 
 .arrow-left-glry {
-  left: 10px;
+  left: 50%;
+  margin-left: -225px;
 }
 
 .arrow-right-glry {
-  right: 10px;
+  right: 50%;
+  margin-right: -225px;
 }
 
 @media (max-width: 475px) {
+  .gallery-wrap {
+    height: 650px;
+  }
+
   .gallery-center {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transition: all 0.5s ease-out;
     transform-style: preserve-3d;
   }
 
   .gallery-box {
-    width: 500px;
-    height: 100px;
+    width: 260px;
     position: absolute;
     transform: translate(-50%, -50%);
     backface-visibility: hidden;
   }
 
   .img-glry {
-    min-width: 100%;
-    height: 600px;
+    width: 100%;
+    height: 400px;
+  }
+
+  .arrow-left-glry {
+    margin-left: -160px;
+  }
+
+  .arrow-right-glry {
+    margin-right: -160px;
+  }
+
+  .arrow-wrapper {
+    padding: 0 10px;
   }
 
   .arrow-glry {
-    top: calc(50% + 120px);
+    font-size: 1.5rem;
+    padding: 8px;
   }
 }

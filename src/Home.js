@@ -54,7 +54,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-wr">
+    <div >
       <GoogleOAuthProvider clientId="your_client_id_here">
         <Nav />
         <Dropnav />
@@ -85,19 +85,19 @@ const Home = () => {
           )}
 
         <div>
-         {isLargeMobile ? <ExploreMobile /> : <Explore />}
+          {isLargeMobile ? <ExploreMobile /> : <Explore />}
 
 
           <Whyuss />
-          {isMobile ? (
-            <div className="px-2 relative">
+          {/* {isMobile ? (
+            <div className="px-2">
               <MobileHomeGallery />
             </div>
           ) : (
-            <div className="px-28 relative">
+            <div className="px-28">
               <Homeglry />
             </div>
-          )}
+          )} */}
           {/* <Review /> */}
           <Forms />
           {/* <Homeyt /> */}

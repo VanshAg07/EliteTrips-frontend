@@ -9,7 +9,7 @@ const Form = () => {
     <>
     <Nav />
     <Dropnav />
-    <div className='bg-[#ffffe6] pb-[20px] pt-[120px]'>
+    <div className=' pb-[20px] pt-[120px]'>
     <Forms />  
     </div>
     <MainFooter />

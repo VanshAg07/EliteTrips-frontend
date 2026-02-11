@@ -36,8 +36,8 @@ const TravelPackageCard = ({ pkg }) => {
       {/* Text content on image */}
       <div className="absolute bottom-0 left-0 p-4 text-white z-10">
         <div className="flex items-center gap-2">
-          <span className="text-lg font-semibold">Starting from</span>
-          <span className="text-lg font-bold">₹{pkg.flipOfferPrice}/-</span>
+          <span className="text-sm font-semibold">From</span>
+          <span className="text-sm font-semibold">₹{pkg.flipOfferPrice}/-</span>
         </div>
       </div>
     </div>
