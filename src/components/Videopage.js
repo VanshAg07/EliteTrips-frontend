@@ -93,10 +93,7 @@ const Videopage = () => {
 
 
         {/* Mainreview component - positioned at bottom of hero */}
-      </div>
-      <div className="">
         <Mainreview />
-
       </div>
       <Socialmedia />
       {/* Homecrd component */}

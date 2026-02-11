@@ -116,10 +116,10 @@ const Nav = () => {
             Indian Trips
           </Link>
           <Link to="/intern" onClick={() => setIsMenuOpen(false)} className="mobile-link">
-            International Deals
+            International Trips
           </Link>
           <Link to="/Honeymoon" onClick={() => setIsMenuOpen(false)} className="mobile-link">
-            Honeymoon Packages
+            Honeymoon Packs
           </Link>
           <Link to="/Aboutus" onClick={() => setIsMenuOpen(false)} className="mobile-link">
             About Us
@@ -130,13 +130,11 @@ const Nav = () => {
           <Link to="/Glry" onClick={() => setIsMenuOpen(false)} className="mobile-link">
             Gallery
           </Link>
-        </div>
 
-        <div className="mobile-menu-footer">
-          <a href="tel:+918852019731" className="mobile-phone">
+          {/* <a href="tel:+918852019731" className="mobile-phone">
             <FaPhoneAlt className="phone-icon" />
-            <span>+91-8852019731</span>
-          </a>
+            <span>8852019731</span>
+          </a> */}
           {username ? (
             <button onClick={handleLogout} className="mobile-logout-btn">
               Logout

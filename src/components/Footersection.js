@@ -13,7 +13,7 @@ const FooterSection = () => {
             <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">
               About Us
             </h2>
-            <p className="leading-relaxed text-[#fff] text-sm md:text-base lg:text-lg">
+            <p className="leading-relaxed text-[#b0b0b0] text-sm md:text-base lg:text-lg">
               EliteTrips is a trusted specialist in Travel & Transport services exclusively for the academic sector. We curate educational and fun-filled tours for students across India, offering meaningful insights into history, geography, and culture.
 
               Our expertise spans school tours, college tours, corporate travel, and family trips to destinations nationwide. Backed by years of industry experience, we are committed to delivering quality, authenticity, and exceptional service — driven by our belief in “Service with Quality & a Smile."
