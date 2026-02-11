@@ -12,8 +12,6 @@ import OfferHomePage from "./Dashboard/OfferHomePage";
 import NavOfferComponent from "./Dashboard/NavOffer";
 import HeroImage from "./Dashboard/HeroImage";
 import PackagesVideo from "./Dashboard/PackagesVideo";
-import CorporatePartners from "./Dashboard/Corporate/CorporatePartners";
-import CorporateHome from "./Dashboard/Corporate/CorporateHome";
 import Flipcard from "./FlipCard/Flipcard";
 import AddBackground from "./AddBackground";
 import YoutubeDetails from "./Dashboard/YoutubeDetails";
@@ -65,14 +63,6 @@ function Dashboard() {
     {
       name: "Packages Video",
       component: <PackagesVideo />,
-    },
-    {
-      name: "Corporate Partners",
-      component: <CorporatePartners />,
-    },
-    {
-      name: "Corporate Home",
-      component: <CorporateHome />,
     },
     {
       name: "Flipcard",

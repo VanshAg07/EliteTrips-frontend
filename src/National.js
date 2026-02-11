@@ -69,9 +69,9 @@ const National = () => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img 
-                  key={index} 
-                  src={imgUrl} 
+                <img
+                  key={index}
+                  src={imgUrl}
                   alt={`Image ${index}`}
                   referrerPolicy="no-referrer"
                   crossOrigin="anonymous"
@@ -105,12 +105,12 @@ const National = () => {
         <div className="bg-[#ffff00] h-1 w-14 md:w-20 lg:w-40 mt-2"></div>
       </div>
       <div className=" w-full flex justify-center items-center">
-      <div className="grid grid-cols-2 sm:grid-cols-3 w-[80%] gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 w-[80%] gap-4">
           {Array.isArray(places) &&
             places.map((place) => (
               <Link key={place.stateName} to={`/place/${place.stateName}`}>
                 <img
-                  className="h-[90%] w-[100%]"
+                  className="h-[90%] w-[100%] rounded-lg"
                   src={place.image[0]} // Ensure you are accessing the first image
                   alt={place.stateName}
                   referrerPolicy="no-referrer"

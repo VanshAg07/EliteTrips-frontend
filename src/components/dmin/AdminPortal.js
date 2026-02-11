@@ -9,12 +9,8 @@ import HomeIntern from "./AddInternational/HomeIntern";
 import AddHoneymoon from "./Honeymoon/AddHoneymoon";
 import NationalEdit from "./EditPackage/NationalEdit";
 import Dashboard from "./Dashboard";
-import BlogForm from "./Blogs/BlogForm";
 import InternationalEdit from "./EditPackage/InternationalEdit";
 import HoneymoonEdit from "./EditPackage/HoneymoonEdit";
-import BlogsEdit from "./EditPackage/BlogsEdit";
-import OffersHome from "./OffersHome";
-import EditOffer from "./EditPackage/EditOffer";
 import EditNationalDetails from "./EditPackageShops/EditNationalDetails";
 
 const AdminPortal = () => {
@@ -123,26 +119,6 @@ const AdminPortal = () => {
                     >
                       Honeymoon
                     </li>
-                    <li
-                      onClick={() => setActiveTab("add-offers")}
-                      className={`py-2 px-4 rounded-lg cursor-pointer ${
-                        activeTab === "add-offers"
-                          ? "bg-gray-700"
-                          : "hover:bg-gray-600"
-                      }`}
-                    >
-                      Offers
-                    </li>
-                    <li
-                      onClick={() => setActiveTab("add-blogs")}
-                      className={`py-2 px-4 rounded-lg cursor-pointer ${
-                        activeTab === "add-blogs"
-                          ? "bg-gray-700"
-                          : "hover:bg-gray-600"
-                      }`}
-                    >
-                      Blogs
-                    </li>
                   </ul>
                 )}
               </div>
@@ -201,26 +177,6 @@ const AdminPortal = () => {
                     >
                       Honeymoon
                     </li>
-                    <li
-                      onClick={() => setActiveTab("edit-blogs")}
-                      className={`py-2 px-4 rounded-lg cursor-pointer ${
-                        activeTab === "edit-blogs"
-                          ? "bg-gray-700"
-                          : "hover:bg-gray-600"
-                      }`}
-                    >
-                      Blogs
-                    </li>
-                    <li
-                      onClick={() => setActiveTab("edit-offer")}
-                      className={`py-2 px-4 rounded-lg cursor-pointer ${
-                        activeTab === "edit-offer"
-                          ? "bg-gray-700"
-                          : "hover:bg-gray-600"
-                      }`}
-                    >
-                      Offer
-                    </li>
                   </ul>
                 )}
               </div>
@@ -244,13 +200,9 @@ const AdminPortal = () => {
         {activeTab === "add-international" && <HomeIntern />}
         {activeTab === "bookings" && <Bookings />}
         {activeTab === "add-honeymoon" && <AddHoneymoon />}
-        {activeTab === "add-offers" && <OffersHome />}
         {activeTab === "edit-national" && <NationalEdit />}
         {activeTab === "edit-international" && <InternationalEdit />}
         {activeTab === "edit-honeymoon" && <HoneymoonEdit />}
-        {activeTab === "edit-offer" && <EditOffer />}
-        {activeTab === "edit-blogs" && <BlogsEdit />}
-        {activeTab === "add-blogs" && <BlogForm />}
         {activeTab === "edit-national-details" && <EditNationalDetails />}
       </div>
     </div>

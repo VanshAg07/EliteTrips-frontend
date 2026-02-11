@@ -1,66 +1,123 @@
-.video-background {
-  height: 100vh; /* Default height for larger screens */
+/* Hero Section - Main container */
+.hero-section {
+  height: calc(100vh - 165px);
+  /* Full viewport minus Nav (60px) + Dropnav (45px) + Review section (~60px) = 165px */
+  min-height: 500px;
+  position: relative;
 }
 
-/* Responsive heights for different screen sizes */
+/* Gradient overlay */
+.gradient-bg {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+/* Hero content positioning */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-title {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  position: relative;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments for tablets and below */
 @media (max-width: 1024px) {
-  .video-background {
-    height: 95vh; /* For large screens (e.g., laptops) */
+  .hero-section {
+    height: calc(100vh - 165px);
+    min-height: 400px;
   }
+
   .gradient-bg {
-    height: 95vh;
     width: 50vw;
-    background: rgba(0, 0, 0, 0.433);
   }
 }
 
 @media (max-width: 768px) {
-  .video-background {
-    height: 95vh; /* For medium screens (e.g., tablets) */
+  .hero-section {
+    height: calc(100vh - 165px);
+    min-height: 350px;
   }
+
   .gradient-bg {
-    height: 95vh;
     width: 50vw;
-    background: rgba(0, 0, 0, 0.433);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile adjustments - Dropnav hidden */
+@media (max-width: 656px) {
+  .hero-section {
+    height: calc(100vh - 115px);
+    /* Only Nav (60px) + Review (~55px) = 115px, Dropnav hidden */
+    min-height: 300px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 426px) {
-  .videopg-wrpper {
-    height: 61vh;
+  .hero-section {
+    height: calc(100vh - 110px);
+    min-height: 280px;
   }
-  .video-background {
-    height: 40vh; /* For medium screens (e.g., tablets) */
-  }
+
   .gradient-bg {
-    height: 40vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.433);
-  }
-  .videopg-p {
-    margin-top: -175px;
-    left: 2rem;
-  }
-  .videopg-btn {
-    margin-top: -240px;
-    left: 2rem;
+    background: rgba(0, 0, 0, 0.5);
   }
 
-  .video-hed {
-    margin-top: -80px;
-    left: 2rem;
+  .hero-title {
+    font-size: 1.5rem;
+    left: 1.5rem !important;
+    margin-bottom: 1rem;
   }
 
-  .line1 .line2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    font-size: 20px;
+  .hero-subtitle {
+    font-size: 0.65rem;
+    left: 1.5rem !important;
+    margin-top: 0.5rem;
+  }
+
+  .hero-content {
+    top: 45%;
   }
 }
-/* styles.css */
-.gradient-bg {
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+@media (max-width: 375px) {
+  .hero-section {
+    min-height: 220px;
+    height: calc(100vh - 60px - 45px);
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+    left: 1rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.6rem;
+    left: 1rem !important;
+  }
+
 }

@@ -47,7 +47,7 @@ const WhyTravello = () => {
   ];
 
   return (
-    <div className="why-travello-container py-16 px-4 w-full bg-gradient-to-b from-[#f8fafc] to-[#e2e8f0]">
+    <div className="py-16 px-4 w-full">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-800">
           Why EliteTrips?

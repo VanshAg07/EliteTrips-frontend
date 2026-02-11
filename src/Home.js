@@ -59,25 +59,6 @@ const Home = () => {
         <Nav />
         <Dropnav />
         <Videopage />
-        {isLargeMobile && <ExploreMobile />}
-        <Link to="/offer">
-          {paymentImages.length > 0 && (
-            <div className="gap-6">
-              {paymentImages.map((item) => (
-                <div
-                  key={item._id}
-                  className="flex justify-center items-center"
-                >
-                  <img
-                    src={`${isMobile ? item.phoneImage : item.image}`}
-                    alt="Payment Method"
-                    className="w-full md:mt-5 h-[70vh]"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-        </Link>
         {isSmallMobile ? (
           <div style={{ margin: "0px 10px 0px 10px" }}>
             <Mobcardinter />
@@ -98,20 +79,16 @@ const Home = () => {
           <div style={{ margin: "0px 10px 0px 10px" }}>
             <Mobcardhoney />
           </div>
-        ) : (
-          <Videopg4 />
-        )}
-
-        <div className="bg-[#ffffe6] relative">
-          {isMobile ? (
-            <div style={{ margin: "0px 10px 0px 10px" }}>
-              <UpcomingtripMobile />
-            </div>
-          ) : (
-            <Upcomingtrip />
+        )
+          : (
+            <Videopg4 />
           )}
 
-          {!isMobile && <Explore />}
+        <div>
+         {isLargeMobile ? <ExploreMobile /> : <Explore />}
+
+
+          <Whyuss />
           {isMobile ? (
             <div className="px-2 relative">
               <MobileHomeGallery />
@@ -121,8 +98,7 @@ const Home = () => {
               <Homeglry />
             </div>
           )}
-          <Whyuss />
-          <Review />
+          {/* <Review /> */}
           <Forms />
           {/* <Homeyt /> */}
         </div>

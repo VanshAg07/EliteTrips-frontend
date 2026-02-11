@@ -52,7 +52,7 @@ const Aboutus = () => {
       <Nav />
       <Dropnav />
       <div>
-        <div className="hero-section-left-1">
+        <div className="object-cover hero-section-left-1">
           {nationalImages.map((item) => (
             <div key={item._id} className="relative">
               {item.image.map((imgUrl, index) =>
@@ -68,9 +68,9 @@ const Aboutus = () => {
                     Your browser does not support the video tag.
                   </video>
                 ) : (
-                  <img 
-                    key={index} 
-                    src={imgUrl} 
+                  <img
+                    key={index}
+                    src={imgUrl}
                     alt={`Image ${index}`}
                     referrerPolicy="no-referrer"
                     crossOrigin="anonymous"
@@ -121,7 +121,7 @@ const Aboutus = () => {
             providing value every step of the way.
           </p>
         </div>
-        
+
         <Aboutushero />
         {/* Team Section */}
 

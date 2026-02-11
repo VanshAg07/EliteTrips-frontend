@@ -75,30 +75,88 @@
   width: 30px;
   height: 30px;
 }
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  .social-icons {
+    top: 40%;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+
+  .icon svg {
+    font-size: 24px;
+  }
+
+  .icon span {
+    left: 40px;
+    font-size: 12px;
+  }
+
+  .icon:hover {
+    width: 110px;
+  }
+}
+
 /* Media query for screens smaller than 425px */
 @media (max-width: 425px) {
   .social-icons {
-    top: 35%; /* Adjust positioning if needed */
+    top: 35%;
     z-index: 10;
   }
 
   .icon {
-    width: 30px; /* Reduce icon container size */
+    width: 30px;
     height: 30px;
     padding: 4px;
   }
 
   .icon svg {
-    font-size: 20px; /* Decrease icon size */
+    font-size: 18px;
   }
 
   .icon span {
     left: 30px;
-    font-size: 10px; /* Decrease font size */
-    padding: 3px 8px;
+    font-size: 9px;
+    padding: 2px 6px;
   }
 
   .icon:hover {
-    width: 90px; /* Adjust hover width for smaller screens */
+    width: 85px;
+  }
+
+  .gmail-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+  .icon {
+    width: 26px;
+    height: 26px;
+    padding: 3px;
+  }
+
+  .icon svg {
+    font-size: 16px;
+  }
+
+  .icon span {
+    font-size: 8px;
+  }
+
+  .icon:hover {
+    width: 75px;
+  }
+
+  .gmail-icon {
+    width: 16px;
+    height: 16px;
   }
 }

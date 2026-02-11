@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Mainreview from "./Mainreview";
-import "../components/Videopage.css";
+import "./Videopage.css";
 import Homecrd from "./Homecrd";
 import axios from "axios";
 import QuotePopup from "../QuotePopup";
-import Socialmedia from "../components/Socialmedia.js";
+import Socialmedia from "./Socialmedia";
 
 const Videopage = () => {
   const [heroImage, setHeroImage] = useState(null);
@@ -30,80 +30,82 @@ const Videopage = () => {
     setQuotePopupVisible(true);
   };
 
+
   const closeQuotePopup = () => {
     setQuotePopupVisible(false);
   };
 
   return (
-    <div className="w-full h-screen videopg-wrpper relative overflow-hidden">
-      {/* Gradient overlay from black to transparent */}
-      <div className="absolute top-0 left-0 w-[50vw] h-full z-10 gradient-bg"></div>
+    <div className="w-full relative">
+      {/* Hero Section - positioned below fixed navbars */}
+      <div className="relative w-full flex flex-col justify-center items-start mt-[105px] hero-section">
+        {/* Gradient overlay from black to transparent */}
+        <div className="absolute top-0 left-0 w-[50vw] h-full z-10 gradient-bg"></div>
 
-      {/* Hero Image Background */}
-      {heroImage && (
-        <img
-          src={heroImage}
-          alt="Hero Background"
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          onError={(e) => {
-            console.error("Hero image failed to load");
-            e.target.style.display = 'none';
-          }}
-        />
-      )}
+        {/* Hero Image Background */}
+        {heroImage && (
+          <img
+            src={heroImage}
+            alt="Hero Background"
+            className="relative h-full w-full overflow-hidden object-cover z-0"
+            referrerPolicy="no-referrer"
+            crossOrigin="anonymous"
+            onError={(e) => {
+              console.error("Hero image failed to load");
+              e.target.style.display = 'none';
+            }}
+          />
 
-      {/* Text content */}
-      <div className="z-20 video-text text-white mb-20 md:mb-28 px-4 text-left relative">
-        <h1
-          className="absolute video-hed left-20 text-2xl md:top-[200px] top-[180px] sm:text-3xl md:text-4xl lg:text-[50px] xl:text-[50px] font-bold"
-          style={{
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
-            lineHeight: "1.2",
-          }}
-        >
-          <span className="">
-            <span className="text-[yellow]">WANDER</span> MORE <br />
-          </span>
-          <span className="">
-            WORRY <span className="sp-1 text-[yellow]">LESS</span>
-            <hr className="hidden md:block border-t-2 border-white w-[85%] md:mt-6" />
-          </span>
-        </h1>
-
-        <div className="h-10 w-full bg-white z-20"></div>
-        <p
-          className="videopg-p md:mt-6 left-20 absolute uppercase md:top-[350px] top-[340px] text-xs sm:text-sm md:text-lg lg:text-xl tracking-wider"
-          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}
-        >
-          Your next adventure awaits <br /> Let us take you there <br /> seamlessly
-        </p>
-      </div>
-      {/* Button for booking */}
-      <div
-        onClick={handleGetQuotesClick}
-        className="absolute videopg-btn left-20 top-[460px] z-50"
-      >
-        <button className="bg-white md:mt-6 video-btn text-black md:py-2 md:px-6 md:rounded-full rounded-lg md:text-sm font-bold text-xs p-2">
-          Travel Now
-        </button>
-      </div>
-
-      {/* Mainreview component */}
-      <div className="z-20 w-full absolute bottom-0 ">
-        <Mainreview />
-      </div>
-      {isQuotePopupVisible && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center">
-          <QuotePopup onClose={closeQuotePopup} />
+        )}
+        {/* Text content */}
+        <div className="z-20 text-white relative max-w-lg hero-content">
+          <h1
+            className="hero-title left-14 text-4xl md:text-6xl"
+            style={{
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+              lineHeight: "1.2",
+            }}
+          >
+            <span className="">
+              <span className="text-[yellow]">WANDER</span> MORE <br />
+            </span>
+            <span className="">
+              WORRY <span className="space-x-1 text-[yellow]">LESS</span>
+              <hr className="hidden md:block border-t-2 border-white w-[85%] " />
+            </span>
+          </h1>
+          <p
+            className="hero-subtitle left-14 text-sm md:text-xl uppercase tracking-wider"
+            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}
+          >
+            Your next adventure awaits <br /> Let us take you there <br /> seamlessly
+          </p>
         </div>
-      )}
+        {/* Button for booking */}
+        <div
+          onClick={handleGetQuotesClick}
+          className="z-50"
+        >
+          <button className=" absolute left-14 bottom-36 bg-white text-black md:py-2 md:px-6 md:rounded-full rounded-lg md:text-sm font-bold text-xs p-2">
+            Travel Now
+          </button>
+        </div>
+
+
+        {/* Mainreview component - positioned at bottom of hero */}
+      </div>
+      <div className="">
+        <Mainreview />
+
+      </div>
       <Socialmedia />
       {/* Homecrd component */}
       <div>
         <Homecrd />
       </div>
+
     </div>
   );
-};
+}
 
 export default Videopage;

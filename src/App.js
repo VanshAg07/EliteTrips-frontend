@@ -15,8 +15,6 @@ import International from "./International.js";
 import National from "./National.js";
 import Glry from "./Glry.js";
 import AdminPortal from "./components/dmin/AdminPortal.js";
-import Blog from "./components/Blog.js";
-import Blogdetails from "./components/Blogdetails.js";
 import Places from "./components/Places.js";
 import Hiking from "./components/Hiking.js";
 import Visit from "./components/Visit.js";
@@ -27,7 +25,6 @@ import Dropnav from "./components/Dropnav.js";
 import Review from "./components/Review.js";
 import Honeymoon from "./components/Honeymoon.js";
 import Faq from "./components/Faq.js";
-import Payments from "./components/Payments.js";
 import FooterSection from "./components/Footersection.js";
 import Privcy from "./components/Privcy.js";
 import Cancellation from "./components/Cancellation.js";
@@ -42,13 +39,10 @@ import Mobcardhoney from "./components/Mobcardhoney.js";
 import Newsignin from "./components/Newsignin.js";
 import Explore from "./components/Explore.js";
 import Homeglry from "./components/Homeglry.js";
-import Corporate from "./components/Corporate.js";
 import Aboutus from "./components/About-us.js";
 import Superpower from "./components/Superpower.js";
-import Corpohero from "./components/Corpo-hero.js";
 import SignUp from "./components/Login/SignUp.js";
 import Login from "./components/Login/Login.js";
-import Corpoform from "./components/Corpo-form.js";
 import DateCosting from "./components/DatesCosting/DateCosting.js";
 import DateCost from "./components/DatesCosting/DateCost.js";
 import BookingOptions from "./components/DatesCosting/BookingOptions.js";
@@ -62,15 +56,12 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop.js";
 import Homecrd from "./components/Homecrd.js";
 import Homeyt from "./components/Homeyt.js";
 import Upcomingtrip from "./components/Upcomingtrips.js";
-import Offer from "./components/Offer.js";
 import AdminLogin from "./components/dmin/AdminLogin.js";
 import Forgotmob from "./components/Login/Forgotmob.js";
 import Forgot from "./components/Login/Forgot.js";
-import PackageOffer from "./components/User/Offers/PackageOffer.js";
 import PhoneFooter from "./components/PhoneFooter.js";
 import VideoModal from "./components/VideoModal.js";
 import Popup2 from "./components/Popup2.js";
-import ScreenshotPrevention from "./components/Screenshotprevention.js";
 
 const App = () => {
   const { user } = useSelector((state) => state.profile);
@@ -81,35 +72,9 @@ const App = () => {
     return <Outlet />;
   };
 
-  useEffect(() => {
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'PrintScreen' || e.keyCode === 44) {
-        e.preventDefault();
-        return false;
-      }
-    }, { capture: true });
-
-    // Disable right-click
-    document.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      return false;
-    });
-  }, []);
-
   const adminMiddleware = roleMiddleware(["admin"]);
 
-  useEffect(() => {
-    const handleContextMenu = (e) => {
-      e.preventDefault();
-    };
 
-    document.addEventListener("contextmenu", handleContextMenu);
-    return () => {
-      document.removeEventListener("contextmenu", handleContextMenu);
-    };
-  }, []);
-
-  
   useEffect(() => {
     const adjustZoomForLaptop = () => {
       const isLaptop136 =
@@ -130,7 +95,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <ScreenshotPrevention>
       <Routes>
         <Route path="/admin" element={adminMiddleware}>
           <Route path="/admin" element={<AdminPortal />} />
@@ -144,7 +108,6 @@ const App = () => {
         <Route path="/Cont" element={<Cont />} />
         <Route path="/intern" element={<International />} />
         <Route path="/national" element={<National />} />
-        <Route path="/Blog" element={<Blog />} />
         <Route path="/Hiking" element={<Hiking />} />
         <Route path="/Visit" element={<Visit />} />
         <Route path="/Food" element={<Food />} />
@@ -160,20 +123,14 @@ const App = () => {
         <Route path="/Whyuss" element={<Whyuss />} />
         <Route path="/Newsignin" element={<Newsignin />} />
         <Route path="/Homeglry" element={<Homeglry />} />
-        <Route path="/blogdetails/:blogTitle" element={<Blogdetails />} />
         <Route path="/Footersection" element={<FooterSection />} />
         <Route path="/Faq" element={<Faq />} />
-        <Route path="/Payments" element={<Payments />} />
         <Route path="/Forms" element={<Forms />} />
         <Route path="/Mainreview" element={<Mainreview />} />
         <Route path="/Mobcard" element={<Mobcard />} />
         <Route path="/Mobcardinter" element={<Mobcardinter />} />
         <Route path="/Mobcardhoney" element={<Mobcardhoney />} />
         <Route path="/Explore" element={<Explore />} />
-        <Route path="/Corporate" element={<Corporate />} />
-        <Route path="/Corpohero" element={<Corpohero />} />
-        <Route path="/Superpower" element={<Superpower />} />
-        <Route path="/Corpoform" element={<Corpoform />} />
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/place/:name" element={<Places />} />
         <Route path="/places/:name" element={<InternationalPlaces />} />
@@ -190,7 +147,6 @@ const App = () => {
           path="/honeymoon/:tripName/:name"
           element={<PackageHoneymoon />}
         />
-        <Route path="/offer/:tripName/:name" element={<PackageOffer />} />
         <Route path="/honeymoon-packages/:name" element={<HomeHoneymoon />} />
         <Route path="/trip/:tripName/:name" element={<Packagedetails />} />
         <Route path="/dates-and-costing" element={<DateCosting />} />
@@ -200,14 +156,12 @@ const App = () => {
         <Route path="/homecrd" element={<Homecrd />} />
         <Route path="/Homeyt" element={<Homeyt />} />
         <Route path="/upcomingtrips" element={<Upcomingtrip />} />
-        <Route path="/offer" element={<Offer />} />
         <Route path="/forgotmob" element={<Forgotmob />} />
         <Route path="/forgot" element={<Forgot />} />
         <Route path="/phonefooter" element={<PhoneFooter />} />
         <Route path="/reel-slider" element={<VideoModal />} />
         <Route path="/popup2" element={<Popup2 />} />
       </Routes>
-      </ScreenshotPrevention>
     </BrowserRouter>
   );
 };

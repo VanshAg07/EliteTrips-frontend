@@ -1,14 +1,30 @@
 .instagram-gradient {
-    background: linear-gradient(to top right, #f9ce34, #ee2a7b, #6228d7);
-    border-radius: 25%;
-    display: flex;
-    align-items: center;
-    padding-left: 2px ;
-    padding-right: 2px;
-    justify-content: center;
-    color: white;
-  }
-  
-  .facebook-gradient{
+  background: linear-gradient(to top right, #f9ce34, #ee2a7b, #6228d7);
+  border-radius: 25%;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  justify-content: center;
+  color: white;
+}
 
+.hero-section-left-1 {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .hero-section-left-1 {
+    position: relative;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
+}

@@ -159,7 +159,7 @@ const International = () => {
             places.map((place) => (
               <Link key={place.stateName} to={`/places/${place.stateName}`}>
                 <img
-                  className="h-[90%] w-[100%]"
+                  className="h-[90%] w-[100%] rounded-lg"
                   src={place.image[0]} // Ensure you are accessing the first image
                   alt={place.stateName}
                   referrerPolicy="no-referrer"

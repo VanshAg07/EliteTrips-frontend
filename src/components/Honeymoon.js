@@ -64,7 +64,7 @@ const Honeymoon = () => {
     <div className="wrpper-inter">
       <Nav />
       <Dropnav />
-      <div className="hero-section-left-1">
+      <div className="object-cover hero-section-left-1">
         {nationalImages.map((item) => (
           <div key={item._id} className="relative">
             {item.image.map((imgUrl, index) =>
@@ -80,9 +80,9 @@ const Honeymoon = () => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img 
-                  key={index} 
-                  src={imgUrl} 
+                <img
+                  key={index}
+                  src={imgUrl}
                   alt={`Image ${index}`}
                   referrerPolicy="no-referrer"
                   crossOrigin="anonymous"
@@ -129,7 +129,7 @@ const Honeymoon = () => {
                 to={`/honeymoon-packages/${place.stateName}`}
               >
                 <img
-                  className="h-[90%] w-[100%]"
+                  className="h-[90%] w-[100%] rounded-lg"
                   src={place.image[0]} // Ensure you are accessing the first image
                   alt={place.stateName}
                   referrerPolicy="no-referrer"

@@ -5,7 +5,7 @@ import "./Mainreview.css"
 
 const FooterBanner = () => {
   return (
-    <div className="bg-[#e1feff] mainreview-wrapper text-black py-2 text-center">
+    <div className="bg-[#e1feff] mainreview-wrapper w-full text-black py-2 text-center">
       {/* Container for the review and traveler information */}
       <div className="flex justify-center items-center space-x-4 sm:space-x-8 md:space-x-12">
         {/* Destinations */}

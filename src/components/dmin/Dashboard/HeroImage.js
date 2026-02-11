@@ -6,31 +6,31 @@ import "react-toastify/dist/ReactToastify.css";
 // Helper function to convert Google Drive URL for preview
 const convertGoogleDriveUrl = (url) => {
   if (!url) return url;
-  
+
   // Already in lh3 format
   if (url.includes('lh3.googleusercontent.com')) {
     return url;
   }
-  
+
   // Extract file ID from various Google Drive URL formats
   let fileId = null;
-  
+
   // Format: https://drive.google.com/file/d/FILE_ID/view
   const fileMatch = url.match(/\/file\/d\/([^\/]+)/);
   if (fileMatch) {
     fileId = fileMatch[1].split('?')[0];
   }
-  
+
   // Format: https://drive.google.com/open?id=FILE_ID
   const openMatch = url.match(/[?&]id=([^&]+)/);
   if (openMatch) {
     fileId = openMatch[1].split('?')[0];
   }
-  
+
   if (fileId) {
     return `https://lh3.googleusercontent.com/d/${fileId}`;
   }
-  
+
   return url;
 };
 
@@ -128,7 +128,7 @@ function HeroImage() {
     <div className="container mx-auto p-4 max-w-4xl">
       <ToastContainer />
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Home Page Hero Image</h1>
-      
+
       {/* Instructions */}
       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
         <h3 className="font-bold text-blue-800 mb-2">🖼️ How to Add Hero Image from Google Drive:</h3>
@@ -159,7 +159,7 @@ function HeroImage() {
               value={newImageUrl}
               onChange={(e) => setNewImageUrl(e.target.value)}
             />
-            
+
             {/* Live Preview */}
             {previewUrl && (
               <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
@@ -168,13 +168,15 @@ function HeroImage() {
                   src={previewUrl}
                   alt="Preview"
                   className="w-full h-64 object-cover rounded-lg"
+                  referrerPolicy="no-referrer"
+                  crossOrigin="anonymous"
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/800x400?text=Image+Failed+to+Load';
                   }}
                 />
               </div>
             )}
-            
+
             <div className="flex gap-2">
               <button
                 onClick={handleSaveImage}
@@ -205,27 +207,29 @@ function HeroImage() {
               {/* Image info */}
               <div className="mb-4 p-3 bg-blue-50 rounded-lg">
                 <p className="text-sm text-gray-700 mb-2">
-                  <strong>Original URL:</strong> 
+                  <strong>Original URL:</strong>
                   <br />
                   <span className="break-all text-xs">{heroImage.imageUrl}</span>
                 </p>
                 <p className="text-sm text-gray-700">
-                  <strong>Display URL:</strong> 
+                  <strong>Display URL:</strong>
                   <br />
                   <span className="break-all text-xs">{heroImage.image}</span>
                 </p>
               </div>
-              
+
               {/* Image Preview */}
               <img
                 src={heroImage.image}
                 alt="Hero"
                 className="w-full h-80 object-cover rounded-lg mb-4"
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
                 onError={(e) => {
                   e.target.src = 'https://via.placeholder.com/800x400?text=Image+Failed+to+Load';
                 }}
               />
-              
+
               <div className="flex items-center justify-between mt-4">
                 <div className="flex gap-2">
                   <button

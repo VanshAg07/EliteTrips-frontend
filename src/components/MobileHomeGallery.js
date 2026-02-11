@@ -36,7 +36,7 @@ const MobileHomeGallery = () => {
   };
 
   return (
-    <div className="relative pb-60">
+    <div className="relative mt-[30rem] pb-60">
       <div className="flex relative flex-row">
         <div className="arrow-wrapper">
           <div className="arrow-glry arrow-left-glry" onClick={handlePrevious}>

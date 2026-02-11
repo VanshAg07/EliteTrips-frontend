@@ -9,10 +9,10 @@ const TravelOptions = () => {
       const res = await axios.get(
         "https://elitetrips-backend.onrender.com/api/flip-card/flip"
       );
-      
+
       // Create adventure items from flipcard data
       const adventureItems = [];
-      
+
       // Add National (Experience India)
       if (res.data.national && res.data.national.length > 0) {
         adventureItems.push({
@@ -22,7 +22,7 @@ const TravelOptions = () => {
           route: '/national'
         });
       }
-      
+
       // Add International
       if (res.data.international && res.data.international.length > 0) {
         adventureItems.push({
@@ -32,7 +32,7 @@ const TravelOptions = () => {
           route: '/intern'
         });
       }
-      
+
       // Add Honeymoon (Romantic Escapes)
       if (res.data.honeymoon && res.data.honeymoon.length > 0) {
         adventureItems.push({
@@ -42,17 +42,7 @@ const TravelOptions = () => {
           route: '/Honeymoon'
         });
       }
-      
-      // Add Corporate Trips
-      adventureItems.push({
-        _id: 'corporate',
-        title: 'Corporate Trips',
-        image: res.data.national && res.data.national.length > 1 
-          ? res.data.national[1].flipcardImage[0] 
-          : res.data.national?.[0]?.flipcardImage?.[0] || '',
-        route: '/Corporate'
-      });
-      
+
       setAdventures(adventureItems);
     } catch (error) {
       console.error("Error fetching adventures:", error);

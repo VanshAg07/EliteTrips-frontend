@@ -9,7 +9,7 @@
 
 .home-wr{
     overflow-x: hidden;
-    background-color: #ffffe6;
+    /* background-color: #ffffe6; */
 }
 
 @media (max-width: 1024px) {

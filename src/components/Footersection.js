@@ -1,21 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const FooterSection = () => {
-  const [blogs, setBlogs] = useState([]);
-  const navigate = useNavigate();
-  const fetchBlogs = () => {
-    fetch(`https://elitetrips-backend.onrender.com/api/blog/blog-title`)
-      .then((response) => response.json())
-      .then((data) => {
-        setBlogs(data.blogs);
-      })
-      .catch((error) => console.error("Error fetching blog titles:", error));
-  };
-
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
 
   return (
     <div className="bg-[#03346E] text-white w-full">
@@ -35,26 +21,12 @@ const FooterSection = () => {
               services extend to school tours, college tours, corporate tours,
               and family trips across India. With years of experience, we ensure
               quality, authenticity, and exceptional service. We believe in
-              “Service with Quality & Smile.”
+              "Service with Quality & Smile."
             </p>
           </div>
 
-          {/* Blogs & Quick Links Section */}
+          {/* Quick Links Section with Right Border */}
           <div className="text-center md:text-left md:border-r md:border-white md:px-8">
-            <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">
-              Blogs
-            </h2>
-            <ul className="text-[#fff] space-y-2 text-sm md:text-base lg:text-lg ">
-              {blogs && Array.isArray(blogs) && blogs.map((blog, index) => (
-                <li key={index} onClick={() => navigate(`/blogdetails/${blog.title}`)} className="cursor-pointer">
-                  {blog.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links Section */}
-          <div className="text-center md:text-left md:pl-8">
             <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">
               Quick Links
             </h2>
@@ -99,12 +71,45 @@ const FooterSection = () => {
                   About Us
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Trips Section */}
+          <div className="text-center md:text-left md:pl-8">
+            <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">
+              Trips
+            </h2>
+            <ul className="text-[#fff] space-y-2 text-sm md:text-base lg:text-lg">
               <li>
                 <Link
-                  to="/Payments"
+                  to="/place/Ladakh"
                   className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
                 >
-                  Payments
+                  Ladakh
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/place/Kashmir"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Kashmir
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/place/Spiti"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Spiti
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/place/Himachal"
+                  className="hover:text-[#fffe9] transition-all ease-in-out duration-200"
+                >
+                  Himachal
                 </Link>
               </li>
             </ul>

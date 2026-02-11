@@ -1,6 +1,7 @@
+/* Main Navbar Container */
 .nav-wrapper {
   color: #fff;
-  width: 100vw;
+  width: 100%;
   background-color: #03346e;
   position: fixed;
   z-index: 9999;
@@ -8,49 +9,117 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.gradient-background {
-  background: linear-gradient(to right, rgba(169, 166, 165, 0.8), rgba(167, 157, 150, 0.8));
-  position: fixed; /* Make it cover the entire viewport */
-  top: 60px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Ensure it is behind other content */
-}
-
-.active-link {
-  position: relative;
-  color: #fff; /* Ensure the text is visible against your navbar background */
-}
-
-.active-link::after {
-  content: '';
-  position: absolute;
-  width: 40%;
-  height: 2px; /* Adjust thickness of underline */
-  background-color: #fff; /* Color of the underline */
-  bottom: -5px; /* Adjust distance of underline from text */
-  left: 3px;
-  transition: width 0.3s ease; /* Smooth transition effect */
-  justify-content: center;
+/* Left section with logo and search */
+.nav-left {
+  display: flex;
   align-items: center;
-}
-.mob-no {
-  border: 2px solid #fff;
-  border-radius: 25px;
-  padding: 5px 15px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
+/* Logo */
 .logo {
-  padding-left: 20px; /* Padding for spacing on larger screens */
-  height: 100%;
-  max-height: 58px;
+  height: 55px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
+/* Desktop search */
+.desktop-search {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Tablet search - centered, hidden by default */
+.tablet-search {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.nav-link.active-link {
+  position: relative;
+}
+
+.nav-link.active-link::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background-color: #fff;
+  bottom: 2px;
+  left: 20%;
+}
+
+/* Phone button with border - original design */
+.nav-phone-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.nav-phone-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.phone-icon {
+  font-size: 14px;
+}
+
+/* User section */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Sign In button with arrow - original design */
 .cta {
   position: relative;
   padding: 10px 14px;
@@ -58,11 +127,13 @@
   border: none;
   background: none;
   cursor: pointer;
-  margin-right: 40px;
+  margin-right: 20px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .cta:before {
@@ -108,7 +179,8 @@
 .cta:active {
   transform: scale(0.95);
 }
-/* Button with Icon */
+
+/* Logout Button with Icon - original design */
 .Btn-n {
   display: flex;
   align-items: center;
@@ -123,7 +195,8 @@
   transition-duration: 0.3s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
   background-color: white;
-  margin-right: 20px; /* Adjusted for smaller screens */
+  margin-right: 20px;
+  flex-shrink: 0;
 }
 
 .sign-n {
@@ -182,252 +255,302 @@
   transform: translate(2px, 2px);
 }
 
-/* Menu Icon for Mobile */
-.menu-icon {
+/* Mobile right section - hidden by default */
+.nav-mobile-right {
   display: none;
-  cursor: pointer;
-  font-size: 24px;
-  padding-right: 20px;
-}
-
-/* Navigation Links */
-.nav-links {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-@media (max-width: 1343px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .lappi-nav{
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 30%; /* Menu takes up 30% of the screen on larger mobile screens */
-    height: 100vh;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px;
-    font-size: 1.3rem;
-  }
-
-  .nav-links.open {
-    display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow effect */
-    transition: all 0.3s ease-in-out;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 10px 20px;
-    margin: 5px 0;
-    text-align: left;
-    display: flex;
-    align-items: center; /* Ensure icons align with text */
-    gap: 8px; /* Add space between icons and text */
-    color: #000;
-  }
-
-  .nav-links .flex {
-    justify-content: flex-start;
-  }
+/* Hamburger Menu Icon */
+.menu-icon {
+  cursor: pointer;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.menu-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Smaller hamburger on mobile */
 @media (max-width: 768px) {
   .menu-icon {
+    padding: 2px;
+  }
+
+  .menu-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 426px) {
+  .menu-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 60px;
+  right: -70%;
+  width: 70%;
+  height: calc(100vh - 60px);
+  background-color: #03346e;
+  z-index: 999;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-content {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.mobile-link {
+  display: block;
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.mobile-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu Footer */
+.mobile-menu-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mobile-logout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  color: #03346e;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.mobile-signin-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  color: #03346e;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+/* Hide scrollbar */
+.mobile-menu-content::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-menu-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - NO OVERLAP DESIGN
+   ============================================ */
+
+/* Large Desktop - 1400px and above */
+@media (min-width: 1400px) {
+  .nav-link {
+    padding: 8px 14px;
+    font-size: 15px;
+  }
+
+  .nav-phone-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop - 1200px to 1399px */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .nav-phone-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .cta {
+    margin-right: 15px;
+    padding: 8px 12px;
+  }
+
+
+
+  .cta span {
+    font-size: 14px;
+  }
+}
+
+
+/* Large Tablet - 900px to 1023px - Switch to hamburger */
+@media (min-width: 900px) and (max-width: 1023px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .desktop-search {
+    display: none;
+  }
+
+  .tablet-search {
     display: block;
+  }
+
+  .nav-mobile-right {
+    display: flex;
+  }
+}
+
+/* Tablet - 768px to 899px */
+@media (min-width: 768px) and (max-width: 899px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .desktop-search {
+    display: none;
+  }
+
+  .tablet-search {
+    display: block;
+  }
+
+  .nav-mobile-right {
+    display: flex;
   }
 
   .nav-wrapper {
-    height: 60px; /* Reduced navbar height for smaller screens */
-     z-index: 1001;
+    padding: 0 15px;
   }
 
   .logo {
-    height: 90px; /* Reduced logo size */
-    padding-left: 15px; /* Adjust padding */
+    height: 50px;
   }
+}
 
-  .nav-links {
+/* Mobile - below 768px */
+@media (max-width: 767px) {
+  .nav-desktop {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 40%; /* Menu takes up 30% of the screen on smaller screens */
-    height: 100vh;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px;
-    font-size: 1rem;
-    transform: translateX(100%);
   }
 
-  .nav-links.open {
+  .desktop-search {
+    display: none;
+  }
+
+  .tablet-search {
+    display: none;
+  }
+
+  .nav-mobile-right {
     display: flex;
-    transform: translateX(0);
   }
 
-  .nav-links a {
-    width: 100%;
-    padding: 10px 20px; /* Increase padding for better touch targets */
-    margin: 5px 0; /* Increase space between links */
-    text-align: left;
-    display: flex;
-    align-items: center; /* Ensure icons align with text */
-    gap: 8px; /* Add space between icons and text */
-    color: #000; /* Ensure text and icons are visible */
-  }
-
-  .nav-links .flex {
-    justify-content: flex-start;
-  }
-  /* Small screen adjustments for Sign In button */
-  .cta {
-    margin-right: 20px; /* Reduced margin */
-    padding: 8px 12px; /* Adjust padding */
-    gap: 6px; /* Adjust gap between text and icon */
-  }
-
-  .cta span {
-    font-size: 16px; /* Adjust font size */
-  }
-
-  .cta svg {
-    margin-left: 0; /* Remove margin to bring the arrow closer */
-    stroke-width: 1.5;
-  }
-}
-
-@media (max-width: 677px) {
-  .menu-icon {
-    font-size: 22px; /* Adjust menu icon size for very small screens */
-    padding-right: 10px;
-  }
-
-  .nav-links {
-    width: 40%; /* Ensure it takes 30% of the screen width */
-    top: 60px; /* Align with the smaller navbar */
-    padding: 10px; /* Reduced padding for smaller screens */
-    font-size: 0.9rem; /* Adjust font size */
-  }
-
-  .nav-links a {
-    padding: 12px 10px; /* Adjust padding */
-    margin: 8px 0; /* Adjust spacing */
-    display: flex;
-    align-items: center; /* Ensure icons align with text */
-    gap: 8px; /* Add space between icons and text */
-    color: #000; /* Ensure text and icons are visible */
-  }
-
-  .cta {
-    margin-right: 10px; /* Further reduced margin */
-    padding: 6px 10px; /* Further adjust padding */
-    gap: 4px; /* Further reduce gap for very small screens */
-  }
-
-  .cta span {
-    font-size: 14px; /* Further adjust font size */
-  }
-
-  .cta svg {
-    stroke-width: 1.5; /* Adjust stroke width */
-  }
-}
-
-@media (max-width: 593px) {
-  .nav-links {
-    width: 50%;
-  }
-}
-
-@media (max-width: 460px) {
-  .cta {
-    margin-right: 5px;
-    padding: 4px 8px;
-    gap: 2px;
-  }
-
-  .cta span {
-    font-size: 12px; /* Slightly reduce font size */
-  }
-
-  .cta svg {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 425px) {
-  .cta {
-    margin-right: 20px; /* Reduced margin for smaller screens */
-    padding: 8px 10px; /* Adjust padding to ensure button stays in one line */
-    /* gap: 2px; Reduce the gap between text and icon */
-  }
   .nav-wrapper {
-    padding: 10px; /* Add padding to the navbar */
-  }
-  .cta span {
-    font-size: 14px; /* Slightly reduce font size */
+    padding: 0 15px;
   }
 
-  .cta svg {
-    width: 12px; /* Adjust the size of the SVG */
-    height: 12px;
-  }
-}
-
-@media (max-width: 425px) {
-  .nav-links a {
-    margin-bottom: 4px; /* Remove any bottom margin */
-    padding-bottom: 0; /* Remove any bottom padding */
-    margin-top: 2px;
+  .logo {
+    height: 50px;
   }
 
-  
-
-  .nav-links {
-    margin-bottom: 0; /* Remove any bottom margin from the nav links container */
-    width: 60%;
+  .mobile-menu {
+    width: 75%;
+    right: -75%;
   }
 }
 
-.desktop-only {
-  display: block;
-}
+/* Small Mobile - below 480px */
+@media (max-width: 479px) {
+  .mobile-menu {
+    width: 85%;
+    right: -85%;
+  }
 
-@media (max-width: 768px) {
-  .desktop-only {
-    display: none;
+  .logo {
+    height: 45px;
+  }
+
+  .nav-wrapper {
+    padding: 0 10px;
   }
 }
 
+/* Very Small Mobile - below 360px */
+@media (max-width: 359px) {
+  .mobile-menu {
+    width: 90%;
+    right: -90%;
+  }
 
-/* Hide scrollbar for Chrome, Safari, and Edge */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+  .logo {
+    height: 40px;
+  }
 
-/* Hide scrollbar for Firefox */
-.scrollbar-hide {
-  scrollbar-width: none; /* For Firefox */
-}
-
-/* Prevent scrollbar from showing up */
-.overflow-y-auto {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  .mobile-link {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
 }

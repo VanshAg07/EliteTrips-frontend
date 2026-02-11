@@ -78,7 +78,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="relative flex items-center ml-4 mr-4 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
+    <div className="relative flex items-center w-[200px] md:w-[220px] lg:w-[250px] xl:w-[280px]">
       <input
         type="text"
         value={search}

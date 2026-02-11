@@ -53,7 +53,6 @@ const Navbar = () => {
     indiaPackages: nationalNav,
     internationalPackage: internationalNav,
     honeymoonPackages: honeymoonNav,
-    corporatePackages: [],
   };
 
   const handleMouseEnter = (dropdown) => {
@@ -79,29 +78,22 @@ const Navbar = () => {
                 key === "indiaPackages"
                   ? "/national"
                   : key === "internationalPackage"
-                  ? "/intern"
-                  : key === "honeymoonPackages"
-                  ? "/honeymoon"
-                  : key === "corporatePackages"
-                  ? "/corporate"
-                  : "#"
+                    ? "/intern"
+                    : key === "honeymoonPackages"
+                      ? "/honeymoon"
+                      : "#"
               }
             >
               {key === "indiaPackages"
                 ? "India Packages"
                 : key === "internationalPackage"
-                ? "International Package"
-                : key === "honeymoonPackages"
-                ? "Honeymoon Packages"
-                : key === "corporatePackages"
-                ? "Corporate Packages"
-                : key.charAt(0).toUpperCase() +
-                  key.replace(/([A-Z])/g, " $1").toLowerCase()}
+                  ? "International Package"
+                  : key === "honeymoonPackages"
+                    ? "Honeymoon Packages"
+                    : key.charAt(0).toUpperCase() +
+                    key.replace(/([A-Z])/g, " $1").toLowerCase()}
             </a>
-            {/* Only render the down arrow if it's not "corporatePackages" */}
-            {key !== "corporatePackages" && (
-              <FaChevronDown className="dropdown-icon" />
-            )}
+            <FaChevronDown className="dropdown-icon" />
             {activeDropdown === key && dropdownLinks[key].length > 0 && (
               <ul className="dropdown">
                 {dropdownLinks[key].map((link, index) => (
@@ -111,10 +103,10 @@ const Navbar = () => {
                         key === "honeymoonPackages"
                           ? `/honeymoon-packages/${link.stateName}`
                           : key === "indiaPackages"
-                          ? `/place/${link.stateName}`
-                          : key === "internationalPackage"
-                          ? `/places/${link.stateName}`
-                          : `/place/${link.stateName}`
+                            ? `/place/${link.stateName}`
+                            : key === "internationalPackage"
+                              ? `/places/${link.stateName}`
+                              : `/place/${link.stateName}`
                       }
                     >
                       {link.stateName}

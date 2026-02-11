@@ -36,7 +36,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="relative mb-80 mt-20">
+    <div className="relative mt-[30rem] mb-80">
       <div className="flex relative flex-row">
         <div className="arrow-wrapper">
           <div className="arrow-glry arrow-left-glry" onClick={handlePrevious}>
@@ -62,9 +62,8 @@ const Gallery = () => {
                   className="gallery-box"
                   key={index}
                   style={{
-                    transform: `translate(-50%, -50%) rotateY(${
-                      index * -30
-                    }deg) translateZ(-1000px)`,
+                    transform: `translate(-50%, -50%) rotateY(${index * -30
+                      }deg) translateZ(-1000px)`,
                   }}
                 >
                   <a>

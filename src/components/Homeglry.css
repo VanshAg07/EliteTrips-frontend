@@ -1,4 +1,6 @@
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
 }
 
@@ -41,13 +43,13 @@
 
 /* Updated Arrow Wrapper */
 .arrow-wrapper {
-  position: absolute;  /* Changed from relative to absolute */
+  /* Changed from relative to absolute */
   width: 100%;
 }
 
 /* Updated Arrow Styles */
 .arrow-glry {
-  position: fixed;
+  /* position: fixed; */
   font-size: 2rem;
   color: #000000;
   cursor: pointer;
@@ -55,7 +57,8 @@
   padding: 5px;
   align-items: center;
   justify-content: center;
-  z-index: 10;  /* Added to ensure arrows stay above images */
+  z-index: 10;
+  /* Added to ensure arrows stay above images */
   top: calc(50% + 150px);
 }
 

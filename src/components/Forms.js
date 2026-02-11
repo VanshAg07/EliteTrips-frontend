@@ -1,5 +1,4 @@
 import React from "react";
-import icon1 from "../img/con-bg.png";
 import axios from "axios";
 
 const Forms = () => {
@@ -58,24 +57,24 @@ const Forms = () => {
   };
 
   return (
-    <div className="bg-[#ffffe6]">
-      <h1 className="text-center md:text-2xl pt-4 text-xl lg:text-4xl font-bold md:mb-8 mb-2">
+    <div className="h-screen flex flex-col justify-center py-4">
+      <h1 className="text-center md:text-2xl text-xl lg:text-4xl font-bold mb-4">
         Need Assistance
       </h1>
-      <div className="flex items-center mb-10 justify-center px-4 h-[80%]">
-        <div className="shadow-[0_10px_15px_rgba(0,0,0,0.5)] rounded-lg flex flex-col md:flex-row items-stretch justify-center w-[80vw] mt-4">
+      <div className="flex items-center justify-center px-4 flex-1 max-h-[85vh]">
+        <div className="shadow-[0_10px_15px_rgba(0,0,0,0.5)] rounded-lg flex flex-col md:flex-row items-stretch justify-center w-[80vw] h-full max-h-[75vh]">
           <div className="md:w-[40vw] flex-shrink-0 bg-white flex items-center justify-center rounded-lg hidden md:flex">
-            <img src={icon1} alt="Illustration" className="w-[90%] h-auto" />
+            <img src="/Contact.png" alt="Illustration" className="w-[90%] h-auto max-h-[70vh] object-contain" />
           </div>
-          <div className="bg-[#e1feff] rounded-lg shadow-lg p-6 md:p-8 md:w-[40vw] flex-shrink-0">
+          <div className="bg-[#e1feff] rounded-lg shadow-lg p-4 md:p-6 md:w-[40vw] flex-shrink-0 flex flex-col justify-center overflow-y-auto">
             <h2 className="text-cyan-500 text-lg font-bold mb-1">
-              EliteTrips Calling?
+              Need Assistance?
             </h2>
-            <h3 className="text-base font-semibold mb-6">
-              Allow Us to Call You Back!
+            <h3 className="text-base font-semibold mb-4">
+              Contact us now!
             </h3>
             <form onSubmit={submitForm}>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label
                   className="block text-sm font-medium mb-1"
                   htmlFor="name"
@@ -87,11 +86,11 @@ const Forms = () => {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="e.g. John Smith"
+                  placeholder="e.g. DJ Bravo"
                   className="w-full border border-gray-300 p-2 rounded-md"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label
                   className="block text-sm font-medium mb-1"
                   htmlFor="phone"
@@ -107,7 +106,7 @@ const Forms = () => {
                   className="w-full border border-gray-300 p-2 rounded-md"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-3">
                 <label
                   className="block text-sm font-medium mb-1"
                   htmlFor="email"
@@ -119,11 +118,11 @@ const Forms = () => {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder="Bravo@example.com"
                   className="w-full border border-gray-300 p-2 rounded-md"
                 />
               </div>
-              <div className="mb-6">
+              <div className="mb-4">
                 <label
                   className="block text-sm font-medium mb-1"
                   htmlFor="message"
@@ -136,6 +135,7 @@ const Forms = () => {
                   onChange={handleChange}
                   placeholder="Any Message"
                   className="w-full border border-gray-300 p-2 rounded-md"
+                  rows="2"
                 ></textarea>
               </div>
               <button
